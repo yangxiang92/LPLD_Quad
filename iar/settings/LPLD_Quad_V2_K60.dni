@@ -1,0 +1,90 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[DebugChecksum]
+Checksum=-2109276392
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[RecentFlashDownload]
+Path=E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH\Exe\LPLD_Quad_V2_K60.out
+[JLinkDriver]
+TraceBufferSize=0x00010000
+TraceStallIfFIFOFull=0x00000000
+TracePortSize=0x00000004
+[Breakpoints]
+Bp0=_ "STD_CODE" "{E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\source\module\PWM.c}.82.2" 0 0 0 0 "" 0 "" 0
+Bp1=_ "STD_CODE" "{E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\source\module\PWM.c}.82.3" 0 0 0 0 "" 0 "" 0
+Bp2=_ "STD_CODE" "{E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\source\module\PWM.c}.82.7" 0 0 0 0 "" 0 "" 0
+Count=3
+[array_types]
+Fmt0=float[4]	4	0
+[watch_formats]
+Fmt0={W}0:flowdata_men_cont	4	0
+Fmt1={W}0:frame_byte_count	3	0
+Fmt2={W}0:frame_length	3	0
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=1
+Graph=0
+Symbiont=0
+Exclusions=
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Trace1]
+Enabled=0
+ShowSource=1
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Bp0=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\lights.c}.229.1" 0 0 1 "" 0 "" 0
+Bp1=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\MS5611.c}.215.1" 0 0 1 "" 0 "" 0
+Bp2=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\MS5611.c}.215.1" 0 0 1 "" 0 "" 0
+Bp3=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\dmp.c}.288.2" 0 0 1 "" 0 "" 0
+Bp4=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\dmp.c}.288.2" 0 0 1 "" 0 "" 0
+Bp5=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\battery.c}.55.1" 0 0 1 "" 0 "" 0
+Bp6=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\app\LPLD_Quad_V2.c}.720.1" 0 0 1 "" 0 "" 0
+Bp7=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\app\LPLD_Quad_V2.c}.720.1" 0 0 1 "" 0 "" 0
+Bp8=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\app\Communicate\decodedata.c}.300.1" 0 0 1 "" 0 "" 0
+Bp9=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\app\Communicate\decodedata.c}.300.1" 0 0 1 "" 0 "" 0
+Bp10=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\app\Communicate\decodedata.c}.300.1" 0 0 1 "" 0 "" 0
+Bp11=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\app\Communicate\decodedata.c}.300.1" 0 0 1 "" 0 "" 0
+Bp12=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\app\Communicate\decodedata.c}.300.1" 0 0 1 "" 0 "" 0
+Bp13=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\app\Communicate\decodedata.c}.300.1" 0 0 1 "" 0 "" 0
+Bp14=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\MPU9150.c}.237.1" 0 0 1 "" 0 "" 0
+Bp15=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\WFLY_RC.c}.253.1" 0 0 1 "" 0 "" 0
+Bp16=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\WFLY_RC.c}.253.1" 0 0 1 "" 0 "" 0
+Bp17=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\WFLY_RC.c}.253.1" 0 0 1 "" 0 "" 0
+Bp18=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\WFLY_RC.c}.253.1" 0 0 1 "" 0 "" 0
+Bp19=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\lights.c}.229.1" 0 0 1 "" 0 "" 0
+Bp20=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\lights.c}.229.1" 0 0 1 "" 0 "" 0
+Bp21=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\lights.c}.229.1" 0 0 1 "" 0 "" 0
+Bp22=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\app\LPLD_Quad_V2.c}.720.1" 0 0 1 "" 0 "" 0
+Bp23=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\app\LPLD_Quad_V2.c}.720.1" 0 0 1 "" 0 "" 0
+Bp24=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\app\SignalProcess\WFLY_RCdata.c}.268.1" 0 0 1 "" 0 "" 0
+Bp25=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\module\uart.c}.269.1" 0 0 1 "" 0 "" 0
+Bp26=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\app\LPLD_Quad_V2.c}.720.1" 0 0 1 "" 0 "" 0
+Bp27=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\app\LPLD_Quad_V2.c}.720.1" 0 0 1 "" 0 "" 0
+Bp28=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\source\app\SignalProcess\MS5611data.c}.81.1" 0 0 1 "" 0 "" 0
+Count=29
+[Aliases]
+Count=0
+SuppressDialog=0

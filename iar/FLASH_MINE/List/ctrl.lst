@@ -1,0 +1,1653 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.40.1.53790/W32 for ARM     09/Aug/2014  10:19:06 #
+# Copyright 1999-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\app\ #
+#                    Control\ctrl.c                                           #
+#    Command line =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\app\ #
+#                    Control\ctrl.c -D LPLD_K60 -lCN                          #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\List\ -lB E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V3\iar\FLASH_MINE\List\ -o E:\ShawnDocuments\IAR_WorkSpa #
+#                    ce\LPLD_Quad_V3\iar\FLASH_MINE\Obj\ --no_cse             #
+#                    --no_unroll --no_inline --no_code_motion --no_tbaa       #
+#                    --no_clustering --no_scheduling --debug --endian=little  #
+#                    --cpu=Cortex-M4 -e --fpu=None --dlib_config "D:\Program  #
+#                    Files\IAR Systems\Embedded Workbench                     #
+#                    6.4\arm\INC\c\DLib_Config_Normal.h" -I                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\ #
+#                    iar\..\source\app\Control\ -I                            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\Others\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V3\iar\..\source\app\Communicate\ -I                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\Algorithm\ -I E:\ShawnDocuments\IAR_WorkSpace\LPL #
+#                    D_Quad_V3\iar\..\source\app\SignalProcess\ -I            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\module\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V3\iar\..\source\module\anbt_dmp\ -I                     #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\module\eMPL\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V3\iar\..\source\lib\CPU\ -I                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\common\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V3\iar\..\source\lib\LPLD\ -I                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\LPLD\HW\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V3\iar\..\source\lib\LPLD\DEV\ -I                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\uCOS-II\Ports\ -I E:\ShawnDocuments\IAR_WorkSpace #
+#                    \LPLD_Quad_V3\iar\..\source\lib\uCOS-II\Source\ -I       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\FatFs\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V3\iar\..\source\lib\FatFs\option\ -I                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\USB\common\ -I E:\ShawnDocuments\IAR_WorkSpace\LP #
+#                    LD_Quad_V3\iar\..\source\lib\USB\driver\ -I              #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\USB\descriptor\ -I E:\ShawnDocuments\IAR_WorkSpac #
+#                    e\LPLD_Quad_V3\iar\..\source\lib\USB\class\ -I           #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\MyLib\ -On -I "D:\Program Files\IAR               #
+#                    Systems\Embedded Workbench 6.4\arm\CMSIS\Include\" -D    #
+#                    ARM_MATH_CM4                                             #
+#    List file    =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\List\ctrl.lst                                        #
+#    Object file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\Obj\ctrl.o                                           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\app\Control\ctrl.c
+      1          /****************************************************************************** 
+      2           *       ctrl.c ----- The basic Control Function of Quad          *
+      3           *       (c) Copyright 2012 HUST RENESAS LAB,The Department of CSE, HUST       *
+      4           *                        All Rights Reserved                                  *
+      5           *Filename             :  ctrl.c                                           *
+      6           *Programmer(s)        :  Yang Xiang                                           *
+      7           *Description          :                                                       *
+      8           *Modification History :                                                       *
+      9           *01a 2014/4/14 15:34:07                                                       *
+     10           ******************************************************************************/
+     11          #include "ctrl.h"
+     12          
+
+   \                                 In section .bss, align 4
+     13          static CtrlParameter s_sControlParameter;
+   \                     s_sControlParameter:
+   \   00000000                      DS8 60
+
+   \                                 In section .bss, align 4
+     14          static CtrlData s_sControlData;
+   \                     s_sControlData:
+   \   00000000                      DS8 48
+     15          
+
+   \                                 In section .rodata, align 4
+     16          extern const float gc_f32LowerLimitThrottle = 0.04;
+   \                     gc_f32LowerLimitThrottle:
+   \   00000000   0x3D23D70A         DC32 3D23D70AH
+
+   \                                 In section .rodata, align 4
+     17          extern const float gc_f32UpperLimitThrottle = 1;
+   \                     gc_f32UpperLimitThrottle:
+   \   00000000   0x3F800000         DC32 3F800000H
+
+   \                                 In section .rodata, align 4
+     18          extern const float gc_f32HoverThrottle = 0.45;
+   \                     gc_f32HoverThrottle:
+   \   00000000   0x3EE66666         DC32 3EE66666H
+
+   \                                 In section .rodata, align 4
+     19          extern const float gc_f32BaseHeight = 0.1;
+   \                     gc_f32BaseHeight:
+   \   00000000   0x3DCCCCCD         DC32 3DCCCCCDH
+     20          
+
+   \                                 In section .bss, align 4
+     21          PID_Parameters g_sXYZPidPara[3] = {0};// = {{0.45, 0.0025, 15}, {0.45, 0.0025, 15}, (0.25, 0, 0)};
+   \                     g_sXYZPidPara:
+   \   00000000                      DS8 60
+
+   \                                 In section .data, align 4
+     22          PID_Parameters g_sHeightPidPara = {0.2, 0.005, 1.0};
+   \                     g_sHeightPidPara:
+   \   00000000   0x3E4CCCCD         DC32 3E4CCCCDH, 3BA3D70AH, 3F800000H
+   \              0x3BA3D70A   
+   \              0x3F800000   
+   \   0000000C   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+
+   \                                 In section .bss, align 4
+     23          PID_Parameters g_sPositionPidPara[2] = {0};
+   \                     g_sPositionPidPara:
+   \   00000000                      DS8 40
+     24          
+
+   \                                 In section .text, align 2, keep-with-next
+     25          void InitControl(void)
+     26          {
+   \                     InitControl:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0xB082             SUB      SP,SP,#+8
+     27              int i = 0;
+   \   00000004   0x2400             MOVS     R4,#+0
+     28          
+     29              s_sControlParameter.mode = 0;
+   \   00000006   0x.... 0x....      LDR.W    R0,??DataTable17
+   \   0000000A   0x2100             MOVS     R1,#+0
+   \   0000000C   0xF880 0x1038      STRB     R1,[R0, #+56]
+     30          
+     31              for(i = 0; i < 2; i++)
+   \   00000010   0x2000             MOVS     R0,#+0
+   \   00000012   0x0004             MOVS     R4,R0
+   \                     ??InitControl_0:
+   \   00000014   0x2C02             CMP      R4,#+2
+   \   00000016   0xDA35             BGE.N    ??InitControl_1
+     32              {
+     33                  g_sXYZPidPara[i].p = 0.45;
+   \   00000018   0x2014             MOVS     R0,#+20
+   \   0000001A   0x.... 0x....      LDR.W    R1,??DataTable17_1
+   \   0000001E   0xFB00 0x1004      MLA      R0,R0,R4,R1
+   \   00000022   0x.... 0x....      LDR.W    R1,??DataTable17_2  ;; 0x3ee66666
+   \   00000026   0x6001             STR      R1,[R0, #+0]
+     34                  g_sXYZPidPara[i].i = 0.0025;
+   \   00000028   0x2014             MOVS     R0,#+20
+   \   0000002A   0x.... 0x....      LDR.W    R1,??DataTable17_1
+   \   0000002E   0xFB00 0x1004      MLA      R0,R0,R4,R1
+   \   00000032   0x.... 0x....      LDR.W    R1,??DataTable17_3  ;; 0x3b23d70a
+   \   00000036   0x6041             STR      R1,[R0, #+4]
+     35                  g_sXYZPidPara[i].d = 15;
+   \   00000038   0x2014             MOVS     R0,#+20
+   \   0000003A   0x.... 0x....      LDR.W    R1,??DataTable17_1
+   \   0000003E   0xFB00 0x1004      MLA      R0,R0,R4,R1
+   \   00000042   0x.... 0x....      LDR.W    R1,??DataTable17_4  ;; 0x41700000
+   \   00000046   0x6081             STR      R1,[R0, #+8]
+     36                  g_sXYZPidPara[i].i_output_limit = 0.05;
+   \   00000048   0x2014             MOVS     R0,#+20
+   \   0000004A   0x.... 0x....      LDR.W    R1,??DataTable17_1
+   \   0000004E   0xFB00 0x1004      MLA      R0,R0,R4,R1
+   \   00000052   0x.... 0x....      LDR.W    R1,??DataTable17_5  ;; 0x3d4ccccd
+   \   00000056   0x6101             STR      R1,[R0, #+16]
+     37                  g_sXYZPidPara[i].i_limit = g_sXYZPidPara[i].i_output_limit / g_sXYZPidPara[i].i;
+   \   00000058   0x2014             MOVS     R0,#+20
+   \   0000005A   0x.... 0x....      LDR.W    R1,??DataTable17_1
+   \   0000005E   0xFB00 0x1004      MLA      R0,R0,R4,R1
+   \   00000062   0x6900             LDR      R0,[R0, #+16]
+   \   00000064   0x2114             MOVS     R1,#+20
+   \   00000066   0x.... 0x....      LDR.W    R2,??DataTable17_1
+   \   0000006A   0xFB01 0x2104      MLA      R1,R1,R4,R2
+   \   0000006E   0x6849             LDR      R1,[R1, #+4]
+   \   00000070   0x.... 0x....      BL       __aeabi_fdiv
+   \   00000074   0x2114             MOVS     R1,#+20
+   \   00000076   0x.... 0x....      LDR.W    R2,??DataTable17_1
+   \   0000007A   0xFB01 0x2104      MLA      R1,R1,R4,R2
+   \   0000007E   0x60C8             STR      R0,[R1, #+12]
+     38              }
+   \   00000080   0x1C64             ADDS     R4,R4,#+1
+   \   00000082   0xE7C7             B.N      ??InitControl_0
+     39              g_sXYZPidPara[2].p = 0.45;//0.25;
+   \                     ??InitControl_1:
+   \   00000084   0x.... 0x....      LDR.W    R0,??DataTable17_1
+   \   00000088   0x.... 0x....      LDR.W    R1,??DataTable17_2  ;; 0x3ee66666
+   \   0000008C   0x6281             STR      R1,[R0, #+40]
+     40              g_sXYZPidPara[2].i = 0.0025;//0;
+   \   0000008E   0x.... 0x....      LDR.W    R0,??DataTable17_1
+   \   00000092   0x.... 0x....      LDR.W    R1,??DataTable17_3  ;; 0x3b23d70a
+   \   00000096   0x62C1             STR      R1,[R0, #+44]
+     41              g_sXYZPidPara[2].d = 30;//0;
+   \   00000098   0x.... 0x....      LDR.W    R0,??DataTable17_1
+   \   0000009C   0x.... 0x....      LDR.W    R1,??DataTable17_6  ;; 0x41f00000
+   \   000000A0   0x6301             STR      R1,[R0, #+48]
+     42              g_sXYZPidPara[2].i_output_limit = 0.05;//0;
+   \   000000A2   0x.... 0x....      LDR.W    R0,??DataTable17_1
+   \   000000A6   0x.... 0x....      LDR.W    R1,??DataTable17_5  ;; 0x3d4ccccd
+   \   000000AA   0x6381             STR      R1,[R0, #+56]
+     43              g_sXYZPidPara[2].i_limit = g_sXYZPidPara[2].i_output_limit / g_sXYZPidPara[2].i;
+   \   000000AC   0x.... 0x....      LDR.W    R0,??DataTable17_1
+   \   000000B0   0x6B80             LDR      R0,[R0, #+56]
+   \   000000B2   0x.... 0x....      LDR.W    R1,??DataTable17_1
+   \   000000B6   0x6AC9             LDR      R1,[R1, #+44]
+   \   000000B8   0x.... 0x....      BL       __aeabi_fdiv
+   \   000000BC   0x.... 0x....      LDR.W    R1,??DataTable17_1
+   \   000000C0   0x6348             STR      R0,[R1, #+52]
+     44              InitPID(g_sXYZPidPara);
+   \   000000C2   0x.... 0x....      LDR.W    R0,??DataTable17_1
+   \   000000C6   0x.... 0x....      BL       InitPID
+     45              g_sHeightPidPara.p = 0.2;
+   \   000000CA   0x.... 0x....      LDR.W    R0,??DataTable17_7
+   \   000000CE   0x.... 0x....      LDR.W    R1,??DataTable17_8  ;; 0x3e4ccccd
+   \   000000D2   0x6001             STR      R1,[R0, #+0]
+     46              g_sHeightPidPara.i = 0.005;
+   \   000000D4   0x.... 0x....      LDR.W    R0,??DataTable17_7
+   \   000000D8   0x.... 0x....      LDR.W    R1,??DataTable17_9  ;; 0x3ba3d70a
+   \   000000DC   0x6041             STR      R1,[R0, #+4]
+     47              g_sHeightPidPara.d = 1.0;
+   \   000000DE   0x.... 0x....      LDR.W    R0,??DataTable17_7
+   \   000000E2   0xF05F 0x517E      MOVS     R1,#+1065353216
+   \   000000E6   0x6081             STR      R1,[R0, #+8]
+     48              g_sHeightPidPara.i_output_limit = 0.35;
+   \   000000E8   0x.... 0x....      LDR.W    R0,??DataTable17_7
+   \   000000EC   0x.... 0x....      LDR.W    R1,??DataTable17_10  ;; 0x3eb33333
+   \   000000F0   0x6101             STR      R1,[R0, #+16]
+     49              g_sHeightPidPara.i_limit = g_sHeightPidPara.i_output_limit / g_sHeightPidPara.i;
+   \   000000F2   0x.... 0x....      LDR.W    R0,??DataTable17_7
+   \   000000F6   0x6900             LDR      R0,[R0, #+16]
+   \   000000F8   0x.... 0x....      LDR.W    R1,??DataTable17_7
+   \   000000FC   0x6849             LDR      R1,[R1, #+4]
+   \   000000FE   0x.... 0x....      BL       __aeabi_fdiv
+   \   00000102   0x.... 0x....      LDR.W    R1,??DataTable17_7
+   \   00000106   0x60C8             STR      R0,[R1, #+12]
+     50              InitHeightPID(g_sHeightPidPara);
+   \   00000108   0x.... 0x....      LDR.W    R1,??DataTable17_7
+   \   0000010C   0xB084             SUB      SP,SP,#+16
+   \   0000010E   0x4668             MOV      R0,SP
+   \   00000110   0x2214             MOVS     R2,#+20
+   \   00000112   0x.... 0x....      BL       __aeabi_memcpy4
+   \   00000116   0xBC0F             POP      {R0-R3}
+   \   00000118   0x.... 0x....      BL       InitHeightPID
+     51              for(i = 0; i < 2; i++)
+   \   0000011C   0x2000             MOVS     R0,#+0
+   \   0000011E   0x0004             MOVS     R4,R0
+   \                     ??InitControl_2:
+   \   00000120   0x2C02             CMP      R4,#+2
+   \   00000122   0xDA34             BGE.N    ??InitControl_3
+     52              {
+     53                  g_sPositionPidPara[i].p = 5.5;
+   \   00000124   0x2014             MOVS     R0,#+20
+   \   00000126   0x.... 0x....      LDR.W    R1,??DataTable17_11
+   \   0000012A   0xFB00 0x1004      MLA      R0,R0,R4,R1
+   \   0000012E   0x.... 0x....      LDR.W    R1,??DataTable17_12  ;; 0x40b00000
+   \   00000132   0x6001             STR      R1,[R0, #+0]
+     54                  g_sPositionPidPara[i].i = 0;
+   \   00000134   0x2014             MOVS     R0,#+20
+   \   00000136   0x.... 0x....      LDR.W    R1,??DataTable17_11
+   \   0000013A   0xFB00 0x1004      MLA      R0,R0,R4,R1
+   \   0000013E   0x2100             MOVS     R1,#+0
+   \   00000140   0x6041             STR      R1,[R0, #+4]
+     55                  g_sPositionPidPara[i].d = 50;//550/25;
+   \   00000142   0x2014             MOVS     R0,#+20
+   \   00000144   0x.... 0x....      LDR.W    R1,??DataTable17_11
+   \   00000148   0xFB00 0x1004      MLA      R0,R0,R4,R1
+   \   0000014C   0x.... 0x....      LDR.W    R1,??DataTable17_13  ;; 0x42480000
+   \   00000150   0x6081             STR      R1,[R0, #+8]
+     56                  g_sPositionPidPara[i].i_output_limit = 1;
+   \   00000152   0x2014             MOVS     R0,#+20
+   \   00000154   0x.... 0x....      LDR.W    R1,??DataTable17_11
+   \   00000158   0xFB00 0x1004      MLA      R0,R0,R4,R1
+   \   0000015C   0xF05F 0x517E      MOVS     R1,#+1065353216
+   \   00000160   0x6101             STR      R1,[R0, #+16]
+     57                  g_sPositionPidPara[i].i_limit = g_sPositionPidPara[i].i_output_limit / g_sPositionPidPara[i].i;
+   \   00000162   0x2014             MOVS     R0,#+20
+   \   00000164   0x.... 0x....      LDR.W    R1,??DataTable17_11
+   \   00000168   0xFB00 0x1004      MLA      R0,R0,R4,R1
+   \   0000016C   0x6900             LDR      R0,[R0, #+16]
+   \   0000016E   0x2114             MOVS     R1,#+20
+   \   00000170   0x.... 0x....      LDR.W    R2,??DataTable17_11
+   \   00000174   0xFB01 0x2104      MLA      R1,R1,R4,R2
+   \   00000178   0x6849             LDR      R1,[R1, #+4]
+   \   0000017A   0x.... 0x....      BL       __aeabi_fdiv
+   \   0000017E   0x2114             MOVS     R1,#+20
+   \   00000180   0x.... 0x....      LDR.W    R2,??DataTable17_11
+   \   00000184   0xFB01 0x2104      MLA      R1,R1,R4,R2
+   \   00000188   0x60C8             STR      R0,[R1, #+12]
+     58              }
+   \   0000018A   0x1C64             ADDS     R4,R4,#+1
+   \   0000018C   0xE7C8             B.N      ??InitControl_2
+     59              InitPositionPID(g_sPositionPidPara);
+   \                     ??InitControl_3:
+   \   0000018E   0x.... 0x....      LDR.W    R0,??DataTable17_11
+   \   00000192   0x.... 0x....      BL       InitPositionPID
+     60          
+     61              for(i = 0; i < 4; i++)
+   \   00000196   0x2000             MOVS     R0,#+0
+   \   00000198   0x0004             MOVS     R4,R0
+   \                     ??InitControl_4:
+   \   0000019A   0x2C04             CMP      R4,#+4
+   \   0000019C   0xDA07             BGE.N    ??InitControl_5
+     62              {
+     63                  s_sControlParameter.throttle[i] = 0;
+   \   0000019E   0x.... 0x....      LDR.W    R0,??DataTable17
+   \   000001A2   0xEB10 0x0084      ADDS     R0,R0,R4, LSL #+2
+   \   000001A6   0x2100             MOVS     R1,#+0
+   \   000001A8   0x6201             STR      R1,[R0, #+32]
+     64              }
+   \   000001AA   0x1C64             ADDS     R4,R4,#+1
+   \   000001AC   0xE7F5             B.N      ??InitControl_4
+     65          
+     66              quaternion_loadIdentity( &(s_sControlParameter.lock_attitude_struct.targetAttitude));
+   \                     ??InitControl_5:
+   \   000001AE   0x.... 0x....      LDR.W    R0,??DataTable17
+   \   000001B2   0x.... 0x....      BL       quaternion_loadIdentity
+     67          }
+   \   000001B6   0xBD13             POP      {R0,R1,R4,PC}    ;; return
+     68          
+
+   \                                 In section .text, align 2, keep-with-next
+     69          void CtrlLockTargetAttitude(void)
+     70          {
+   \                     CtrlLockTargetAttitude:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     71              if(s_sControlParameter.lock_attitude_struct.baseThrottle < gc_f32LowerLimitThrottle)
+   \   00000002   0x.... 0x....      LDR.W    R0,??DataTable17
+   \   00000006   0x6940             LDR      R0,[R0, #+20]
+   \   00000008   0x.... 0x....      LDR.W    R1,??DataTable17_14
+   \   0000000C   0x6809             LDR      R1,[R1, #+0]
+   \   0000000E   0x.... 0x....      BL       __aeabi_cfcmple
+   \   00000012   0xD203             BCS.N    ??CtrlLockTargetAttitude_0
+     72              {
+     73                  CtrlOutputSameThrottle(0);
+   \   00000014   0x2000             MOVS     R0,#+0
+   \   00000016   0x.... 0x....      BL       CtrlOutputSameThrottle
+   \   0000001A   0xE006             B.N      ??CtrlLockTargetAttitude_1
+     74              }
+     75              else
+     76              {
+     77                  CtrlOutputByTargetAttitude(&(s_sControlParameter.lock_attitude_struct.targetAttitude), s_sControlParameter.lock_attitude_struct.baseThrottle);
+   \                     ??CtrlLockTargetAttitude_0:
+   \   0000001C   0x.... 0x....      LDR.W    R0,??DataTable17
+   \   00000020   0x6941             LDR      R1,[R0, #+20]
+   \   00000022   0x.... 0x....      LDR.W    R0,??DataTable17
+   \   00000026   0x.... 0x....      BL       CtrlOutputByTargetAttitude
+     78              }
+     79          }
+   \                     ??CtrlLockTargetAttitude_1:
+   \   0000002A   0xBD01             POP      {R0,PC}          ;; return
+     80          
+
+   \                                 In section .text, align 2, keep-with-next
+     81          void CtrlOutputSameThrottle(float esc_throttle)
+     82          {
+   \                     CtrlOutputSameThrottle:
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     83              int i = 0;
+   \   00000004   0x2500             MOVS     R5,#+0
+     84          
+     85              for(i = 0; i < 6; i ++)
+   \   00000006   0x2000             MOVS     R0,#+0
+   \   00000008   0x0005             MOVS     R5,R0
+   \                     ??CtrlOutputSameThrottle_0:
+   \   0000000A   0x2D06             CMP      R5,#+6
+   \   0000000C   0xDA06             BGE.N    ??CtrlOutputSameThrottle_1
+     86              {
+     87                  s_sControlParameter.throttle[i] = esc_throttle;
+   \   0000000E   0x.... 0x....      LDR.W    R0,??DataTable17
+   \   00000012   0xEB10 0x0085      ADDS     R0,R0,R5, LSL #+2
+   \   00000016   0x6204             STR      R4,[R0, #+32]
+     88              }
+   \   00000018   0x1C6D             ADDS     R5,R5,#+1
+   \   0000001A   0xE7F6             B.N      ??CtrlOutputSameThrottle_0
+     89          
+     90              CtrlOutputThrottle();
+   \                     ??CtrlOutputSameThrottle_1:
+   \   0000001C   0x.... 0x....      BL       CtrlOutputThrottle
+     91          }
+   \   00000020   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     92          
+
+   \                                 In section .text, align 2, keep-with-next
+     93          void CtrlOutputThrottle(void)
+     94          {
+   \                     CtrlOutputThrottle:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     95              ThrottleOutSixESC(s_sControlParameter.throttle);
+   \   00000002   0x.... 0x....      LDR.W    R0,??DataTable17_15
+   \   00000006   0x.... 0x....      BL       ThrottleOutSixESC
+     96          }
+   \   0000000A   0xBD01             POP      {R0,PC}          ;; return
+     97          
+
+   \                                 In section .text, align 2, keep-with-next
+     98          void CtrlOutputByTargetAttitude(quaternion * targetAttitude, float baseThrottle)
+     99          {   
+   \                     CtrlOutputByTargetAttitude:
+   \   00000000   0xE92D 0x41F0      PUSH     {R4-R8,LR}
+   \   00000004   0xB092             SUB      SP,SP,#+72
+   \   00000006   0x0007             MOVS     R7,R0
+   \   00000008   0x000D             MOVS     R5,R1
+    100              //Pay Attention: If you are using this function to do the attitude control, the yaw pitch roll
+    101              //               here is HALF the real yaw pitch roll. So, if you were using the euler attitude
+    102              //               to do the control job, and now you want to use this function to do the control
+    103              //               job, you have to DOUBLE your pid parameter to adapt to this algorithm!!!
+    104              int i = 0;
+   \   0000000A   0x2400             MOVS     R4,#+0
+    105              quaternion * cur = GetAttitude();
+   \   0000000C   0x.... 0x....      BL       GetAttitude
+   \   00000010   0x0006             MOVS     R6,R0
+    106          
+    107              quaternion cur_rev;
+    108              quaternion delta;
+    109          
+    110              cur_rev = quaternion_getConjugateQuaternion(*cur);
+   \   00000012   0xB083             SUB      SP,SP,#+12
+   \   00000014   0x4668             MOV      R0,SP
+   \   00000016   0xCE0E             LDM      R6!,{R1-R3}
+   \   00000018   0xC00E             STM      R0!,{R1-R3}
+   \   0000001A   0x6831             LDR      R1,[R6, #0]
+   \   0000001C   0x6001             STR      R1,[R0, #+0]
+   \   0000001E   0x3E0C             SUBS     R6,R6,#+12
+   \   00000020   0x380C             SUBS     R0,R0,#+12
+   \   00000022   0xBC0E             POP      {R1-R3}
+   \   00000024   0xA80E             ADD      R0,SP,#+56
+   \   00000026   0x.... 0x....      BL       quaternion_getConjugateQuaternion
+    111          
+    112              quaternion_mult(&delta, &cur_rev, targetAttitude);
+   \   0000002A   0x003A             MOVS     R2,R7
+   \   0000002C   0xA90E             ADD      R1,SP,#+56
+   \   0000002E   0xA80A             ADD      R0,SP,#+40
+   \   00000030   0x.... 0x....      BL       quaternion_mult
+    113              quaternion_normalize(&delta);
+   \   00000034   0xA80A             ADD      R0,SP,#+40
+   \   00000036   0x.... 0x....      BL       quaternion_normalize
+    114              
+    115              s_sControlData.delta_quaternion = delta;
+   \   0000003A   0x.... 0x....      LDR.W    R0,??DataTable17_16
+   \   0000003E   0xA90A             ADD      R1,SP,#+40
+   \   00000040   0x2210             MOVS     R2,#+16
+   \   00000042   0x.... 0x....      BL       __aeabi_memcpy4
+    116          
+    117              float output[3] = {0,0,0};
+   \   00000046   0xA801             ADD      R0,SP,#+4
+   \   00000048   0x2100             MOVS     R1,#+0
+   \   0000004A   0x2200             MOVS     R2,#+0
+   \   0000004C   0x2300             MOVS     R3,#+0
+   \   0000004E   0xC00E             STM      R0!,{R1-R3}
+   \   00000050   0x380C             SUBS     R0,R0,#+12
+    118              float input[3] = {0,0,0};
+   \   00000052   0xA807             ADD      R0,SP,#+28
+   \   00000054   0x2100             MOVS     R1,#+0
+   \   00000056   0x2200             MOVS     R2,#+0
+   \   00000058   0x2300             MOVS     R3,#+0
+   \   0000005A   0xC00E             STM      R0!,{R1-R3}
+   \   0000005C   0x380C             SUBS     R0,R0,#+12
+    119              float delta_ypr[3] = {0,0,0};
+   \   0000005E   0xA804             ADD      R0,SP,#+16
+   \   00000060   0x2100             MOVS     R1,#+0
+   \   00000062   0x2200             MOVS     R2,#+0
+   \   00000064   0x2300             MOVS     R3,#+0
+   \   00000066   0xC00E             STM      R0!,{R1-R3}
+   \   00000068   0x380C             SUBS     R0,R0,#+12
+    120              /* To make it the same as using the euler angle to control */
+    121          //    input[0] = delta.x * 2;
+    122          //    input[1] = delta.y * 2;
+    123          //    input[2] = delta.z * 2;
+    124              quaternion_converQuaternionToYawPitchRoll(delta, delta_ypr);
+   \   0000006A   0xA804             ADD      R0,SP,#+16
+   \   0000006C   0x9000             STR      R0,[SP, #+0]
+   \   0000006E   0xA80A             ADD      R0,SP,#+40
+   \   00000070   0xC80F             LDM      R0,{R0-R3}
+   \   00000072   0x.... 0x....      BL       quaternion_converQuaternionToYawPitchRoll
+    125              for(i = 0; i < 3; i++)
+   \   00000076   0x2000             MOVS     R0,#+0
+   \   00000078   0x0004             MOVS     R4,R0
+   \                     ??CtrlOutputByTargetAttitude_0:
+   \   0000007A   0x2C03             CMP      R4,#+3
+   \   0000007C   0xDA32             BGE.N    ??CtrlOutputByTargetAttitude_1
+    126              {
+    127                  if(delta_ypr[i] > 180)
+   \   0000007E   0xA804             ADD      R0,SP,#+16
+   \   00000080   0xF850 0x0024      LDR      R0,[R0, R4, LSL #+2]
+   \   00000084   0x.... 0x....      LDR.W    R1,??DataTable17_17  ;; 0x43340001
+   \   00000088   0x.... 0x....      BL       __aeabi_cfrcmple
+   \   0000008C   0xD80A             BHI.N    ??CtrlOutputByTargetAttitude_2
+    128                  {
+    129                      delta_ypr[i] -= 360;
+   \   0000008E   0xA804             ADD      R0,SP,#+16
+   \   00000090   0xF850 0x0024      LDR      R0,[R0, R4, LSL #+2]
+   \   00000094   0x.... 0x....      LDR.W    R1,??DataTable17_18  ;; 0xc3b40000
+   \   00000098   0x.... 0x....      BL       __aeabi_fadd
+   \   0000009C   0xA904             ADD      R1,SP,#+16
+   \   0000009E   0xF841 0x0024      STR      R0,[R1, R4, LSL #+2]
+   \   000000A2   0xE011             B.N      ??CtrlOutputByTargetAttitude_3
+    130                  }
+    131                  else if(delta_ypr[i] < -180)
+   \                     ??CtrlOutputByTargetAttitude_2:
+   \   000000A4   0xA804             ADD      R0,SP,#+16
+   \   000000A6   0xF850 0x0024      LDR      R0,[R0, R4, LSL #+2]
+   \   000000AA   0x.... 0x....      LDR.W    R1,??DataTable17_19  ;; 0xc3340000
+   \   000000AE   0x.... 0x....      BL       __aeabi_cfcmple
+   \   000000B2   0xD209             BCS.N    ??CtrlOutputByTargetAttitude_3
+    132                  {
+    133                      delta_ypr[i] += 360;
+   \   000000B4   0xA804             ADD      R0,SP,#+16
+   \   000000B6   0xF850 0x0024      LDR      R0,[R0, R4, LSL #+2]
+   \   000000BA   0x.... 0x....      LDR.W    R1,??DataTable17_20  ;; 0x43b40000
+   \   000000BE   0x.... 0x....      BL       __aeabi_fadd
+   \   000000C2   0xA904             ADD      R1,SP,#+16
+   \   000000C4   0xF841 0x0024      STR      R0,[R1, R4, LSL #+2]
+    134                  }
+    135                  input[2-i] = delta_ypr[i] / 57.2957795f;
+   \                     ??CtrlOutputByTargetAttitude_3:
+   \   000000C8   0xA804             ADD      R0,SP,#+16
+   \   000000CA   0xF850 0x0024      LDR      R0,[R0, R4, LSL #+2]
+   \   000000CE   0x.... 0x....      LDR.W    R1,??DataTable17_21  ;; 0x42652ee1
+   \   000000D2   0x.... 0x....      BL       __aeabi_fdiv
+   \   000000D6   0x4261             RSBS     R1,R4,#+0
+   \   000000D8   0xAA07             ADD      R2,SP,#+28
+   \   000000DA   0xEB12 0x0181      ADDS     R1,R2,R1, LSL #+2
+   \   000000DE   0x6088             STR      R0,[R1, #+8]
+    136              }
+   \   000000E0   0x1C64             ADDS     R4,R4,#+1
+   \   000000E2   0xE7CA             B.N      ??CtrlOutputByTargetAttitude_0
+    137              //PIDInterate(input, output);
+    138              SAS_PIDInterate(input, output);
+   \                     ??CtrlOutputByTargetAttitude_1:
+   \   000000E4   0xA901             ADD      R1,SP,#+4
+   \   000000E6   0xA807             ADD      R0,SP,#+28
+   \   000000E8   0x.... 0x....      BL       SAS_PIDInterate
+    139              
+    140              for(i = 0; i < 3; i++)
+   \   000000EC   0x2000             MOVS     R0,#+0
+   \   000000EE   0x0004             MOVS     R4,R0
+   \                     ??CtrlOutputByTargetAttitude_4:
+   \   000000F0   0x2C03             CMP      R4,#+3
+   \   000000F2   0xDA08             BGE.N    ??CtrlOutputByTargetAttitude_5
+    141              {
+    142                  s_sControlData.pid_output[i] = output[i];
+   \   000000F4   0x.... 0x....      LDR.W    R0,??DataTable17_22
+   \   000000F8   0xA901             ADD      R1,SP,#+4
+   \   000000FA   0xF851 0x1024      LDR      R1,[R1, R4, LSL #+2]
+   \   000000FE   0xF840 0x1024      STR      R1,[R0, R4, LSL #+2]
+    143              }
+   \   00000102   0x1C64             ADDS     R4,R4,#+1
+   \   00000104   0xE7F4             B.N      ??CtrlOutputByTargetAttitude_4
+    144          
+    145          #ifndef SIX_ROTORS
+    146              /*
+    147               * “+”控制模式
+    148               */
+    149              /* 
+    150              s_sControlParameter.throttle[0] = baseThrottle             - output[1] - output[2];
+    151              s_sControlParameter.throttle[1] = baseThrottle + output[0]             + output[2];
+    152              s_sControlParameter.throttle[2] = baseThrottle             + output[1] - output[2];
+    153              s_sControlParameter.throttle[3] = baseThrottle - output[0]             + output[2];
+    154              */
+    155              
+    156              /* 
+    157               * “X”控制模式
+    158               * */
+    159              s_sControlParameter.throttle[0] = baseThrottle + (output[0]/2) - (output[1]/2) - output[2];
+    160              s_sControlParameter.throttle[1] = baseThrottle - (output[0]/2) - (output[1]/2) + output[2];
+    161              s_sControlParameter.throttle[2] = baseThrottle - (output[0]/2) + (output[1]/2) - output[2];
+    162              s_sControlParameter.throttle[3] = baseThrottle + (output[0]/2) + (output[1]/2) + output[2];    
+    163          #else
+    164              for(i = 0; i < 3; i++)
+   \                     ??CtrlOutputByTargetAttitude_5:
+   \   00000106   0x2000             MOVS     R0,#+0
+   \   00000108   0x0004             MOVS     R4,R0
+   \                     ??CtrlOutputByTargetAttitude_6:
+   \   0000010A   0x2C03             CMP      R4,#+3
+   \   0000010C   0xDA11             BGE.N    ??CtrlOutputByTargetAttitude_7
+    165              {
+    166                  output[i] = output[i] * 1.1;
+   \   0000010E   0xA801             ADD      R0,SP,#+4
+   \   00000110   0xF850 0x0024      LDR      R0,[R0, R4, LSL #+2]
+   \   00000114   0x.... 0x....      BL       __aeabi_f2d
+   \   00000118   0x.... 0x....      LDR.W    R2,??DataTable17_23  ;; 0x9999999a
+   \   0000011C   0x.... 0x....      LDR.W    R3,??DataTable17_24  ;; 0x3ff19999
+   \   00000120   0x.... 0x....      BL       __aeabi_dmul
+   \   00000124   0x.... 0x....      BL       __aeabi_d2f
+   \   00000128   0xA901             ADD      R1,SP,#+4
+   \   0000012A   0xF841 0x0024      STR      R0,[R1, R4, LSL #+2]
+    167              }
+   \   0000012E   0x1C64             ADDS     R4,R4,#+1
+   \   00000130   0xE7EB             B.N      ??CtrlOutputByTargetAttitude_6
+    168              s_sControlParameter.throttle[0] = baseThrottle - (output[0]/2) - ((output[1]*1.1547f)/2) - output[2];
+   \                     ??CtrlOutputByTargetAttitude_7:
+   \   00000132   0x9801             LDR      R0,[SP, #+4]
+   \   00000134   0xF05F 0x4180      MOVS     R1,#+1073741824
+   \   00000138   0x.... 0x....      BL       __aeabi_fdiv
+   \   0000013C   0x0001             MOVS     R1,R0
+   \   0000013E   0x0028             MOVS     R0,R5
+   \   00000140   0x.... 0x....      BL       __aeabi_fsub
+   \   00000144   0x4680             MOV      R8,R0
+   \   00000146   0x9902             LDR      R1,[SP, #+8]
+   \   00000148   0x.... 0x....      LDR.W    R0,??DataTable17_25  ;; 0x3f93cd36
+   \   0000014C   0x.... 0x....      BL       __aeabi_fmul
+   \   00000150   0xF05F 0x4180      MOVS     R1,#+1073741824
+   \   00000154   0x.... 0x....      BL       __aeabi_fdiv
+   \   00000158   0x0001             MOVS     R1,R0
+   \   0000015A   0x4640             MOV      R0,R8
+   \   0000015C   0x.... 0x....      BL       __aeabi_fsub
+   \   00000160   0x9903             LDR      R1,[SP, #+12]
+   \   00000162   0x.... 0x....      BL       __aeabi_fsub
+   \   00000166   0x.... 0x....      LDR.W    R1,??DataTable17
+   \   0000016A   0x6208             STR      R0,[R1, #+32]
+    169              s_sControlParameter.throttle[1] = baseThrottle - (output[0]/2)                           + output[2];
+   \   0000016C   0x9801             LDR      R0,[SP, #+4]
+   \   0000016E   0xF05F 0x4180      MOVS     R1,#+1073741824
+   \   00000172   0x.... 0x....      BL       __aeabi_fdiv
+   \   00000176   0x0001             MOVS     R1,R0
+   \   00000178   0x0028             MOVS     R0,R5
+   \   0000017A   0x.... 0x....      BL       __aeabi_fsub
+   \   0000017E   0x9903             LDR      R1,[SP, #+12]
+   \   00000180   0x.... 0x....      BL       __aeabi_fadd
+   \   00000184   0x.... 0x....      LDR.W    R1,??DataTable17
+   \   00000188   0x6248             STR      R0,[R1, #+36]
+    170              s_sControlParameter.throttle[2] = baseThrottle - (output[0]/2) + ((output[1]*1.1547f)/2) - output[2];
+   \   0000018A   0x9801             LDR      R0,[SP, #+4]
+   \   0000018C   0xF05F 0x4180      MOVS     R1,#+1073741824
+   \   00000190   0x.... 0x....      BL       __aeabi_fdiv
+   \   00000194   0x0001             MOVS     R1,R0
+   \   00000196   0x0028             MOVS     R0,R5
+   \   00000198   0x.... 0x....      BL       __aeabi_fsub
+   \   0000019C   0x4680             MOV      R8,R0
+   \   0000019E   0x9902             LDR      R1,[SP, #+8]
+   \   000001A0   0x.... 0x....      LDR.W    R0,??DataTable17_25  ;; 0x3f93cd36
+   \   000001A4   0x.... 0x....      BL       __aeabi_fmul
+   \   000001A8   0xF05F 0x4180      MOVS     R1,#+1073741824
+   \   000001AC   0x.... 0x....      BL       __aeabi_fdiv
+   \   000001B0   0x4641             MOV      R1,R8
+   \   000001B2   0x.... 0x....      BL       __aeabi_fadd
+   \   000001B6   0x9903             LDR      R1,[SP, #+12]
+   \   000001B8   0x.... 0x....      BL       __aeabi_fsub
+   \   000001BC   0x.... 0x....      LDR.W    R1,??DataTable17
+   \   000001C0   0x6288             STR      R0,[R1, #+40]
+    171              s_sControlParameter.throttle[3] = baseThrottle + (output[0]/2) + ((output[1]*1.1547f)/2) + output[2];
+   \   000001C2   0x9801             LDR      R0,[SP, #+4]
+   \   000001C4   0xF05F 0x4180      MOVS     R1,#+1073741824
+   \   000001C8   0x.... 0x....      BL       __aeabi_fdiv
+   \   000001CC   0x0029             MOVS     R1,R5
+   \   000001CE   0x.... 0x....      BL       __aeabi_fadd
+   \   000001D2   0x4680             MOV      R8,R0
+   \   000001D4   0x9902             LDR      R1,[SP, #+8]
+   \   000001D6   0x.... 0x....      LDR.W    R0,??DataTable17_25  ;; 0x3f93cd36
+   \   000001DA   0x.... 0x....      BL       __aeabi_fmul
+   \   000001DE   0xF05F 0x4180      MOVS     R1,#+1073741824
+   \   000001E2   0x.... 0x....      BL       __aeabi_fdiv
+   \   000001E6   0x4641             MOV      R1,R8
+   \   000001E8   0x.... 0x....      BL       __aeabi_fadd
+   \   000001EC   0x9903             LDR      R1,[SP, #+12]
+   \   000001EE   0x.... 0x....      BL       __aeabi_fadd
+   \   000001F2   0x.... 0x....      LDR.W    R1,??DataTable17
+   \   000001F6   0x62C8             STR      R0,[R1, #+44]
+    172              s_sControlParameter.throttle[4] = baseThrottle + (output[0]/2)                           - output[2];   
+   \   000001F8   0x9801             LDR      R0,[SP, #+4]
+   \   000001FA   0xF05F 0x4180      MOVS     R1,#+1073741824
+   \   000001FE   0x.... 0x....      BL       __aeabi_fdiv
+   \   00000202   0x0029             MOVS     R1,R5
+   \   00000204   0x.... 0x....      BL       __aeabi_fadd
+   \   00000208   0x9903             LDR      R1,[SP, #+12]
+   \   0000020A   0x.... 0x....      BL       __aeabi_fsub
+   \   0000020E   0x.... 0x....      LDR.W    R1,??DataTable17
+   \   00000212   0x6308             STR      R0,[R1, #+48]
+    173              s_sControlParameter.throttle[5] = baseThrottle + (output[0]/2) - ((output[1]*1.1547f)/2) + output[2];
+   \   00000214   0x9801             LDR      R0,[SP, #+4]
+   \   00000216   0xF05F 0x4180      MOVS     R1,#+1073741824
+   \   0000021A   0x.... 0x....      BL       __aeabi_fdiv
+   \   0000021E   0x0029             MOVS     R1,R5
+   \   00000220   0x.... 0x....      BL       __aeabi_fadd
+   \   00000224   0x4680             MOV      R8,R0
+   \   00000226   0x9902             LDR      R1,[SP, #+8]
+   \   00000228   0x.... 0x....      LDR.W    R0,??DataTable17_25  ;; 0x3f93cd36
+   \   0000022C   0x.... 0x....      BL       __aeabi_fmul
+   \   00000230   0xF05F 0x4180      MOVS     R1,#+1073741824
+   \   00000234   0x.... 0x....      BL       __aeabi_fdiv
+   \   00000238   0x0001             MOVS     R1,R0
+   \   0000023A   0x4640             MOV      R0,R8
+   \   0000023C   0x.... 0x....      BL       __aeabi_fsub
+   \   00000240   0x9903             LDR      R1,[SP, #+12]
+   \   00000242   0x.... 0x....      BL       __aeabi_fadd
+   \   00000246   0x....             LDR.N    R1,??DataTable17
+   \   00000248   0x6348             STR      R0,[R1, #+52]
+    174          #endif
+    175          
+    176              CtrlOutputThrottle();
+   \   0000024A   0x.... 0x....      BL       CtrlOutputThrottle
+    177          }
+   \   0000024E   0xB012             ADD      SP,SP,#+72
+   \   00000250   0xE8BD 0x81F0      POP      {R4-R8,PC}       ;; return
+    178          
+
+   \                                 In section .text, align 2, keep-with-next
+    179          CtrlParameter* GetControlParameter(void)
+    180          {
+    181              return &s_sControlParameter;
+   \                     GetControlParameter:
+   \   00000000   0x....             LDR.N    R0,??DataTable17
+   \   00000002   0x4770             BX       LR               ;; return
+    182          }
+    183          
+
+   \                                 In section .text, align 2, keep-with-next
+    184          CtrlData * GetControlData(void)
+    185          {
+    186              return &s_sControlData;
+   \                     GetControlData:
+   \   00000000   0x.... 0x....      LDR.W    R0,??DataTable17_22
+   \   00000004   0x4770             BX       LR               ;; return
+    187          }
+    188          
+
+   \                                 In section .text, align 2, keep-with-next
+    189          float CtrlGetLockTargetHeightThrottle(float height)
+    190          {
+   \                     CtrlGetLockTargetHeightThrottle:
+   \   00000000   0x0001             MOVS     R1,R0
+    191              return 0;
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0x4770             BX       LR               ;; return
+    192          }
+    193          
+
+   \                                 In section .text, align 2, keep-with-next
+    194          void CtrlEvent(void)
+    195          {
+   \                     CtrlEvent:
+   \   00000000   0xB510             PUSH     {R4,LR}
+    196              if(s_sControlParameter.mode != CTRL_MODE_HALT)
+   \   00000002   0x....             LDR.N    R0,??DataTable17
+   \   00000004   0xF890 0x0038      LDRB     R0,[R0, #+56]
+   \   00000008   0x2800             CMP      R0,#+0
+   \   0000000A   0xD00C             BEQ.N    ??CtrlEvent_0
+    197              {
+    198                  if(ExceptionCheckInclination(*GetEulerAttitude()))
+   \   0000000C   0x.... 0x....      BL       GetEulerAttitude
+   \   00000010   0xC807             LDM      R0,{R0-R2}
+   \   00000012   0x.... 0x....      BL       ExceptionCheckInclination
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD005             BEQ.N    ??CtrlEvent_0
+    199                  {
+    200                      g_sQuadSystemFlag.incline_halt = 1;
+   \   0000001A   0x.... 0x....      LDR.W    R0,??DataTable17_26
+   \   0000001E   0x2101             MOVS     R1,#+1
+   \   00000020   0x70C1             STRB     R1,[R0, #+3]
+    201                      CtrlEnterHaltMode();
+   \   00000022   0x.... 0x....      BL       CtrlEnterHaltMode
+    202                  }
+    203              }
+    204          
+    205              switch(s_sControlParameter.mode)
+   \                     ??CtrlEvent_0:
+   \   00000026   0x....             LDR.N    R0,??DataTable17
+   \   00000028   0xF890 0x0038      LDRB     R0,[R0, #+56]
+   \   0000002C   0x2800             CMP      R0,#+0
+   \   0000002E   0xD008             BEQ.N    ??CtrlEvent_1
+   \   00000030   0x2801             CMP      R0,#+1
+   \   00000032   0xD00D             BEQ.N    ??CtrlEvent_2
+   \   00000034   0x2803             CMP      R0,#+3
+   \   00000036   0xD00E             BEQ.N    ??CtrlEvent_3
+   \   00000038   0x2805             CMP      R0,#+5
+   \   0000003A   0xD018             BEQ.N    ??CtrlEvent_4
+   \   0000003C   0x2807             CMP      R0,#+7
+   \   0000003E   0xD022             BEQ.N    ??CtrlEvent_5
+   \   00000040   0xE036             B.N      ??CtrlEvent_6
+    206              {
+    207                  case CTRL_MODE_HALT:
+    208                      SetBuzzerMode(1);
+   \                     ??CtrlEvent_1:
+   \   00000042   0x2001             MOVS     R0,#+1
+   \   00000044   0x.... 0x....      BL       SetBuzzerMode
+    209                      CtrlOutputSameThrottle(0);
+   \   00000048   0x2000             MOVS     R0,#+0
+   \   0000004A   0x.... 0x....      BL       CtrlOutputSameThrottle
+    210                      break;
+   \   0000004E   0xE032             B.N      ??CtrlEvent_7
+    211                  case CTRL_MODE_LOCK_ATTITUDE:
+    212                      CtrlLockTargetAttitude();
+   \                     ??CtrlEvent_2:
+   \   00000050   0x.... 0x....      BL       CtrlLockTargetAttitude
+    213                      break;
+   \   00000054   0xE02F             B.N      ??CtrlEvent_7
+    214                  case CTRL_MODE_LOCK_HEIGHT_ATTITUDE:
+    215                      CtrlLockHeightThrottle((float)g_sonar_measure_distance_mm / 1000);
+   \                     ??CtrlEvent_3:
+   \   00000056   0x....             LDR.N    R0,??DataTable17_27
+   \   00000058   0x8800             LDRH     R0,[R0, #+0]
+   \   0000005A   0x.... 0x....      BL       __aeabi_ui2f
+   \   0000005E   0x....             LDR.N    R1,??DataTable17_28  ;; 0x447a0000
+   \   00000060   0x.... 0x....      BL       __aeabi_fdiv
+   \   00000064   0x.... 0x....      BL       CtrlLockHeightThrottle
+    216                      CtrlLockTargetAttitude();
+   \   00000068   0x.... 0x....      BL       CtrlLockTargetAttitude
+    217                      break;
+   \   0000006C   0xE023             B.N      ??CtrlEvent_7
+    218                  case CTRL_MODE_LOCK_POSITION_ATTITUDE:
+    219                      CtrlLockPositionEulerAngle(ADNS3080_GetIntegratedPosition()[0], ADNS3080_GetIntegratedPosition()[1]);
+   \                     ??CtrlEvent_4:
+   \   0000006E   0x.... 0x....      BL       ADNS3080_GetIntegratedPosition
+   \   00000072   0x0004             MOVS     R4,R0
+   \   00000074   0x.... 0x....      BL       ADNS3080_GetIntegratedPosition
+   \   00000078   0x6861             LDR      R1,[R4, #+4]
+   \   0000007A   0x6800             LDR      R0,[R0, #+0]
+   \   0000007C   0x.... 0x....      BL       CtrlLockPositionEulerAngle
+    220                      CtrlLockTargetAttitude();
+   \   00000080   0x.... 0x....      BL       CtrlLockTargetAttitude
+    221                      break;
+   \   00000084   0xE017             B.N      ??CtrlEvent_7
+    222                  case CTRL_MODE_LOCK_HEIGHT_POSITION_ATTITUDE:
+    223                      CtrlLockHeightThrottle((float)g_sonar_measure_distance_mm / 1000);
+   \                     ??CtrlEvent_5:
+   \   00000086   0x....             LDR.N    R0,??DataTable17_27
+   \   00000088   0x8800             LDRH     R0,[R0, #+0]
+   \   0000008A   0x.... 0x....      BL       __aeabi_ui2f
+   \   0000008E   0x....             LDR.N    R1,??DataTable17_28  ;; 0x447a0000
+   \   00000090   0x.... 0x....      BL       __aeabi_fdiv
+   \   00000094   0x.... 0x....      BL       CtrlLockHeightThrottle
+    224                      CtrlLockPositionEulerAngle(ADNS3080_GetIntegratedPosition()[0], ADNS3080_GetIntegratedPosition()[1]);
+   \   00000098   0x.... 0x....      BL       ADNS3080_GetIntegratedPosition
+   \   0000009C   0x0004             MOVS     R4,R0
+   \   0000009E   0x.... 0x....      BL       ADNS3080_GetIntegratedPosition
+   \   000000A2   0x6861             LDR      R1,[R4, #+4]
+   \   000000A4   0x6800             LDR      R0,[R0, #+0]
+   \   000000A6   0x.... 0x....      BL       CtrlLockPositionEulerAngle
+    225                      CtrlLockTargetAttitude();
+   \   000000AA   0x.... 0x....      BL       CtrlLockTargetAttitude
+    226                      break;
+   \   000000AE   0xE002             B.N      ??CtrlEvent_7
+    227                  default:
+    228                      CtrlOutputSameThrottle(0);
+   \                     ??CtrlEvent_6:
+   \   000000B0   0x2000             MOVS     R0,#+0
+   \   000000B2   0x.... 0x....      BL       CtrlOutputSameThrottle
+    229                      break;
+    230              }
+    231          }
+   \                     ??CtrlEvent_7:
+   \   000000B6   0xBD10             POP      {R4,PC}          ;; return
+    232          
+
+   \                                 In section .text, align 2, keep-with-next
+    233          void CtrlEnterHaltMode(void)
+    234          {
+   \                     CtrlEnterHaltMode:
+   \   00000000   0xB580             PUSH     {R7,LR}
+    235              s_sControlParameter.mode = CTRL_MODE_HALT;
+   \   00000002   0x....             LDR.N    R0,??DataTable17
+   \   00000004   0x2100             MOVS     R1,#+0
+   \   00000006   0xF880 0x1038      STRB     R1,[R0, #+56]
+    236              CtrlOutputSameThrottle(0);
+   \   0000000A   0x2000             MOVS     R0,#+0
+   \   0000000C   0x.... 0x....      BL       CtrlOutputSameThrottle
+    237          }
+   \   00000010   0xBD01             POP      {R0,PC}          ;; return
+    238          
+
+   \                                 In section .text, align 2, keep-with-next
+    239          void CtrlLockHeightThrottle(float height)
+    240          {
+   \                     CtrlLockHeightThrottle:
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    241              float height_err = 0;
+   \   00000004   0x2500             MOVS     R5,#+0
+    242              static int control_period_cnt = 0;
+    243          
+    244              control_period_cnt ++;
+   \   00000006   0x....             LDR.N    R0,??DataTable17_29
+   \   00000008   0x6800             LDR      R0,[R0, #+0]
+   \   0000000A   0x1C40             ADDS     R0,R0,#+1
+   \   0000000C   0x....             LDR.N    R1,??DataTable17_29
+   \   0000000E   0x6008             STR      R0,[R1, #+0]
+    245          
+    246              if(control_period_cnt >= 15)
+   \   00000010   0x....             LDR.N    R0,??DataTable17_29
+   \   00000012   0x6800             LDR      R0,[R0, #+0]
+   \   00000014   0x280F             CMP      R0,#+15
+   \   00000016   0xDB1A             BLT.N    ??CtrlLockHeightThrottle_0
+    247              {
+    248          
+    249                  if(g_sonar_measure_error_flag == 0)
+   \   00000018   0x....             LDR.N    R0,??DataTable17_30
+   \   0000001A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000001C   0x2800             CMP      R0,#+0
+   \   0000001E   0xD106             BNE.N    ??CtrlLockHeightThrottle_1
+    250                  {
+    251                      height_err = s_sControlParameter.lock_attitude_struct.targetHeight - height;
+   \   00000020   0x....             LDR.N    R0,??DataTable17
+   \   00000022   0x6900             LDR      R0,[R0, #+16]
+   \   00000024   0x0021             MOVS     R1,R4
+   \   00000026   0x.... 0x....      BL       __aeabi_fsub
+   \   0000002A   0x0005             MOVS     R5,R0
+   \   0000002C   0xE001             B.N      ??CtrlLockHeightThrottle_2
+    252                  }
+    253                  else
+    254                  {
+    255                      height_err = -0.1;
+   \                     ??CtrlLockHeightThrottle_1:
+   \   0000002E   0x....             LDR.N    R0,??DataTable17_31  ;; 0xbdcccccd
+   \   00000030   0x0005             MOVS     R5,R0
+    256                  }
+    257          
+    258                  CtrlSetBaseThrottle(s_sControlData.lock_height_pid_output = (HeightPIDInterate(height_err) + gc_f32HoverThrottle));//0.58
+   \                     ??CtrlLockHeightThrottle_2:
+   \   00000032   0x0028             MOVS     R0,R5
+   \   00000034   0x.... 0x....      BL       HeightPIDInterate
+   \   00000038   0x....             LDR.N    R1,??DataTable17_32
+   \   0000003A   0x6809             LDR      R1,[R1, #+0]
+   \   0000003C   0x.... 0x....      BL       __aeabi_fadd
+   \   00000040   0x....             LDR.N    R1,??DataTable17_22
+   \   00000042   0x60C8             STR      R0,[R1, #+12]
+   \   00000044   0x.... 0x....      BL       CtrlSetBaseThrottle
+    259                  
+    260                  control_period_cnt = 0;
+   \   00000048   0x....             LDR.N    R0,??DataTable17_29
+   \   0000004A   0x2100             MOVS     R1,#+0
+   \   0000004C   0x6001             STR      R1,[R0, #+0]
+    261              }
+    262          }
+   \                     ??CtrlLockHeightThrottle_0:
+   \   0000004E   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+
+   \                                 In section .bss, align 4
+   \                     ??control_period_cnt:
+   \   00000000                      DS8 4
+    263          
+
+   \                                 In section .text, align 2, keep-with-next
+    264          void CtrlLockPositionEulerAngle(float x_position, float y_position)
+    265          {
+   \                     CtrlLockPositionEulerAngle:
+   \   00000000   0xE92D 0x4FF0      PUSH     {R4-R11,LR}
+   \   00000004   0xB08B             SUB      SP,SP,#+44
+   \   00000006   0x4683             MOV      R11,R0
+   \   00000008   0x468A             MOV      R10,R1
+    266              static int control_period_cnt = 0;
+    267              static float last_ypr_output[3] = {0,0,0};
+    268              int i = 0;
+   \   0000000A   0x2400             MOVS     R4,#+0
+    269          
+    270              control_period_cnt ++;
+   \   0000000C   0x....             LDR.N    R0,??DataTable17_33
+   \   0000000E   0x6800             LDR      R0,[R0, #+0]
+   \   00000010   0x1C40             ADDS     R0,R0,#+1
+   \   00000012   0x....             LDR.N    R1,??DataTable17_33
+   \   00000014   0x6008             STR      R0,[R1, #+0]
+    271              if(control_period_cnt < 25)
+   \   00000016   0x....             LDR.N    R0,??DataTable17_33
+   \   00000018   0x6800             LDR      R0,[R0, #+0]
+   \   0000001A   0x2819             CMP      R0,#+25
+   \   0000001C   0xDA08             BGE.N    ??CtrlLockPositionEulerAngle_0
+    272              {
+    273                  CtrlSetTargetEulerAttitude(last_ypr_output[0], last_ypr_output[1], last_ypr_output[2]);
+   \   0000001E   0x....             LDR.N    R0,??DataTable17_34
+   \   00000020   0x6882             LDR      R2,[R0, #+8]
+   \   00000022   0x....             LDR.N    R0,??DataTable17_34
+   \   00000024   0x6841             LDR      R1,[R0, #+4]
+   \   00000026   0x....             LDR.N    R0,??DataTable17_34
+   \   00000028   0x6800             LDR      R0,[R0, #+0]
+   \   0000002A   0x.... 0x....      BL       CtrlSetTargetEulerAttitude
+    274                  return;
+   \   0000002E   0xE0A3             B.N      ??CtrlLockPositionEulerAngle_1
+    275              }
+    276              else
+    277              {
+    278                  control_period_cnt = 0;
+   \                     ??CtrlLockPositionEulerAngle_0:
+   \   00000030   0x....             LDR.N    R0,??DataTable17_33
+   \   00000032   0x2100             MOVS     R1,#+0
+   \   00000034   0x6001             STR      R1,[R0, #+0]
+    279              }
+    280          
+    281              float position_err[2] = {0,0};
+   \   00000036   0xA806             ADD      R0,SP,#+24
+   \   00000038   0x2100             MOVS     R1,#+0
+   \   0000003A   0x2200             MOVS     R2,#+0
+   \   0000003C   0xC006             STM      R0!,{R1,R2}
+   \   0000003E   0x3808             SUBS     R0,R0,#+8
+    282              float output_pitch_roll[2] = {0,0};
+   \   00000040   0xA801             ADD      R0,SP,#+4
+   \   00000042   0x2100             MOVS     R1,#+0
+   \   00000044   0x2200             MOVS     R2,#+0
+   \   00000046   0xC006             STM      R0!,{R1,R2}
+   \   00000048   0x3808             SUBS     R0,R0,#+8
+    283              float target_yaw_pitch_roll[3] = {0,0,0};
+   \   0000004A   0xA808             ADD      R0,SP,#+32
+   \   0000004C   0x2100             MOVS     R1,#+0
+   \   0000004E   0x2200             MOVS     R2,#+0
+   \   00000050   0x2300             MOVS     R3,#+0
+   \   00000052   0xC00E             STM      R0!,{R1-R3}
+   \   00000054   0x380C             SUBS     R0,R0,#+12
+    284          
+    285              position_err[0] = s_sControlParameter.lock_attitude_struct.targetPosition[0] - x_position;
+   \   00000056   0x....             LDR.N    R0,??DataTable17
+   \   00000058   0x6980             LDR      R0,[R0, #+24]
+   \   0000005A   0x4659             MOV      R1,R11
+   \   0000005C   0x.... 0x....      BL       __aeabi_fsub
+   \   00000060   0x9006             STR      R0,[SP, #+24]
+    286              position_err[1] = s_sControlParameter.lock_attitude_struct.targetPosition[1] - y_position;
+   \   00000062   0x....             LDR.N    R0,??DataTable17
+   \   00000064   0x69C0             LDR      R0,[R0, #+28]
+   \   00000066   0x4651             MOV      R1,R10
+   \   00000068   0x.... 0x....      BL       __aeabi_fsub
+   \   0000006C   0x9007             STR      R0,[SP, #+28]
+    287          
+    288              PositionPIDInterate(position_err, output_pitch_roll);
+   \   0000006E   0xA901             ADD      R1,SP,#+4
+   \   00000070   0xA806             ADD      R0,SP,#+24
+   \   00000072   0x.... 0x....      BL       PositionPIDInterate
+    289              output_pitch_roll[1] = -output_pitch_roll[1];
+   \   00000076   0x9802             LDR      R0,[SP, #+8]
+   \   00000078   0xF090 0x4000      EORS     R0,R0,#0x80000000
+   \   0000007C   0x9002             STR      R0,[SP, #+8]
+    290              
+    291              quaternion_converQuaternionToYawPitchRoll(s_sControlParameter.lock_attitude_struct.targetAttitude, target_yaw_pitch_roll);
+   \   0000007E   0xA808             ADD      R0,SP,#+32
+   \   00000080   0x9000             STR      R0,[SP, #+0]
+   \   00000082   0x....             LDR.N    R0,??DataTable17
+   \   00000084   0xC80F             LDM      R0,{R0-R3}
+   \   00000086   0x.... 0x....      BL       quaternion_converQuaternionToYawPitchRoll
+    292          
+    293              float output_ypr[3];
+    294              float yaw_rad;
+    295              yaw_rad = GetEulerAttitude()->yaw / 57.2957795f;
+   \   0000008A   0x.... 0x....      BL       GetEulerAttitude
+   \   0000008E   0x6800             LDR      R0,[R0, #+0]
+   \   00000090   0x....             LDR.N    R1,??DataTable17_21  ;; 0x42652ee1
+   \   00000092   0x.... 0x....      BL       __aeabi_fdiv
+   \   00000096   0x0005             MOVS     R5,R0
+    296              output_ypr[0] = target_yaw_pitch_roll[0];
+   \   00000098   0x9808             LDR      R0,[SP, #+32]
+   \   0000009A   0x9003             STR      R0,[SP, #+12]
+    297              output_ypr[1] = output_pitch_roll[0] * cos(yaw_rad) - output_pitch_roll[1] * sin(yaw_rad); 
+   \   0000009C   0x0028             MOVS     R0,R5
+   \   0000009E   0x.... 0x....      BL       __aeabi_f2d
+   \   000000A2   0x.... 0x....      BL       cos
+   \   000000A6   0x4680             MOV      R8,R0
+   \   000000A8   0x4689             MOV      R9,R1
+   \   000000AA   0x0028             MOVS     R0,R5
+   \   000000AC   0x.... 0x....      BL       __aeabi_f2d
+   \   000000B0   0x.... 0x....      BL       sin
+   \   000000B4   0x0006             MOVS     R6,R0
+   \   000000B6   0x000F             MOVS     R7,R1
+   \   000000B8   0x9801             LDR      R0,[SP, #+4]
+   \   000000BA   0x.... 0x....      BL       __aeabi_f2d
+   \   000000BE   0x4642             MOV      R2,R8
+   \   000000C0   0x464B             MOV      R3,R9
+   \   000000C2   0x.... 0x....      BL       __aeabi_dmul
+   \   000000C6   0x4680             MOV      R8,R0
+   \   000000C8   0x4689             MOV      R9,R1
+   \   000000CA   0x9802             LDR      R0,[SP, #+8]
+   \   000000CC   0x.... 0x....      BL       __aeabi_f2d
+   \   000000D0   0x0032             MOVS     R2,R6
+   \   000000D2   0x003B             MOVS     R3,R7
+   \   000000D4   0x.... 0x....      BL       __aeabi_dmul
+   \   000000D8   0x0002             MOVS     R2,R0
+   \   000000DA   0x000B             MOVS     R3,R1
+   \   000000DC   0x4640             MOV      R0,R8
+   \   000000DE   0x4649             MOV      R1,R9
+   \   000000E0   0x.... 0x....      BL       __aeabi_dsub
+   \   000000E4   0x.... 0x....      BL       __aeabi_d2f
+   \   000000E8   0x9004             STR      R0,[SP, #+16]
+    298              output_ypr[2] = output_pitch_roll[0] * sin(yaw_rad) + output_pitch_roll[1] * cos(yaw_rad);
+   \   000000EA   0x0028             MOVS     R0,R5
+   \   000000EC   0x.... 0x....      BL       __aeabi_f2d
+   \   000000F0   0x.... 0x....      BL       sin
+   \   000000F4   0x4680             MOV      R8,R0
+   \   000000F6   0x4689             MOV      R9,R1
+   \   000000F8   0x0028             MOVS     R0,R5
+   \   000000FA   0x.... 0x....      BL       __aeabi_f2d
+   \   000000FE   0x.... 0x....      BL       cos
+   \   00000102   0x0006             MOVS     R6,R0
+   \   00000104   0x000F             MOVS     R7,R1
+   \   00000106   0x9801             LDR      R0,[SP, #+4]
+   \   00000108   0x.... 0x....      BL       __aeabi_f2d
+   \   0000010C   0x4642             MOV      R2,R8
+   \   0000010E   0x464B             MOV      R3,R9
+   \   00000110   0x.... 0x....      BL       __aeabi_dmul
+   \   00000114   0x4680             MOV      R8,R0
+   \   00000116   0x4689             MOV      R9,R1
+   \   00000118   0x9802             LDR      R0,[SP, #+8]
+   \   0000011A   0x.... 0x....      BL       __aeabi_f2d
+   \   0000011E   0x0032             MOVS     R2,R6
+   \   00000120   0x003B             MOVS     R3,R7
+   \   00000122   0x.... 0x....      BL       __aeabi_dmul
+   \   00000126   0x4642             MOV      R2,R8
+   \   00000128   0x464B             MOV      R3,R9
+   \   0000012A   0x.... 0x....      BL       __aeabi_dadd
+   \   0000012E   0x.... 0x....      BL       __aeabi_d2f
+   \   00000132   0x9005             STR      R0,[SP, #+20]
+    299              CtrlSetTargetEulerAttitude(output_ypr[0], output_ypr[1], output_ypr[2]);
+   \   00000134   0x9A05             LDR      R2,[SP, #+20]
+   \   00000136   0x9904             LDR      R1,[SP, #+16]
+   \   00000138   0x9803             LDR      R0,[SP, #+12]
+   \   0000013A   0x.... 0x....      BL       CtrlSetTargetEulerAttitude
+    300              last_ypr_output[0] = output_ypr[0];
+   \   0000013E   0x....             LDR.N    R0,??DataTable17_34
+   \   00000140   0x9903             LDR      R1,[SP, #+12]
+   \   00000142   0x6001             STR      R1,[R0, #+0]
+    301              last_ypr_output[1] = output_ypr[1];
+   \   00000144   0x....             LDR.N    R0,??DataTable17_34
+   \   00000146   0x9904             LDR      R1,[SP, #+16]
+   \   00000148   0x6041             STR      R1,[R0, #+4]
+    302              last_ypr_output[2] = output_ypr[2];
+   \   0000014A   0x....             LDR.N    R0,??DataTable17_34
+   \   0000014C   0x9905             LDR      R1,[SP, #+20]
+   \   0000014E   0x6081             STR      R1,[R0, #+8]
+    303          
+    304              for(i = 0; i < 2; i++)
+   \   00000150   0x2000             MOVS     R0,#+0
+   \   00000152   0x0004             MOVS     R4,R0
+   \                     ??CtrlLockPositionEulerAngle_2:
+   \   00000154   0x2C02             CMP      R4,#+2
+   \   00000156   0xDA0F             BGE.N    ??CtrlLockPositionEulerAngle_3
+    305              {
+    306                  s_sControlData.lock_position_pid_output[i] = output_pitch_roll[i];
+   \   00000158   0x....             LDR.N    R0,??DataTable17_22
+   \   0000015A   0xEB10 0x0084      ADDS     R0,R0,R4, LSL #+2
+   \   0000015E   0xA901             ADD      R1,SP,#+4
+   \   00000160   0xF851 0x1024      LDR      R1,[R1, R4, LSL #+2]
+   \   00000164   0x6201             STR      R1,[R0, #+32]
+    307                  s_sControlData.lock_position_err[i] = position_err[i];
+   \   00000166   0x....             LDR.N    R0,??DataTable17_22
+   \   00000168   0xEB10 0x0084      ADDS     R0,R0,R4, LSL #+2
+   \   0000016C   0xA906             ADD      R1,SP,#+24
+   \   0000016E   0xF851 0x1024      LDR      R1,[R1, R4, LSL #+2]
+   \   00000172   0x6281             STR      R1,[R0, #+40]
+    308              }
+   \   00000174   0x1C64             ADDS     R4,R4,#+1
+   \   00000176   0xE7ED             B.N      ??CtrlLockPositionEulerAngle_2
+    309          }
+   \                     ??CtrlLockPositionEulerAngle_3:
+   \                     ??CtrlLockPositionEulerAngle_1:
+   \   00000178   0xB00B             ADD      SP,SP,#+44
+   \   0000017A   0xE8BD 0x8FF0      POP      {R4-R11,PC}      ;; return
+
+   \                                 In section .bss, align 4
+   \                     ??control_period_cnt_1:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+   \                     ??last_ypr_output:
+   \   00000000                      DS8 12
+    310          
+
+   \                                 In section .text, align 2, keep-with-next
+    311          void CtrlSetTargetEulerAttitude(float yaw_angle, float pitch_angle, float roll_angle)
+    312          {
+   \                     CtrlSetTargetEulerAttitude:
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0xB088             SUB      SP,SP,#+32
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000D             MOVS     R5,R1
+   \   00000008   0x0016             MOVS     R6,R2
+    313              float ypr[3] = {0, 0, 0};
+   \   0000000A   0xA800             ADD      R0,SP,#+0
+   \   0000000C   0x2100             MOVS     R1,#+0
+   \   0000000E   0x2200             MOVS     R2,#+0
+   \   00000010   0x2300             MOVS     R3,#+0
+   \   00000012   0xC00E             STM      R0!,{R1-R3}
+   \   00000014   0x380C             SUBS     R0,R0,#+12
+    314          
+    315              ypr[0] = yaw_angle;
+   \   00000016   0x9400             STR      R4,[SP, #+0]
+    316              ypr[1] = pitch_angle;
+   \   00000018   0x9501             STR      R5,[SP, #+4]
+    317              ypr[2] = roll_angle;
+   \   0000001A   0x9602             STR      R6,[SP, #+8]
+    318          
+    319              s_sControlParameter.lock_attitude_struct.targetAttitude = quaternion_converYawPitchRollToQuaternion(ypr);
+   \   0000001C   0xA900             ADD      R1,SP,#+0
+   \   0000001E   0xA803             ADD      R0,SP,#+12
+   \   00000020   0x.... 0x....      BL       quaternion_converYawPitchRollToQuaternion
+   \   00000024   0x....             LDR.N    R0,??DataTable17
+   \   00000026   0xA903             ADD      R1,SP,#+12
+   \   00000028   0x2210             MOVS     R2,#+16
+   \   0000002A   0x.... 0x....      BL       __aeabi_memcpy4
+    320          }
+   \   0000002E   0xB008             ADD      SP,SP,#+32
+   \   00000030   0xBD70             POP      {R4-R6,PC}       ;; return
+    321          
+
+   \                                 In section .text, align 2, keep-with-next
+    322          void CtrlSetBaseThrottle(float throttle)
+    323          {
+   \                     CtrlSetBaseThrottle:
+   \   00000000   0xB500             PUSH     {LR}
+   \   00000002   0x0001             MOVS     R1,R0
+    324              if(throttle > gc_f32UpperLimitThrottle)
+   \   00000004   0x....             LDR.N    R0,??DataTable17_35
+   \   00000006   0x6800             LDR      R0,[R0, #+0]
+   \   00000008   0x.... 0x....      BL       __aeabi_cfcmple
+   \   0000000C   0xD202             BCS.N    ??CtrlSetBaseThrottle_0
+    325              {
+    326                  throttle = gc_f32UpperLimitThrottle;
+   \   0000000E   0x....             LDR.N    R0,??DataTable17_35
+   \   00000010   0x6800             LDR      R0,[R0, #+0]
+   \   00000012   0x0001             MOVS     R1,R0
+    327              }
+    328              s_sControlParameter.lock_attitude_struct.baseThrottle = throttle;
+   \                     ??CtrlSetBaseThrottle_0:
+   \   00000014   0x....             LDR.N    R0,??DataTable17
+   \   00000016   0x6141             STR      R1,[R0, #+20]
+    329          }
+   \   00000018   0xBD00             POP      {PC}             ;; return
+    330          
+
+   \                                 In section .text, align 2, keep-with-next
+    331          void CtrlSetMode(uint8 mode_to_run)
+    332          {
+    333              s_sControlParameter.mode = mode_to_run; 
+   \                     CtrlSetMode:
+   \   00000000   0x....             LDR.N    R1,??DataTable17
+   \   00000002   0xF881 0x0038      STRB     R0,[R1, #+56]
+    334          }
+   \   00000006   0x4770             BX       LR               ;; return
+    335          
+
+   \                                 In section .text, align 2, keep-with-next
+    336          void CtrlSetModeWithMask(uint8 mask)
+    337          {
+    338              s_sControlParameter.mode = s_sControlParameter.mode | mask;
+   \                     CtrlSetModeWithMask:
+   \   00000000   0x....             LDR.N    R1,??DataTable17
+   \   00000002   0xF891 0x1038      LDRB     R1,[R1, #+56]
+   \   00000006   0x4301             ORRS     R1,R0,R1
+   \   00000008   0x....             LDR.N    R2,??DataTable17
+   \   0000000A   0xF882 0x1038      STRB     R1,[R2, #+56]
+    339          }
+   \   0000000E   0x4770             BX       LR               ;; return
+    340          
+
+   \                                 In section .text, align 2, keep-with-next
+    341          void CtrlCancelModeWithMask(uint8 mask)
+    342          {
+    343              s_sControlParameter.mode = (s_sControlParameter.mode & (~mask));
+   \                     CtrlCancelModeWithMask:
+   \   00000000   0x....             LDR.N    R1,??DataTable17
+   \   00000002   0xF891 0x1038      LDRB     R1,[R1, #+56]
+   \   00000006   0x4381             BICS     R1,R1,R0
+   \   00000008   0x....             LDR.N    R2,??DataTable17
+   \   0000000A   0xF882 0x1038      STRB     R1,[R2, #+56]
+    344          }
+   \   0000000E   0x4770             BX       LR               ;; return
+    345          
+
+   \                                 In section .text, align 2, keep-with-next
+    346          void CtrlSetTargetHeight(float height)
+    347          {
+   \                     CtrlSetTargetHeight:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    348              //s_sControlParameter.lock_attitude_struct.targetHeight = height;
+    349              s_sControlParameter.lock_attitude_struct.targetHeight = gc_f32BaseHeight + height;
+   \   00000004   0x....             LDR.N    R0,??DataTable17_36
+   \   00000006   0x6800             LDR      R0,[R0, #+0]
+   \   00000008   0x0021             MOVS     R1,R4
+   \   0000000A   0x.... 0x....      BL       __aeabi_fadd
+   \   0000000E   0x....             LDR.N    R1,??DataTable17
+   \   00000010   0x6108             STR      R0,[R1, #+16]
+    350          }
+   \   00000012   0xBD10             POP      {R4,PC}          ;; return
+    351          
+
+   \                                 In section .text, align 2, keep-with-next
+    352          void CtrlSetTargetPosition(float x_position, float y_position)
+    353          {
+    354              s_sControlParameter.lock_attitude_struct.targetPosition[0] = x_position;
+   \                     CtrlSetTargetPosition:
+   \   00000000   0x....             LDR.N    R2,??DataTable17
+   \   00000002   0x6190             STR      R0,[R2, #+24]
+    355              s_sControlParameter.lock_attitude_struct.targetPosition[1] = y_position;
+   \   00000004   0x....             LDR.N    R2,??DataTable17
+   \   00000006   0x61D1             STR      R1,[R2, #+28]
+    356          }
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17:
+   \   00000000   0x........         DC32     s_sControlParameter
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_1:
+   \   00000000   0x........         DC32     g_sXYZPidPara
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_2:
+   \   00000000   0x3EE66666         DC32     0x3ee66666
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_3:
+   \   00000000   0x3B23D70A         DC32     0x3b23d70a
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_4:
+   \   00000000   0x41700000         DC32     0x41700000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_5:
+   \   00000000   0x3D4CCCCD         DC32     0x3d4ccccd
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_6:
+   \   00000000   0x41F00000         DC32     0x41f00000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_7:
+   \   00000000   0x........         DC32     g_sHeightPidPara
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_8:
+   \   00000000   0x3E4CCCCD         DC32     0x3e4ccccd
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_9:
+   \   00000000   0x3BA3D70A         DC32     0x3ba3d70a
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_10:
+   \   00000000   0x3EB33333         DC32     0x3eb33333
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_11:
+   \   00000000   0x........         DC32     g_sPositionPidPara
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_12:
+   \   00000000   0x40B00000         DC32     0x40b00000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_13:
+   \   00000000   0x42480000         DC32     0x42480000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_14:
+   \   00000000   0x........         DC32     gc_f32LowerLimitThrottle
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_15:
+   \   00000000   0x........         DC32     s_sControlParameter+0x20
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_16:
+   \   00000000   0x........         DC32     s_sControlData+0x10
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_17:
+   \   00000000   0x43340001         DC32     0x43340001
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_18:
+   \   00000000   0xC3B40000         DC32     0xc3b40000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_19:
+   \   00000000   0xC3340000         DC32     0xc3340000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_20:
+   \   00000000   0x43B40000         DC32     0x43b40000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_21:
+   \   00000000   0x42652EE1         DC32     0x42652ee1
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_22:
+   \   00000000   0x........         DC32     s_sControlData
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_23:
+   \   00000000   0x9999999A         DC32     0x9999999a
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_24:
+   \   00000000   0x3FF19999         DC32     0x3ff19999
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_25:
+   \   00000000   0x3F93CD36         DC32     0x3f93cd36
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_26:
+   \   00000000   0x........         DC32     g_sQuadSystemFlag
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_27:
+   \   00000000   0x........         DC32     g_sonar_measure_distance_mm
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_28:
+   \   00000000   0x447A0000         DC32     0x447a0000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_29:
+   \   00000000   0x........         DC32     ??control_period_cnt
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_30:
+   \   00000000   0x........         DC32     g_sonar_measure_error_flag
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_31:
+   \   00000000   0xBDCCCCCD         DC32     0xbdcccccd
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_32:
+   \   00000000   0x........         DC32     gc_f32HoverThrottle
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_33:
+   \   00000000   0x........         DC32     ??control_period_cnt_1
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_34:
+   \   00000000   0x........         DC32     ??last_ypr_output
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_35:
+   \   00000000   0x........         DC32     gc_f32UpperLimitThrottle
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_36:
+   \   00000000   0x........         DC32     gc_f32BaseHeight
+
+   \                                 In section .rodata, align 4
+   \   00000000   0x00000000         DC32 0H, 0H, 0H
+   \              0x00000000   
+   \              0x00000000   
+
+   \                                 In section .rodata, align 4
+   \   00000000   0x00000000         DC32 0H, 0H, 0H
+   \              0x00000000   
+   \              0x00000000   
+
+   \                                 In section .rodata, align 4
+   \   00000000   0x00000000         DC32 0H, 0H, 0H
+   \              0x00000000   
+   \              0x00000000   
+
+   \                                 In section .rodata, align 4
+   \   00000000   0x00000000         DC32 0H, 0H
+   \              0x00000000   
+
+   \                                 In section .rodata, align 4
+   \   00000000   0x00000000         DC32 0H, 0H
+   \              0x00000000   
+
+   \                                 In section .rodata, align 4
+   \   00000000   0x00000000         DC32 0H, 0H, 0H
+   \              0x00000000   
+   \              0x00000000   
+
+   \                                 In section .rodata, align 4
+   \   00000000   0x00000000         DC32 0H, 0H, 0H
+   \              0x00000000   
+   \              0x00000000   
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+        0  CtrlCancelModeWithMask
+        8  CtrlEnterHaltMode
+              8 -> CtrlOutputSameThrottle
+        8  CtrlEvent
+              8 -> ADNS3080_GetIntegratedPosition
+              8 -> CtrlEnterHaltMode
+              8 -> CtrlLockHeightThrottle
+              8 -> CtrlLockPositionEulerAngle
+              8 -> CtrlLockTargetAttitude
+              8 -> CtrlOutputSameThrottle
+              8 -> ExceptionCheckInclination
+              8 -> GetEulerAttitude
+              8 -> SetBuzzerMode
+              8 -> __aeabi_fdiv
+              8 -> __aeabi_ui2f
+        0  CtrlGetLockTargetHeightThrottle
+       16  CtrlLockHeightThrottle
+             16 -> CtrlSetBaseThrottle
+             16 -> HeightPIDInterate
+             16 -> __aeabi_fadd
+             16 -> __aeabi_fsub
+       80  CtrlLockPositionEulerAngle
+             80 -> CtrlSetTargetEulerAttitude
+             80 -> GetEulerAttitude
+             80 -> PositionPIDInterate
+             80 -> __aeabi_d2f
+             80 -> __aeabi_dadd
+             80 -> __aeabi_dmul
+             80 -> __aeabi_dsub
+             80 -> __aeabi_f2d
+             80 -> __aeabi_fdiv
+             80 -> __aeabi_fsub
+             80 -> cos
+             80 -> quaternion_converQuaternionToYawPitchRoll
+             80 -> sin
+        8  CtrlLockTargetAttitude
+              8 -> CtrlOutputByTargetAttitude
+              8 -> CtrlOutputSameThrottle
+              8 -> __aeabi_cfcmple
+      108  CtrlOutputByTargetAttitude
+             96 -> CtrlOutputThrottle
+             96 -> GetAttitude
+             96 -> SAS_PIDInterate
+             96 -> __aeabi_cfcmple
+             96 -> __aeabi_cfrcmple
+             96 -> __aeabi_d2f
+             96 -> __aeabi_dmul
+             96 -> __aeabi_f2d
+             96 -> __aeabi_fadd
+             96 -> __aeabi_fdiv
+             96 -> __aeabi_fmul
+             96 -> __aeabi_fsub
+             96 -> __aeabi_memcpy4
+             96 -> quaternion_converQuaternionToYawPitchRoll
+             96 -> quaternion_getConjugateQuaternion
+             96 -> quaternion_mult
+             96 -> quaternion_normalize
+       16  CtrlOutputSameThrottle
+             16 -> CtrlOutputThrottle
+        8  CtrlOutputThrottle
+              8 -> ThrottleOutSixESC
+        4  CtrlSetBaseThrottle
+              4 -> __aeabi_cfcmple
+        0  CtrlSetMode
+        0  CtrlSetModeWithMask
+       48  CtrlSetTargetEulerAttitude
+             48 -> __aeabi_memcpy4
+             48 -> quaternion_converYawPitchRollToQuaternion
+        8  CtrlSetTargetHeight
+              8 -> __aeabi_fadd
+        0  CtrlSetTargetPosition
+        0  GetControlData
+        0  GetControlParameter
+       32  InitControl
+             16 -> InitHeightPID
+             16 -> InitPID
+             16 -> InitPositionPID
+             16 -> __aeabi_fdiv
+             32 -> __aeabi_memcpy4
+             16 -> quaternion_loadIdentity
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  ?<Constant {(0.0F), (0.0F), (0.0F)}>
+      12  ?<Constant {(0.0F), (0.0F), (0.0F)}>_1
+      12  ?<Constant {(0.0F), (0.0F), (0.0F)}>_2
+      12  ?<Constant {(0.0F), (0.0F), (0.0F)}>_3
+      12  ?<Constant {(0.0F), (0.0F), (0.0F)}>_4
+       8  ?<Constant {(0.0F), (0.0F)}>
+       8  ?<Constant {(0.0F), (0.0F)}>_1
+       4  ??DataTable17
+       4  ??DataTable17_1
+       4  ??DataTable17_10
+       4  ??DataTable17_11
+       4  ??DataTable17_12
+       4  ??DataTable17_13
+       4  ??DataTable17_14
+       4  ??DataTable17_15
+       4  ??DataTable17_16
+       4  ??DataTable17_17
+       4  ??DataTable17_18
+       4  ??DataTable17_19
+       4  ??DataTable17_2
+       4  ??DataTable17_20
+       4  ??DataTable17_21
+       4  ??DataTable17_22
+       4  ??DataTable17_23
+       4  ??DataTable17_24
+       4  ??DataTable17_25
+       4  ??DataTable17_26
+       4  ??DataTable17_27
+       4  ??DataTable17_28
+       4  ??DataTable17_29
+       4  ??DataTable17_3
+       4  ??DataTable17_30
+       4  ??DataTable17_31
+       4  ??DataTable17_32
+       4  ??DataTable17_33
+       4  ??DataTable17_34
+       4  ??DataTable17_35
+       4  ??DataTable17_36
+       4  ??DataTable17_4
+       4  ??DataTable17_5
+       4  ??DataTable17_6
+       4  ??DataTable17_7
+       4  ??DataTable17_8
+       4  ??DataTable17_9
+      16  CtrlCancelModeWithMask
+      18  CtrlEnterHaltMode
+     184  CtrlEvent
+       6  CtrlGetLockTargetHeightThrottle
+      80  CtrlLockHeightThrottle
+     382  CtrlLockPositionEulerAngle
+      44  CtrlLockTargetAttitude
+     596  CtrlOutputByTargetAttitude
+      34  CtrlOutputSameThrottle
+      12  CtrlOutputThrottle
+      26  CtrlSetBaseThrottle
+       8  CtrlSetMode
+      16  CtrlSetModeWithMask
+      50  CtrlSetTargetEulerAttitude
+      20  CtrlSetTargetHeight
+      10  CtrlSetTargetPosition
+       6  GetControlData
+       4  GetControlParameter
+     440  InitControl
+       4  control_period_cnt
+       4  control_period_cnt
+      20  g_sHeightPidPara
+      40  g_sPositionPidPara
+      60  g_sXYZPidPara
+       4  gc_f32BaseHeight
+       4  gc_f32HoverThrottle
+       4  gc_f32LowerLimitThrottle
+       4  gc_f32UpperLimitThrottle
+      12  last_ypr_output
+      48  s_sControlData
+      60  s_sControlParameter
+
+ 
+   228 bytes in section .bss
+    20 bytes in section .data
+    92 bytes in section .rodata
+ 2 100 bytes in section .text
+ 
+ 2 100 bytes of CODE  memory
+    92 bytes of CONST memory
+   248 bytes of DATA  memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1218 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V6.40.1.53790/W32 for ARM              07/May/2014  21:58:12 #
+# Copyright 2007-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Exe\LPLD_Quad_V2_K60.out                             #
+#    Map file     =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\List\LPLD_Quad_V2_K60.map                            #
+#    Command line =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\AK8975Cdata.o E:\ShawnDocuments\IAR_WorkSpace\LP #
+#                    LD_Quad_V2\iar\FLASH_MINE\Obj\DEV_LCD.o                  #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\HCSR04.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V2\iar\FLASH_MINE\Obj\HW_ADC.o                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\HW_CAN.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V2\iar\FLASH_MINE\Obj\HW_DAC.o                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\HW_DMA.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V2\iar\FLASH_MINE\Obj\HW_ENET.o                       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\HW_FLASH.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V2\iar\FLASH_MINE\Obj\HW_FLEXBUS.o                  #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\HW_FTM.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V2\iar\FLASH_MINE\Obj\HW_GPIO.o                       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\HW_I2C.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V2\iar\FLASH_MINE\Obj\HW_LPTMR.o                      #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\HW_MCG.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V2\iar\FLASH_MINE\Obj\HW_NVIC.o                       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\HW_PDB.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V2\iar\FLASH_MINE\Obj\HW_PIT.o                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\HW_RTC.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V2\iar\FLASH_MINE\Obj\HW_SDHC.o                       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\HW_SPI.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V2\iar\FLASH_MINE\Obj\HW_SYSTICK.o                    #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\HW_TSI.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V2\iar\FLASH_MINE\Obj\HW_UART.o                       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\HW_USB.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V2\iar\FLASH_MINE\Obj\HW_WDOG.o                       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\I2C_ope.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V2\iar\FLASH_MINE\Obj\LPLD_Quad_V2.o                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\MPU6050data.o E:\ShawnDocuments\IAR_WorkSpace\LP #
+#                    LD_Quad_V2\iar\FLASH_MINE\Obj\MPU9150.o                  #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\MPU9150_IO.o E:\ShawnDocuments\IAR_WorkSpace\LPL #
+#                    D_Quad_V2\iar\FLASH_MINE\Obj\MS5611.o                    #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\MS5611data.o E:\ShawnDocuments\IAR_WorkSpace\LPL #
+#                    D_Quad_V2\iar\FLASH_MINE\Obj\MyLib.o                     #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\PWM.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V2\iar\FLASH_MINE\Obj\WFLY_RC.o                          #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\WFLY_RCdata.o E:\ShawnDocuments\IAR_WorkSpace\LP #
+#                    LD_Quad_V2\iar\FLASH_MINE\Obj\accfilter.o                #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\alloc.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qua #
+#                    d_V2\iar\FLASH_MINE\Obj\assert.o                         #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\attitude.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V2\iar\FLASH_MINE\Obj\battery.o                     #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\buzzer.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V2\iar\FLASH_MINE\Obj\ctrl.o                          #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\dataframe.o E:\ShawnDocuments\IAR_WorkSpace\LPLD #
+#                    _Quad_V2\iar\FLASH_MINE\Obj\decodedata.o                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\delay.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qua #
+#                    d_V2\iar\FLASH_MINE\Obj\exception.o                      #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\flash_rom.o E:\ShawnDocuments\IAR_WorkSpace\LPLD #
+#                    _Quad_V2\iar\FLASH_MINE\Obj\getoffset.o                  #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\gyrfilter.o E:\ShawnDocuments\IAR_WorkSpace\LPLD #
+#                    _Quad_V2\iar\FLASH_MINE\Obj\io.o                         #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\lights.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V2\iar\FLASH_MINE\Obj\magfilter.o                     #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\myqueue.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V2\iar\FLASH_MINE\Obj\param.o                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\pid.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V2\iar\FLASH_MINE\Obj\printf.o                           #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\quaternion.o E:\ShawnDocuments\IAR_WorkSpace\LPL #
+#                    D_Quad_V2\iar\FLASH_MINE\Obj\queue.o                     #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\relocate.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V2\iar\FLASH_MINE\Obj\sensorfusion.o                #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\startup_K60.o E:\ShawnDocuments\IAR_WorkSpace\LP #
+#                    LD_Quad_V2\iar\FLASH_MINE\Obj\stdlib.o                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\switches.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V2\iar\FLASH_MINE\Obj\sysflag.o                     #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\system_MK60DZ10.o E:\ShawnDocuments\IAR_WorkSpac #
+#                    e\LPLD_Quad_V2\iar\FLASH_MINE\Obj\timer.o                #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\uart.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad #
+#                    _V2\iar\FLASH_MINE\Obj\uartqueue.o                       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\uif.o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V2\iar\FLASH_MINE\Obj\uploaddata.o --redirect            #
+#                    _Printf=_PrintfFull --redirect _Scanf=_ScanfFull -o      #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Exe\LPLD_Quad_V2_K60.out --map                       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\List\LPLD_Quad_V2_K60.map --config                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\iar_config_files\LPLD_K60DN512_FLASH_MINE.icf     #
+#                    --semihosting --entry __iar_program_start "D:\Program    #
+#                    Files\IAR Systems\Embedded Workbench                     #
+#                    6.4\arm\CMSIS\Lib\IAR\iar_cortexM4l_math.a" --vfe        #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00000000 { ro section .intvec };
+"A2":  place at 0x00000410 { ro section .noinit };
+"P1":  place in [from 0x00000000 to 0x00080000] { ro, block CodeRelocate };
+"P2":  place in [from 0x1fff0410 to 0x20010000] {
+          rw, block CodeRelocateRam, block CSTACK, block HEAP };
+
+  Section              Kind        Address    Size  Object
+  -------              ----        -------    ----  ------
+"A1":                                        0x400
+  .intvec              ro code  0x00000000   0x400  startup_K60.o [1]
+                              - 0x00000400   0x400
+
+"A2":                                         0x14
+  .noinit              ro code  0x00000410    0x10  startup_K60.o [1]
+  .noinit              ro code  0x00000420     0x4  startup_K60.o [1]
+                              - 0x00000424    0x14
+
+"P1":                                       0xa350
+  .text                ro code  0x00000424   0xa74  LPLD_Quad_V2.o [1]
+  .text                ro code  0x00000e98   0x192  getoffset.o [1]
+  .text                ro code  0x0000102a    0x22  zero_init3.o [5]
+  .text                ro code  0x0000104c   0x11c  MPU6050data.o [1]
+  .text                ro code  0x00001168    0xa8  AK8975Cdata.o [1]
+  .text                ro code  0x00001210   0x120  attitude.o [1]
+  .text                ro code  0x00001330   0x49c  uploaddata.o [1]
+  .text                ro code  0x000017cc    0xb8  battery.o [1]
+  .text                ro code  0x00001884    0x3c  MS5611data.o [1]
+  .text                ro code  0x000018c0    0xd8  FltMul.o [4]
+  .text                ro code  0x00001998   0x28c  PWM.o [1]
+  .text                ro code  0x00001c24    0x44  FltToS32.o [4]
+  .text                ro code  0x00001c68   0x12c  sysflag.o [1]
+  .text                ro code  0x00001d94   0x164  buzzer.o [1]
+  .text                ro code  0x00001ef8   0x1dc  switches.o [1]
+  .text                ro code  0x000020d4   0x406  lights.o [1]
+  .text                ro code  0x000024dc   0x2e4  param.o [1]
+  .text                ro code  0x000027c0    0x76  ABImemcpy.o [5]
+  .text                ro code  0x00002838   0x3c0  WFLY_RCdata.o [1]
+  .text                ro code  0x00002bf8   0x4cc  uartqueue.o [1]
+  .text                ro code  0x000030c4   0x35c  ctrl.o [1]
+  .text                ro code  0x00003420    0x24  FltCmpLe.o [4]
+  .text                ro code  0x00003444   0x56a  printf.o [1]
+  .text                ro code  0x000039b0   0x338  uart.o [1]
+  .text                ro code  0x00003ce8   0x224  MPU9150.o [1]
+  .text                ro code  0x00003f0c   0x22c  HCSR04.o [1]
+  .text                ro code  0x00004138    0xc8  timer.o [1]
+  .text                ro code  0x00004200   0x378  WFLY_RC.o [1]
+  .text                ro code  0x00004578   0x39c  MS5611.o [1]
+  .text                ro code  0x00004914   0x140  flash_rom.o [1]
+  .text                ro code  0x00004a54    0x32  I32ToFlt.o [4]
+  .text                ro code  0x00004a88    0xe8  accfilter.o [1]
+  .text                ro code  0x00004b70    0x68  gyrfilter.o [1]
+  .text                ro code  0x00004bd8    0x3c  magfilter.o [1]
+  .text                ro code  0x00004c14   0x620  quaternion.o [1]
+  .text                ro code  0x00005234   0x6ec  sensorfusion.o [1]
+  .text                ro code  0x00005920     0x6  ABImemclr4.o [5]
+  .text                ro code  0x00005928   0x420  HW_ADC.o [1]
+  .text                ro code  0x00005d48   0x92c  HW_FTM.o [1]
+  .text                ro code  0x00006674   0x162  MyLib.o [1]
+  .text                ro code  0x000067d8   0x23c  HW_GPIO.o [1]
+  .text                ro code  0x00006a14   0x14c  HW_PIT.o [1]
+  .text                ro code  0x00006b60    0x84  dataframe.o [1]
+  .text                ro code  0x00006be4   0x328  pid.o [1]
+  .text                ro code  0x00006f0c    0xe6  FltSub.o [4]
+  .text                ro code  0x00006ff4    0xfc  FltDiv.o [4]
+  .text                ro code  0x000070f0    0x24  FltCmpGe.o [4]
+  .text                ro code  0x00007114    0xf2  myqueue.o [1]
+  .text                ro code  0x00007208   0x648  HW_UART.o [1]
+  .text                ro code  0x00007850    0x84  FltAdd.o [4]
+  .text                ro code  0x000078d4    0x50  exception.o [1]
+  .text                ro code  0x00007924    0x4e  FltToDbl.o [4]
+  .text                ro code  0x00007974    0xe8  DblAdd.o [4]
+  .text                ro code  0x00007a5c    0x90  DblToFlt.o [4]
+  .text                ro code  0x00007aec    0x22  stdlib.o [1]
+  .text                ro code  0x00007b10   0x244  decodedata.o [1]
+  .text                ro code  0x00007d54   0x2e0  HW_I2C.o [1]
+  .text                ro code  0x00008034    0x5c  delay.o [1]
+  .text                ro code  0x00008090   0x1ba  I2C_ope.o [1]
+  .text                ro code  0x0000824c   0x132  I64DivMod.o [5]
+  .text                ro code  0x00008380   0x1f0  HW_FLASH.o [1]
+  .text                ro code  0x00008570   0x110  atan2.o [4]
+  .text                ro code  0x00008680   0x1a2  DblMul.o [4]
+  .text                ro code  0x00008824    0xf6  asin.o [4]
+  .text                ro code  0x0000891a     0x6  cos.o [4]
+  .text                ro code  0x00008920     0x6  sin.o [4]
+  .text                ro code  0x00008928   0x180  DblSub.o [4]
+  .text                ro code  0x00008aa8    0x32  ABImemset48.o [5]
+  .text                ro code  0x00008adc   0x246  DblDiv.o [4]
+  .text                ro code  0x00008d24    0x2e  DblCmpLe.o [4]
+  .text                ro code  0x00008d54    0x90  alloc.o [1]
+  .text                ro code  0x00008de4     0x2  I64DivZer.o [5]
+  .rodata              const    0x00008de8    0x14  buzzer.o [1]
+  .text                ro code  0x00008e00   0x1e0  xatan.o [4]
+  .text                ro code  0x00008fe0    0xf0  sqrt.o [4]
+  .text                ro code  0x000090d0     0xc  errno.o [3]
+  .text                ro code  0x000090dc   0x42a  xsin.o [4]
+  .text                ro code  0x00009508    0x2e  DblCmpGe.o [4]
+  .text                ro code  0x00009538     0xc  iarEdom.o [5]
+  .text                ro code  0x00009544     0x2  xtls.o [3]
+  .text                ro code  0x00009548    0x4c  DblToI32.o [4]
+  .text                ro code  0x00009594    0x2c  I32ToDbl.o [4]
+  .text                ro code  0x000095c0   0x160  xquad.o [4]
+  .text                ro code  0x00009720    0x7e  xdint.o [4]
+  .text                ro code  0x000097a0    0x20  DblCmpEq.o [4]
+  .text                ro code  0x000097c0   0x1a8  fmod.o [4]
+  .text                ro code  0x00009968   0x218  HW_SPI.o [1]
+  .text                ro code  0x00009b80   0x1f6  HW_CAN.o [1]
+  Veneer               ro code  0x00009d78     0x8  - Linker created -
+  .text                ro code  0x00009d80   0x1f0  HW_MCG.o [1]
+  .text                ro code  0x00009f70   0x16c  HW_DMA.o [1]
+  .text                ro code  0x0000a0dc   0x100  system_MK60DZ10.o [1]
+  .text                ro code  0x0000a1dc    0xc0  relocate.o [1]
+  .text                ro code  0x0000a29c    0xf4  HW_DAC.o [1]
+  .data_init                    0x0000a390    0x84  <Block>
+    Initializer bytes  ro data  0x0000a390    0x84  <for .data-1>
+  .text                ro code  0x0000a414    0x80  HW_ENET.o [1]
+  .text                ro code  0x0000a494    0x80  HW_PDB.o [1]
+  .text                ro code  0x0000a514    0x70  HW_TSI.o [1]
+  .text                ro code  0x0000a584    0x60  HW_RTC.o [1]
+  CodeRelocate                  0x0000a5e4    0x50  <Block>
+    Initializer bytes  ro data  0x0000a5e4    0x50  <for CodeRelocateRam-1>
+  .text                ro code  0x0000a634    0x28  data_init3.o [5]
+  .iar.init_table      const    0x0000a65c    0x18  - Linker created -
+  .rodata              const    0x0000a674    0x20  dataframe.o [1]
+  .text                ro code  0x0000a694    0x20  HW_LPTMR.o [1]
+  .text                ro code  0x0000a6b4    0x16  cmain.o [5]
+  .text                ro code  0x0000a6ca     0x4  low_level_init.o [3]
+  .text                ro code  0x0000a6ce     0x4  exit.o [3]
+  .text                ro code  0x0000a6d4     0xa  cexit.o [5]
+  .text                ro code  0x0000a6e0    0x14  exit.o [6]
+  .rodata              const    0x0000a6f4    0x10  LPLD_Quad_V2.o [1]
+  .rodata              const    0x0000a704    0x10  uart.o [1]
+  .text                ro code  0x0000a714    0x10  HW_SYSTICK.o [1]
+  .text                ro code  0x0000a724    0x10  HW_USB.o [1]
+  .rodata              const    0x0000a734     0xc  uart.o [1]
+  .text                ro code  0x0000a740     0xc  cstartup_M.o [5]
+  .rodata              const    0x0000a74c     0x4  WFLY_RCdata.o [1]
+  .rodata              const    0x0000a750     0x4  WFLY_RCdata.o [1]
+  .rodata              const    0x0000a754     0x4  WFLY_RCdata.o [1]
+  .rodata              const    0x0000a758     0x4  WFLY_RCdata.o [1]
+  .rodata              const    0x0000a75c     0x4  WFLY_RCdata.o [1]
+  .rodata              const    0x0000a760     0x4  ctrl.o [1]
+  .rodata              const    0x0000a764     0x4  ctrl.o [1]
+  .rodata              const    0x0000a768     0x4  exception.o [1]
+  .rodata              const    0x0000a76c     0x4  sensorfusion.o [1]
+  .rodata              const    0x0000a770     0x4  sensorfusion.o [1]
+  .rodata              const    0x0000a774     0x0  zero_init3.o [5]
+                              - 0x0000a774  0xa350
+
+"P2", part 1 of 4:                            0xd8
+  .data                         0x1fff0410    0x84  <Block>
+    .data-1                     0x1fff0410    0x84  <Init block>
+      .data            inited   0x1fff0410     0xc  AK8975Cdata.o [1]
+      .data            inited   0x1fff041c     0x4  HW_MCG.o [1]
+      .data            inited   0x1fff0420     0x4  HW_MCG.o [1]
+      .data            inited   0x1fff0424     0x4  HW_MCG.o [1]
+      .data            inited   0x1fff0428     0x4  HW_MCG.o [1]
+      .data            inited   0x1fff042c     0xc  MPU6050data.o [1]
+      .data            inited   0x1fff0438     0xc  MPU6050data.o [1]
+      .data            inited   0x1fff0444    0x10  WFLY_RCdata.o [1]
+      .data            inited   0x1fff0454    0x10  WFLY_RCdata.o [1]
+      .data            inited   0x1fff0464     0xc  ctrl.o [1]
+      .data            inited   0x1fff0470     0x1  decodedata.o [1]
+      .data            inited   0x1fff0474     0x4  exception.o [1]
+      .data            inited   0x1fff0478     0x4  exception.o [1]
+      .data            inited   0x1fff047c     0x8  getoffset.o [1]
+      .data            inited   0x1fff0484     0x8  getoffset.o [1]
+      .data            inited   0x1fff048c     0x4  sensorfusion.o [1]
+      .data            inited   0x1fff0490     0x4  system_MK60DZ10.o [1]
+  CodeRelocateRam               0x1fff0494    0x50  <Block>
+    CodeRelocateRam-1           0x1fff0494    0x50  <Init block>
+      .textrw          inited   0x1fff0494    0x50  HW_MCG.o [1]
+                              - 0x1fff04e4    0xd4
+
+"P2", part 2 of 4:                           0x728
+  .bss                          0x1fff04e8   0x723  <Block>
+    .bss               zero     0x1fff04e8    0x48  MS5611.o [1]
+    .bss               zero     0x1fff0530    0x48  MS5611data.o [1]
+    .bss               zero     0x1fff0578     0x8  timer.o [1]
+    .bss               zero     0x1fff0580     0x8  AK8975Cdata.o [1]
+    .bss               zero     0x1fff0588     0x4  AK8975Cdata.o [1]
+    .bss               zero     0x1fff058c    0x14  HCSR04.o [1]
+    .bss               zero     0x1fff05a0    0x14  HCSR04.o [1]
+    .bss               zero     0x1fff05b4     0x4  HCSR04.o [1]
+    .bss               zero     0x1fff05b8     0x8  HW_ADC.o [1]
+    .bss               zero     0x1fff05c0   0x100  HW_CAN.o [1]
+    .bss               zero     0x1fff06c0    0x40  HW_CAN.o [1]
+    .bss               zero     0x1fff0700    0x40  HW_CAN.o [1]
+    .bss               zero     0x1fff0740     0x8  HW_DAC.o [1]
+    .bss               zero     0x1fff0748     0x8  HW_DAC.o [1]
+    .bss               zero     0x1fff0750     0x8  HW_DAC.o [1]
+    .bss               zero     0x1fff0758    0x40  HW_DMA.o [1]
+    .bss               zero     0x1fff0798    0x10  HW_ENET.o [1]
+    .bss               zero     0x1fff07a8     0xc  HW_FTM.o [1]
+    .bss               zero     0x1fff07b4    0x14  HW_GPIO.o [1]
+    .bss               zero     0x1fff07c8     0x8  HW_I2C.o [1]
+    .bss               zero     0x1fff07d0     0x4  HW_LPTMR.o [1]
+    .bss               zero     0x1fff07d4     0x4  HW_PDB.o [1]
+    .bss               zero     0x1fff07d8     0x4  HW_PDB.o [1]
+    .bss               zero     0x1fff07dc    0x10  HW_PIT.o [1]
+    .bss               zero     0x1fff07ec     0xc  HW_RTC.o [1]
+    .bss               zero     0x1fff07f8    0x18  HW_SPI.o [1]
+    .bss               zero     0x1fff0810    0x18  HW_SPI.o [1]
+    .bss               zero     0x1fff0828    0x18  HW_SPI.o [1]
+    .bss               zero     0x1fff0840     0x4  HW_SYSTICK.o [1]
+    .bss               zero     0x1fff0844     0x8  HW_TSI.o [1]
+    .bss               zero     0x1fff084c    0x18  HW_UART.o [1]
+    .bss               zero     0x1fff0864    0x18  HW_UART.o [1]
+    .bss               zero     0x1fff087c     0x4  HW_USB.o [1]
+    .bss               zero     0x1fff0880    0x10  MPU6050data.o [1]
+    .bss               zero     0x1fff0890     0x4  MS5611data.o [1]
+    .bss               zero     0x1fff0894    0x20  PWM.o [1]
+    .bss               zero     0x1fff08b4    0x10  WFLY_RC.o [1]
+    .bss               zero     0x1fff08c4    0x14  WFLY_RC.o [1]
+    .bss               zero     0x1fff08d8    0x10  WFLY_RC.o [1]
+    .bss               zero     0x1fff08e8     0x4  WFLY_RC.o [1]
+    .bss               zero     0x1fff08ec    0x60  accfilter.o [1]
+    .bss               zero     0x1fff094c     0xc  accfilter.o [1]
+    .bss               zero     0x1fff0958    0x10  alloc.o [1]
+    .bss               zero     0x1fff0968     0x4  alloc.o [1]
+    .bss               zero     0x1fff096c    0x10  attitude.o [1]
+    .bss               zero     0x1fff097c     0xc  attitude.o [1]
+    .bss               zero     0x1fff0988     0x4  buzzer.o [1]
+    .bss               zero     0x1fff098c    0x2c  ctrl.o [1]
+    .bss               zero     0x1fff09b8    0x20  ctrl.o [1]
+    .bss               zero     0x1fff09d8    0x24  ctrl.o [1]
+    .bss               zero     0x1fff09fc     0x4  ctrl.o [1]
+    .bss               zero     0x1fff0a00     0x8  getoffset.o [1]
+    .bss               zero     0x1fff0a08     0xc  gyrfilter.o [1]
+    .bss               zero     0x1fff0a14     0xc  magfilter.o [1]
+    .bss               zero     0x1fff0a20    0x88  param.o [1]
+    .bss               zero     0x1fff0aa8    0x24  pid.o [1]
+    .bss               zero     0x1fff0acc    0x18  pid.o [1]
+    .bss               zero     0x1fff0ae4     0xc  pid.o [1]
+    .bss               zero     0x1fff0af0     0x8  pid.o [1]
+    .bss               zero     0x1fff0af8    0x10  sysflag.o [1]
+    .bss               zero     0x1fff0b08     0x8  sysflag.o [1]
+    .bss               zero     0x1fff0b10     0x4  timer.o [1]
+    .bss               zero     0x1fff0b14     0x4  timer.o [1]
+    .bss               zero     0x1fff0b18     0x4  timer.o [1]
+    .bss               zero     0x1fff0b1c     0x4  timer.o [1]
+    .bss               zero     0x1fff0b20     0x4  timer.o [1]
+    .bss               zero     0x1fff0b24     0x4  timer.o [1]
+    .bss               zero     0x1fff0b28    0x10  uart.o [1]
+    .bss               zero     0x1fff0b38     0x4  uart.o [1]
+    .bss               zero     0x1fff0b3c     0x4  uart.o [1]
+    .bss               zero     0x1fff0b40     0x4  uart.o [1]
+    .bss               zero     0x1fff0b44     0x4  uart.o [1]
+    .bss               zero     0x1fff0b48    0x18  uartqueue.o [1]
+    .bss               zero     0x1fff0b60    0x18  uartqueue.o [1]
+    .bss               zero     0x1fff0b78    0x84  uploaddata.o [1]
+    .bss               zero     0x1fff0bfc     0x2  HCSR04.o [1]
+    .bss               zero     0x1fff0bfe     0x2  battery.o [1]
+    .bss               zero     0x1fff0c00     0x1  HCSR04.o [1]
+    .bss               zero     0x1fff0c01     0x1  HCSR04.o [1]
+    .bss               zero     0x1fff0c02     0x1  MS5611.o [1]
+    .bss               zero     0x1fff0c03     0x1  WFLY_RC.o [1]
+    .bss               zero     0x1fff0c04     0x1  accfilter.o [1]
+    .bss               zero     0x1fff0c05     0x1  buzzer.o [1]
+    .bss               zero     0x1fff0c06     0x1  buzzer.o [1]
+    .bss               zero     0x1fff0c07     0x1  decodedata.o [1]
+    .bss               zero     0x1fff0c08     0x1  decodedata.o [1]
+    .bss               zero     0x1fff0c09     0x1  decodedata.o [1]
+    .bss               zero     0x1fff0c0a     0x1  decodedata.o [1]
+                              - 0x1fff0c0b   0x723
+
+"P2", part 3 of 4:                          0x1200
+  CSTACK                        0x1fff0c10   0xe00  <Block>
+    CSTACK             uninit   0x1fff0c10   0xe00  <Block tail>
+  HEAP                          0x1fff1a10   0x400  <Block>
+    HEAP               uninit   0x1fff1a10   0x400  <Block tail>
+                              - 0x1fff1e10  0x1200
+
+"P2", part 4 of 4:                             0x4
+  __DLIB_PERTHREAD     zero     0x1fff1e10     0x4  errno.o [3]
+                              - 0x1fff1e14     0x4
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    2 destination ranges, total size 0x727:
+          0x1fff04e8  0x723
+          0x1fff1e10    0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module             ro code  rw code  ro data  rw data
+    ------             -------  -------  -------  -------
+E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_MINE\Obj: [1]
+    AK8975Cdata.o          168                12       24
+    HCSR04.o               556                         48
+    HW_ADC.o             1 056                          8
+    HW_CAN.o               502                        384
+    HW_DAC.o               244                         24
+    HW_DMA.o               364                         64
+    HW_ENET.o              128                         16
+    HW_FLASH.o             496
+    HW_FTM.o             2 348                         12
+    HW_GPIO.o              572                         20
+    HW_I2C.o               736                          8
+    HW_LPTMR.o              32                          4
+    HW_MCG.o               496       80       96       16
+    HW_PDB.o               128                          8
+    HW_PIT.o               332                         16
+    HW_RTC.o                96                         12
+    HW_SPI.o               536                         72
+    HW_SYSTICK.o            16                          4
+    HW_TSI.o               112                          8
+    HW_UART.o            1 608                         48
+    HW_USB.o                16                          4
+    I2C_ope.o              442
+    LPLD_Quad_V2.o       2 676                16
+    MPU6050data.o          284                24       40
+    MPU9150.o              548
+    MS5611.o               924                         73
+    MS5611data.o            60                         76
+    MyLib.o                354
+    PWM.o                  652                         32
+    WFLY_RC.o              888                         57
+    WFLY_RCdata.o          960                52       32
+    accfilter.o            232                        109
+    alloc.o                144                         20
+    attitude.o             288                         28
+    battery.o              184                          2
+    buzzer.o               356                20        6
+    ctrl.o                 860                20      128
+    dataframe.o            132                32
+    decodedata.o           580                 1        5
+    delay.o                 92
+    exception.o             80                15        8
+    flash_rom.o            320
+    getoffset.o            402                16       24
+    gyrfilter.o            104                         12
+    lights.o             1 030
+    magfilter.o             60                         12
+    myqueue.o              242
+    param.o                740                        136
+    pid.o                  808                         80
+    printf.o             1 386
+    quaternion.o         1 568
+    relocate.o             192
+    sensorfusion.o       1 772                12        4
+    startup_K60.o        1 044
+    stdlib.o                34
+    switches.o             476
+    sysflag.o              300                         24
+    system_MK60DZ10.o      256                 4        4
+    timer.o                200                         32
+    uart.o                 824                28       32
+    uartqueue.o          1 228                         48
+    uploaddata.o         1 180                        132
+    -----------------------------------------------------
+    Total:              35 444       80      348    1 956
+
+command line: [2]
+    -----------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    errno.o                 12                          4
+    exit.o                   4
+    low_level_init.o         4
+    xtls.o                   2
+    -----------------------------------------------------
+    Total:                  22                          4
+
+m7M_tl.a: [4]
+    DblAdd.o               232
+    DblCmpEq.o              32
+    DblCmpGe.o              46
+    DblCmpLe.o              46
+    DblDiv.o               582
+    DblMul.o               418
+    DblSub.o               384
+    DblToFlt.o             144
+    DblToI32.o              76
+    FltAdd.o               132
+    FltCmpGe.o              36
+    FltCmpLe.o              36
+    FltDiv.o               252
+    FltMul.o               216
+    FltSub.o               230
+    FltToDbl.o              78
+    FltToS32.o              68
+    I32ToDbl.o              44
+    I32ToFlt.o              50
+    asin.o                 246
+    atan2.o                272
+    cos.o                    6
+    fmod.o                 424
+    sin.o                    6
+    sqrt.o                 240
+    xatan.o                480
+    xdint.o                126
+    xquad.o                352
+    xsin.o               1 066
+    -----------------------------------------------------
+    Total:               6 320
+
+rt7M_tl.a: [5]
+    ABImemclr4.o             6
+    ABImemcpy.o            118
+    ABImemset48.o           50
+    I64DivMod.o            306
+    I64DivZer.o              2
+    cexit.o                 10
+    cmain.o                 22
+    cstartup_M.o            12
+    data_init3.o            40
+    iarEdom.o               12
+    zero_init3.o            34
+    -----------------------------------------------------
+    Total:                 612
+
+shb_l.a: [6]
+    exit.o                  20
+    -----------------------------------------------------
+    Total:                  20
+
+    Gaps                    52                 2        3
+    Linker created           8                24    4 608
+---------------------------------------------------------
+    Grand Total:        42 478       80      374    6 571
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.bss$$Base              0x1fff04e8          --   Gb  - Linker created -
+.bss$$Limit             0x1fff0c0b          --   Gb  - Linker created -
+.data$$Base             0x1fff0410          --   Gb  - Linker created -
+.data$$Limit            0x1fff0494          --   Gb  - Linker created -
+.data_init$$Base        0x0000a390          --   Gb  - Linker created -
+.data_init$$Limit       0x0000a414          --   Gb  - Linker created -
+?main                   0x0000a6b5         Code  Gb  cmain.o [5]
+ADC0_IRQHandler         0x00005d0d    0xa  Code  Gb  HW_ADC.o [1]
+ADC1_IRQHandler         0x00005d17    0xa  Code  Gb  HW_ADC.o [1]
+ADC_ISR                 0x1fff05b8    0x8  Data  Gb  HW_ADC.o [1]
+AK8975C_GetCalibratedMag
+                        0x000011cb   0x34  Code  Gb  AK8975Cdata.o [1]
+AK8975C_GetRawData      0x00003ed5   0x38  Code  Gb  MPU9150.o [1]
+AK8975C_InitRawData     0x00001169   0x1e  Code  Gb  AK8975Cdata.o [1]
+AK8975C_MultiReadReg    0x00003eab   0x20  Code  Gb  MPU9150.o [1]
+AK8975C_RefreshRawData  0x00001187   0x44  Code  Gb  AK8975Cdata.o [1]
+AK8975C_SingleReadReg   0x00003e51   0x14  Code  Gb  MPU9150.o [1]
+AK8975C_SingleWriteReg  0x00003e35   0x1c  Code  Gb  MPU9150.o [1]
+AK8975C_StartMeasure    0x00003e79    0xc  Code  Gb  MPU9150.o [1]
+AK8975C_WaitMeasureComplete
+                        0x00003e85   0x26  Code  Gb  MPU9150.o [1]
+AccFilterGetCurrent     0x00004b61    0x4  Code  Gb  accfilter.o [1]
+AccFilterInput          0x00004ac9   0x98  Code  Gb  accfilter.o [1]
+ApplyQuadParam          0x00002699   0xe0  Code  Gb  param.o [1]
+AttitudeInit            0x00001211   0x1a  Code  Gb  attitude.o [1]
+AttitudeInputAcc        0x0000122f    0xc  Code  Gb  attitude.o [1]
+AttitudeInputGyr        0x0000123b    0xc  Code  Gb  attitude.o [1]
+AttitudeInputMag        0x00001247    0xc  Code  Gb  attitude.o [1]
+AttitudeMixGyrAcc       0x00001277   0x1a  Code  Gb  attitude.o [1]
+AttitudeMixGyrAccMag    0x00001253   0x24  Code  Gb  attitude.o [1]
+BatteryVoltageADCIsr    0x00001835   0x1a  Code  Gb  battery.o [1]
+BusFault_Handler        0x00000421         Code  Wk  startup_K60.o [1]
+BuzzerTimerIsr          0x00001e55   0x88  Code  Gb  buzzer.o [1]
+CAN0_BUS_OFF_IRQHandler
+                        0x00009ced    0x8  Code  Gb  HW_CAN.o [1]
+CAN0_ERR_IRQHandler     0x00009cf5   0x10  Code  Gb  HW_CAN.o [1]
+CAN0_IMEU_IRQHandler    0x00009d1b    0x2  Code  Gb  HW_CAN.o [1]
+CAN0_ISR                0x1fff06c0   0x40  Data  Gb  HW_CAN.o [1]
+CAN0_LR_IRQHandler      0x00009d1d    0x2  Code  Gb  HW_CAN.o [1]
+CAN0_MESS_IRQHandler    0x00009ce5    0x8  Code  Gb  HW_CAN.o [1]
+CAN0_RW_IRQHandler      0x00009d0f    0xa  Code  Gb  HW_CAN.o [1]
+CAN0_TW_IRQHandler      0x00009d05    0xa  Code  Gb  HW_CAN.o [1]
+CAN0_WAKE_UP_IRQHandler
+                        0x00009d19    0x2  Code  Gb  HW_CAN.o [1]
+CAN1_BUS_OFF_IRQHandler
+                        0x00009d27    0x8  Code  Gb  HW_CAN.o [1]
+CAN1_ERR_IRQHandler     0x00009d2f   0x10  Code  Gb  HW_CAN.o [1]
+CAN1_IMEU_IRQHandler    0x00009d73    0x2  Code  Gb  HW_CAN.o [1]
+CAN1_ISR                0x1fff0700   0x40  Data  Gb  HW_CAN.o [1]
+CAN1_LR_IRQHandler      0x00009d75    0x2  Code  Gb  HW_CAN.o [1]
+CAN1_MESS_IRQHandler    0x00009d1f    0x8  Code  Gb  HW_CAN.o [1]
+CAN1_RW_IRQHandler      0x00009d49    0xa  Code  Gb  HW_CAN.o [1]
+CAN1_TW_IRQHandler      0x00009d3f    0xa  Code  Gb  HW_CAN.o [1]
+CAN1_WAKE_UP_IRQHandler
+                        0x00009d71    0x2  Code  Gb  HW_CAN.o [1]
+CMP0_IRQHandler         0x00000421         Code  Wk  startup_K60.o [1]
+CMP1_IRQHandler         0x00000421         Code  Wk  startup_K60.o [1]
+CMP2_IRQHandler         0x00000421         Code  Wk  startup_K60.o [1]
+CMT_IRQHandler          0x00000421         Code  Wk  startup_K60.o [1]
+CSTACK$$Base            0x1fff0c10          --   Gb  - Linker created -
+CSTACK$$Limit           0x1fff1a10          --   Gb  - Linker created -
+CalculateCrc16_HalfByte
+                        0x00006b61   0x4e  Code  Gb  dataframe.o [1]
+CheckLastSystemSettingTheSame
+                        0x00001d65   0x22  Code  Gb  sysflag.o [1]
+CheckQuadParamValid     0x00002537   0x28  Code  Gb  param.o [1]
+ClearMyQueue            0x00007201    0x6  Code  Gb  myqueue.o [1]
+ClearUartRecvQueue      0x0000303f   0x64  Code  Gb  uartqueue.o [1]
+CodeRelocate$$Base      0x0000a5e4          --   Gb  - Linker created -
+CodeRelocate$$Limit     0x0000a634          --   Gb  - Linker created -
+CodeRelocateRam$$Base   0x1fff0494          --   Gb  - Linker created -
+CodeRelocateRam$$Limit  0x1fff04e4          --   Gb  - Linker created -
+CommUartSendOneByte     0x00003a97   0x10  Code  Gb  uart.o [1]
+CreateMyQueue           0x00007115   0x38  Code  Gb  myqueue.o [1]
+CtrlEnterHaltMode       0x0000331f   0x12  Code  Gb  ctrl.o [1]
+CtrlEvent               0x000032b5   0x6a  Code  Gb  ctrl.o [1]
+CtrlLockHeightThrottle  0x00003331   0x58  Code  Gb  ctrl.o [1]
+CtrlLockTargetAttitude  0x000030fd   0x24  Code  Gb  ctrl.o [1]
+CtrlOutputByTargetAttitude
+                        0x0000314b  0x162  Code  Gb  ctrl.o [1]
+CtrlOutputSameThrottle  0x00003121   0x20  Code  Gb  ctrl.o [1]
+CtrlOutputThrottle      0x00003141    0xa  Code  Gb  ctrl.o [1]
+CtrlSetBaseThrottle     0x000033bb   0x1a  Code  Gb  ctrl.o [1]
+CtrlSetMode             0x000033d5    0x8  Code  Gb  ctrl.o [1]
+CtrlSetTargetEulerAttitude
+                        0x00003389   0x32  Code  Gb  ctrl.o [1]
+CtrlSetTargetHeight     0x000033dd    0x6  Code  Gb  ctrl.o [1]
+DAC0_IRQHandler         0x0000a29d   0x6a  Code  Gb  HW_DAC.o [1]
+DAC1_IRQHandler         0x0000a307   0x6a  Code  Gb  HW_DAC.o [1]
+DAC_RDPTBOT_ISR         0x1fff0740    0x8  Data  Gb  HW_DAC.o [1]
+DAC_RDPTTOP_ISR         0x1fff0748    0x8  Data  Gb  HW_DAC.o [1]
+DAC_WATERMK_ISR         0x1fff0750    0x8  Data  Gb  HW_DAC.o [1]
+DMA0_IRQHandler         0x00009f71   0x16  Code  Gb  HW_DMA.o [1]
+DMA10_IRQHandler        0x0000a04d   0x16  Code  Gb  HW_DMA.o [1]
+DMA11_IRQHandler        0x0000a063   0x16  Code  Gb  HW_DMA.o [1]
+DMA12_IRQHandler        0x0000a079   0x16  Code  Gb  HW_DMA.o [1]
+DMA13_IRQHandler        0x0000a08f   0x16  Code  Gb  HW_DMA.o [1]
+DMA14_IRQHandler        0x0000a0a5   0x16  Code  Gb  HW_DMA.o [1]
+DMA15_IRQHandler        0x0000a0bb   0x16  Code  Gb  HW_DMA.o [1]
+DMA1_IRQHandler         0x00009f87   0x16  Code  Gb  HW_DMA.o [1]
+DMA2_IRQHandler         0x00009f9d   0x16  Code  Gb  HW_DMA.o [1]
+DMA3_IRQHandler         0x00009fb3   0x16  Code  Gb  HW_DMA.o [1]
+DMA4_IRQHandler         0x00009fc9   0x16  Code  Gb  HW_DMA.o [1]
+DMA5_IRQHandler         0x00009fdf   0x16  Code  Gb  HW_DMA.o [1]
+DMA6_IRQHandler         0x00009ff5   0x16  Code  Gb  HW_DMA.o [1]
+DMA7_IRQHandler         0x0000a00b   0x16  Code  Gb  HW_DMA.o [1]
+DMA8_IRQHandler         0x0000a021   0x16  Code  Gb  HW_DMA.o [1]
+DMA9_IRQHandler         0x0000a037   0x16  Code  Gb  HW_DMA.o [1]
+DMA_ERR_IRQHandler      0x00000421         Code  Wk  startup_K60.o [1]
+DMA_ISR                 0x1fff0758   0x40  Data  Gb  HW_DMA.o [1]
+DebugMon_Handler        0x00000421         Code  Wk  startup_K60.o [1]
+DebugUartRxIsr          0x00003aa9  0x190  Code  Gb  uart.o [1]
+DecodeControlParaData   0x00007c8f   0xac  Code  Gb  decodedata.o [1]
+DefaultISR              0x0000a1db    0x2  Code  Gb  system_MK60DZ10.o [1]
+DelayWithTimer          0x000041d5   0x10  Code  Gb  timer.o [1]
+ENET_ISR                0x1fff0798   0x10  Data  Gb  HW_ENET.o [1]
+EraseFlashStorage       0x0000491d   0x22  Code  Gb  flash_rom.o [1]
+Eth_Err_Misc_IRQHandler
+                        0x0000a477   0x16  Code  Gb  HW_ENET.o [1]
+Eth_IEEE1588_IRQHandler
+                        0x0000a461   0x16  Code  Gb  HW_ENET.o [1]
+Eth_RX_IRQHandler       0x0000a415   0x26  Code  Gb  HW_ENET.o [1]
+Eth_TX_IRQHandler       0x0000a43b   0x26  Code  Gb  HW_ENET.o [1]
+ExceptionCheckInclination
+                        0x000078d5   0x4a  Code  Gb  exception.o [1]
+ExchangeUint16Bytes     0x00006bb5   0x30  Code  Gb  dataframe.o [1]
+FLASH_CC_IRQHandler     0x00000421         Code  Wk  startup_K60.o [1]
+FLASH_RC_IRQHandler     0x00000421         Code  Wk  startup_K60.o [1]
+FTM0_IRQHandler         0x000065dd    0xa  Code  Gb  HW_FTM.o [1]
+FTM1_IRQHandler         0x000065e7    0xa  Code  Gb  HW_FTM.o [1]
+FTM2_IRQHandler         0x000065f5    0xa  Code  Gb  HW_FTM.o [1]
+FTM_ISR                 0x1fff07a8    0xc  Data  Gb  HW_FTM.o [1]
+FlashStorageByteProgram
+                        0x000049fb   0x14  Code  Gb  flash_rom.o [1]
+FlashStorageSectorErase
+                        0x00004a0f    0xc  Code  Gb  flash_rom.o [1]
+FuseGyrAccCrossMethod   0x00005235  0x280  Code  Gb  sensorfusion.o [1]
+FuseGyrAccMagCrossMethod
+                        0x000054b5  0x458  Code  Gb  sensorfusion.o [1]
+GPIO_ISR                0x1fff07b4   0x14  Data  Gb  HW_GPIO.o [1]
+GPSUartRxIsr            0x00003c39   0x7c  Code  Gb  uart.o [1]
+GetAccGyrOffset         0x00000e99   0xca  Code  Gb  getoffset.o [1]
+GetAccGyrOffsetOpe      0x00000f71   0x3e  Code  Gb  getoffset.o [1]
+GetAccOffsetOpe         0x00000faf   0x3e  Code  Gb  getoffset.o [1]
+GetAttitude             0x0000122b    0x4  Code  Gb  attitude.o [1]
+GetControlData          0x000032b1    0x4  Code  Gb  ctrl.o [1]
+GetControlParameter     0x000032ad    0x4  Code  Gb  ctrl.o [1]
+GetEulerAttitude        0x000012a5    0x4  Code  Gb  attitude.o [1]
+GetGyrOffsetOpe         0x00000fed   0x3e  Code  Gb  getoffset.o [1]
+GetMyQueueSize          0x0000714d   0x1c  Code  Gb  myqueue.o [1]
+GetQuadParamInRam       0x00002695    0x4  Code  Gb  param.o [1]
+GetSystemSettingOnSwitch
+                        0x00001c69   0x96  Code  Gb  sysflag.o [1]
+GetUartRecvQueueSize    0x00002f0b   0x5e  Code  Gb  uartqueue.o [1]
+GyrFilterGetCurrent     0x00004bcb    0x4  Code  Gb  gyrfilter.o [1]
+GyrFilterInput          0x00004b89   0x42  Code  Gb  gyrfilter.o [1]
+HCSR04_InputPluseMeasureIsr
+                        0x00004091   0x6e  Code  Gb  HCSR04.o [1]
+HCSR04_PluseTriggerIsr  0x00003fd9   0xb8  Code  Gb  HCSR04.o [1]
+HCSR04_echo_pin_init_struct
+                        0x1fff05a0   0x14  Data  Gb  HCSR04.o [1]
+HCSR04_pluse_signal_timer_init_struct
+                        0x1fff058c   0x14  Data  Gb  HCSR04.o [1]
+HEAP$$Base              0x1fff1a10          --   Gb  - Linker created -
+HEAP$$Limit             0x1fff1e10          --   Gb  - Linker created -
+HardFault_Handler       0x0000a1d9    0x2  Code  Gb  system_MK60DZ10.o [1]
+HeightPIDInterate       0x00006db9  0x116  Code  Gb  pid.o [1]
+I2C0_IRQHandler         0x00007f37   0x5a  Code  Gb  HW_I2C.o [1]
+I2C1_IRQHandler         0x00007f91   0x5a  Code  Gb  HW_I2C.o [1]
+I2C_ISR                 0x1fff07c8    0x8  Data  Gb  HW_I2C.o [1]
+I2C_ReadRegMulti        0x000080ed   0xd0  Code  Gb  I2C_ope.o [1]
+I2C_ReadRegSingle       0x000081bd   0x8e  Code  Gb  I2C_ope.o [1]
+I2C_WriteRegSingle      0x00008091   0x5c  Code  Gb  I2C_ope.o [1]
+I2S_IRQHandler          0x00000421         Code  Wk  startup_K60.o [1]
+InitAK8975C             0x00003e65   0x14  Code  Gb  MPU9150.o [1]
+InitAccFilter           0x00004a89   0x40  Code  Gb  accfilter.o [1]
+InitBatteryVoltageMeasurement
+                        0x000017cd   0x68  Code  Gb  battery.o [1]
+InitBuzzer              0x00001d95   0x3e  Code  Gb  buzzer.o [1]
+InitBuzzerTimer         0x00001dd3   0x4e  Code  Gb  buzzer.o [1]
+InitCommunicateUart     0x00003a09   0x38  Code  Gb  uart.o [1]
+InitControl             0x000030c5   0x38  Code  Gb  ctrl.o [1]
+InitDebugUart           0x000039b1   0x58  Code  Gb  uart.o [1]
+InitEulerAttitude       0x00001291   0x14  Code  Gb  attitude.o [1]
+InitFlashRom            0x00004915    0x8  Code  Gb  flash_rom.o [1]
+InitFourRotorPWM        0x00001999   0x78  Code  Gb  PWM.o [1]
+InitGPSUart             0x00003a41   0x56  Code  Gb  uart.o [1]
+InitGyrFilter           0x00004b71   0x18  Code  Gb  gyrfilter.o [1]
+InitHCSR04              0x00003f0d   0xca  Code  Gb  HCSR04.o [1]
+InitHW                  0x00000e59   0x40  Code  Gb  LPLD_Quad_V2.o [1]
+InitHeightPID           0x00006d9b   0x1e  Code  Gb  pid.o [1]
+InitLight               0x000020d5  0x1a8  Code  Gb  lights.o [1]
+InitMPU6050             0x00003e09   0x2c  Code  Gb  MPU9150.o [1]
+InitMPU9150             0x00003ce9   0x7c  Code  Gb  MPU9150.o [1]
+InitMS5611              0x00004579   0xb6  Code  Gb  MS5611.o [1]
+InitMagFilter           0x00004bd9   0x18  Code  Gb  magfilter.o [1]
+InitPID                 0x00006be5   0x3c  Code  Gb  pid.o [1]
+InitPWMData             0x00001a27   0x22  Code  Gb  PWM.o [1]
+InitPWMOutPut           0x00001a11   0x16  Code  Gb  PWM.o [1]
+InitQuadParam           0x000024dd   0x4a  Code  Gb  param.o [1]
+InitSwitches            0x00001ef9  0x130  Code  Gb  switches.o [1]
+InitTimer               0x00004139   0x4c  Code  Gb  timer.o [1]
+InitUartQueue           0x00002bf9   0x96  Code  Gb  uartqueue.o [1]
+InitUartRecvQueue       0x00002e75   0x96  Code  Gb  uartqueue.o [1]
+InitWFLY_RC             0x00004201  0x15c  Code  Gb  WFLY_RC.o [1]
+IsMyQueueEmpty          0x00007169   0x16  Code  Gb  myqueue.o [1]
+IsMyQueueFull           0x0000717f   0x1a  Code  Gb  myqueue.o [1]
+IsUartQueueEmpty        0x00002c8f   0x74  Code  Gb  uartqueue.o [1]
+LLWU_IRQHandler         0x00000421         Code  Wk  startup_K60.o [1]
+LPLD_ADC_Cal            0x00005c67   0xa6  Code  Lc  HW_ADC.o [1]
+LPLD_ADC_Chn_Enable     0x00005a89  0x1de  Code  Gb  HW_ADC.o [1]
+LPLD_ADC_EnableIrq      0x00005a55   0x34  Code  Gb  HW_ADC.o [1]
+LPLD_ADC_Init           0x00005943  0x112  Code  Gb  HW_ADC.o [1]
+LPLD_CAN_Interrupt_ClearPending
+                        0x00009b81   0x26  Code  Lc  HW_CAN.o [1]
+LPLD_CAN_Interrupt_GetFlag
+                        0x00009ba7   0x2a  Code  Lc  HW_CAN.o [1]
+LPLD_CAN_MB_ISR         0x00009c89   0x5c  Code  Lc  HW_CAN.o [1]
+LPLD_CAN_Receive_Interrupt
+                        0x00009c2b   0x5e  Code  Lc  HW_CAN.o [1]
+LPLD_CAN_Transmit_Interrupt
+                        0x00009bd1   0x5a  Code  Gb  HW_CAN.o [1]
+LPLD_FTM_DEC_Init       0x000065d5    0x8  Code  Lc  HW_FTM.o [1]
+LPLD_FTM_IC_Init        0x00006023   0x8c  Code  Lc  HW_FTM.o [1]
+LPLD_FTM_Init           0x00005d49  0x114  Code  Gb  HW_FTM.o [1]
+LPLD_FTM_PWM_ChangeDuty
+                        0x00005ebf   0x3a  Code  Gb  HW_FTM.o [1]
+LPLD_FTM_PWM_Enable     0x00005e5d   0x62  Code  Gb  HW_FTM.o [1]
+LPLD_FTM_PWM_Init       0x00005ef9  0x12a  Code  Lc  HW_FTM.o [1]
+LPLD_FTM_PinInit        0x000060af  0x4d0  Code  Lc  HW_FTM.o [1]
+LPLD_FTM_QD_Init        0x00006599   0x3c  Code  Lc  HW_FTM.o [1]
+LPLD_Flash_ByteProgram  0x0000846f   0xd4  Code  Gb  HW_FLASH.o [1]
+LPLD_Flash_Init         0x00008381   0x5a  Code  Gb  HW_FLASH.o [1]
+LPLD_Flash_SectorErase  0x000083db   0x94  Code  Gb  HW_FLASH.o [1]
+LPLD_GPIO_DisableIrq    0x00006919   0x4c  Code  Gb  HW_GPIO.o [1]
+LPLD_GPIO_EnableIrq     0x000068cd   0x4c  Code  Gb  HW_GPIO.o [1]
+LPLD_GPIO_Init          0x00006809   0xc4  Code  Gb  HW_GPIO.o [1]
+LPLD_GPIO_Input_b       0x00006965    0xa  Code  Gb  HW_GPIO.o [1]
+LPLD_I2C_Init           0x00007d55  0x15e  Code  Gb  HW_I2C.o [1]
+LPLD_I2C_ReStart        0x00007ec5    0xa  Code  Gb  HW_I2C.o [1]
+LPLD_I2C_ReadByte       0x00007f13    0xa  Code  Gb  HW_I2C.o [1]
+LPLD_I2C_SetMasterWR    0x00007f1d   0x1a  Code  Gb  HW_I2C.o [1]
+LPLD_I2C_Start          0x00007eb3   0x12  Code  Gb  HW_I2C.o [1]
+LPLD_I2C_Stop           0x00007ecf   0x12  Code  Gb  HW_I2C.o [1]
+LPLD_I2C_WaitAck        0x00007ee1   0x2e  Code  Gb  HW_I2C.o [1]
+LPLD_I2C_WriteByte      0x00007f0f    0x4  Code  Gb  HW_I2C.o [1]
+LPLD_PIT_EnableIrq      0x00006ac5   0x18  Code  Gb  HW_PIT.o [1]
+LPLD_PIT_Init           0x00006a2d   0x98  Code  Gb  HW_PIT.o [1]
+LPLD_PLL_Setup          0x00009d81  0x1f0  Code  Gb  HW_MCG.o [1]
+LPLD_Set_SYS_DIV        0x1fff0495   0x50  Code  Gb  HW_MCG.o [1]
+LPLD_UART_EnableIrq     0x000075fb   0x68  Code  Gb  HW_UART.o [1]
+LPLD_UART_GetChar       0x000075e3    0xe  Code  Gb  HW_UART.o [1]
+LPLD_UART_Init          0x00007223  0x3c0  Code  Gb  HW_UART.o [1]
+LPLD_UART_PutChar       0x000075f1    0xa  Code  Gb  HW_UART.o [1]
+LPTMR_ISR               0x1fff07d0    0x4  Data  Gb  HW_LPTMR.o [1]
+LPT_IRQHandler          0x0000a695   0x16  Code  Gb  HW_LPTMR.o [1]
+LoadDefaultQuadParam    0x0000255f   0xec  Code  Gb  param.o [1]
+LoadLastSystemSetting   0x00001cff   0x22  Code  Gb  sysflag.o [1]
+LoadQuadParamInFlash    0x00002527   0x10  Code  Gb  param.o [1]
+MCG_IRQHandler          0x00000421         Code  Wk  startup_K60.o [1]
+MCM_IRQHandler          0x00000421         Code  Wk  startup_K60.o [1]
+MIX_MAG_Y               0x0000a76c    0x4  Data  Lc  sensorfusion.o [1]
+MIX_MAG_Z               0x0000a770    0x4  Data  Lc  sensorfusion.o [1]
+MPU6050_GetCalibratedAcc
+                        0x000010b1   0x68  Code  Gb  MPU6050data.o [1]
+MPU6050_GetCalibratedGyr
+                        0x00001119   0x38  Code  Gb  MPU6050data.o [1]
+MPU6050_GetData         0x00003d65   0x2e  Code  Gb  MPU9150.o [1]
+MPU6050_GetRawData      0x00003d93   0x3a  Code  Gb  MPU9150.o [1]
+MPU6050_InitRawData     0x0000104d   0x28  Code  Gb  MPU6050data.o [1]
+MPU6050_MultiReadReg    0x00003de9   0x20  Code  Gb  MPU9150.o [1]
+MPU6050_RefreshRawData  0x00001075   0x3c  Code  Gb  MPU6050data.o [1]
+MPU6050_SingleWriteReg  0x00003dcd   0x1c  Code  Gb  MPU9150.o [1]
+MS5611_Calculate        0x0000479b   0xf0  Code  Gb  MS5611.o [1]
+MS5611_ConvADC          0x00004755    0xe  Code  Gb  MS5611.o [1]
+MS5611_MultiRead        0x000046c5   0x90  Code  Gb  MS5611.o [1]
+MS5611_Read             0x0000488b   0x6a  Code  Gb  MS5611.o [1]
+MS5611_ReadADC          0x00004763   0x38  Code  Gb  MS5611.o [1]
+MS5611_ReadROM          0x00004669   0x26  Code  Gb  MS5611.o [1]
+MS5611_ReadROM_1        0x0000468f   0x36  Code  Gb  MS5611.o [1]
+MS5611_RefreshData      0x00001885   0x3c  Code  Gb  MS5611data.o [1]
+MS5611_WriteCommand     0x0000462f   0x3a  Code  Gb  MS5611.o [1]
+MS5611_data_struct      0x1fff04e8   0x48  Data  Gb  MS5611.o [1]
+MagFilterGetCurrent     0x00004c0b    0x4  Code  Gb  magfilter.o [1]
+MagFilterInput          0x00004bf1   0x1a  Code  Gb  magfilter.o [1]
+MemManage_Handler       0x00000421         Code  Wk  startup_K60.o [1]
+MemoryBytesCompare      0x00004a1b   0x3a  Code  Gb  flash_rom.o [1]
+NMI_Handler             0x00000421         Code  Wk  startup_K60.o [1]
+NVIC_DisableIRQ         0x000067f1   0x18  Code  Lc  HW_GPIO.o [1]
+NVIC_EnableIRQ          0x00005929   0x1a  Code  Lc  HW_ADC.o [1]
+NVIC_EnableIRQ          0x000067d9   0x18  Code  Lc  HW_GPIO.o [1]
+NVIC_EnableIRQ          0x00006a15   0x18  Code  Lc  HW_PIT.o [1]
+NVIC_EnableIRQ          0x00007209   0x1a  Code  Lc  HW_UART.o [1]
+OS_CPU_PendSVHandler    0x00000421         Code  Wk  startup_K60.o [1]
+OS_CPU_SysTickHandler   0x0000a715    0xa  Code  Gb  HW_SYSTICK.o [1]
+PDB_IRQHandler          0x0000a495   0x6a  Code  Gb  HW_PDB.o [1]
+PDB_ISR                 0x1fff07d4    0x4  Data  Gb  HW_PDB.o [1]
+PDB_SE_ISR              0x1fff07d8    0x4  Data  Gb  HW_PDB.o [1]
+PIDInterate             0x00006c21  0x17a  Code  Gb  pid.o [1]
+PIT0_IRQHandler         0x00006add   0x16  Code  Gb  HW_PIT.o [1]
+PIT1_IRQHandler         0x00006af3   0x16  Code  Gb  HW_PIT.o [1]
+PIT2_IRQHandler         0x00006b09   0x16  Code  Gb  HW_PIT.o [1]
+PIT3_IRQHandler         0x00006b1f   0x16  Code  Gb  HW_PIT.o [1]
+PIT_ISR                 0x1fff07dc   0x10  Data  Gb  HW_PIT.o [1]
+PORTA_IRQHandler        0x0000696f   0x12  Code  Gb  HW_GPIO.o [1]
+PORTB_IRQHandler        0x00006981   0x12  Code  Gb  HW_GPIO.o [1]
+PORTC_IRQHandler        0x00006993   0x12  Code  Gb  HW_GPIO.o [1]
+PORTD_ExtIsr            0x0000435d   0x2c  Code  Gb  WFLY_RC.o [1]
+PORTD_IRQHandler        0x000069a5   0x12  Code  Gb  HW_GPIO.o [1]
+PORTE_ExtIsr            0x00004389   0x2c  Code  Gb  WFLY_RC.o [1]
+PORTE_IRQHandler        0x000069b7   0x12  Code  Gb  HW_GPIO.o [1]
+PWMOutFourESC           0x00001bd7   0x20  Code  Gb  PWM.o [1]
+PWMOutFourRotor         0x00001bf7   0x20  Code  Gb  PWM.o [1]
+PWMOutOneESC            0x00001b0f   0x96  Code  Gb  PWM.o [1]
+PWMOutOneRotor          0x00001a49   0xc6  Code  Gb  PWM.o [1]
+PinNum2GpioPin          0x00006675  0x162  Code  Gb  MyLib.o [1]
+PopMyQueue              0x000071cd   0x34  Code  Gb  myqueue.o [1]
+PopUartQueue            0x00002d91   0x74  Code  Gb  uartqueue.o [1]
+PopUartRecvQueue        0x00002fe1   0x5e  Code  Gb  uartqueue.o [1]
+PushMyQueue             0x00007199   0x34  Code  Gb  myqueue.o [1]
+PushUartQueue           0x00002d03   0x8e  Code  Gb  uartqueue.o [1]
+PushUartRecvQueue       0x00002f69   0x78  Code  Gb  uartqueue.o [1]
+PutCharUartQueue        0x00002e05   0x12  Code  Gb  uartqueue.o [1]
+PutStringUartQueue      0x00002e17   0x28  Code  Gb  uartqueue.o [1]
+RNGB_IRQHandler         0x00000421         Code  Wk  startup_K60.o [1]
+RTC_IRQHandler          0x0000a585   0x56  Code  Gb  HW_RTC.o [1]
+RTC_ISR                 0x1fff07ec    0xc  Data  Gb  HW_RTC.o [1]
+ReadFlashStorage        0x000049d5   0x26  Code  Gb  flash_rom.o [1]
+ReadSwitches            0x00002029   0xa8  Code  Gb  switches.o [1]
+RecvFrame               0x00007b11  0x17e  Code  Gb  decodedata.o [1]
+RefreshAttitude         0x000012a9   0x76  Code  Gb  attitude.o [1]
+RefreshQuadParamCrc     0x0000264b   0x28  Code  Gb  param.o [1]
+Region$$Table$$Base     0x0000a65c          --   Gb  - Linker created -
+Region$$Table$$Limit    0x0000a674          --   Gb  - Linker created -
+Reserved102_IRQHandler  0x00000421         Code  Wk  startup_K60.o [1]
+Reserved108_IRQHandler  0x00000421         Code  Wk  startup_K60.o [1]
+Reserved109_IRQHandler  0x00000421         Code  Wk  startup_K60.o [1]
+Reserved110_IRQHandler  0x00000421         Code  Wk  startup_K60.o [1]
+Reserved111_IRQHandler  0x00000421         Code  Wk  startup_K60.o [1]
+Reserved112_IRQHandler  0x00000421         Code  Wk  startup_K60.o [1]
+Reserved113_IRQHandler  0x00000421         Code  Wk  startup_K60.o [1]
+Reserved114_IRQHandler  0x00000421         Code  Wk  startup_K60.o [1]
+Reserved115_IRQHandler  0x00000421         Code  Wk  startup_K60.o [1]
+Reserved116_IRQHandler  0x00000421         Code  Wk  startup_K60.o [1]
+Reserved117_IRQHandler  0x00000421         Code  Wk  startup_K60.o [1]
+Reserved118_IRQHandler  0x00000421         Code  Wk  startup_K60.o [1]
+Reserved119_IRQHandler  0x00000421         Code  Wk  startup_K60.o [1]
+Reserved83_IRQHandler   0x00000421         Code  Wk  startup_K60.o [1]
+Reset_Handler           0x00000411         Code  Wk  startup_K60.o [1]
+SDHC_IRQHandler         0x00000421         Code  Wk  startup_K60.o [1]
+SPI0_IRQHandler         0x00009969   0xaa  Code  Gb  HW_SPI.o [1]
+SPI0_ISR                0x1fff07f8   0x18  Data  Gb  HW_SPI.o [1]
+SPI1_IRQHandler         0x00009a13   0xaa  Code  Gb  HW_SPI.o [1]
+SPI1_ISR                0x1fff0810   0x18  Data  Gb  HW_SPI.o [1]
+SPI2_IRQHandler         0x00009abd   0xaa  Code  Gb  HW_SPI.o [1]
+SPI2_ISR                0x1fff0828   0x18  Data  Gb  HW_SPI.o [1]
+SVC_Handler             0x00000421         Code  Wk  startup_K60.o [1]
+SYSTICK_ISR             0x1fff0840    0x4  Data  Gb  HW_SYSTICK.o [1]
+SaveQuadParamToFlash    0x00002673   0x22  Code  Gb  param.o [1]
+SaveThisSystemSettingToFlash
+                        0x00001d4d   0x18  Code  Gb  sysflag.o [1]
+SendSeveralUartQueueData
+                        0x00002e3f   0x36  Code  Gb  uartqueue.o [1]
+SetBuzzerMode           0x00001e4d    0x6  Code  Gb  buzzer.o [1]
+SetBuzzerOnOff          0x00001e45    0x8  Code  Gb  buzzer.o [1]
+SetDefaultLastSystemSettingInRam
+                        0x00001d21   0x2c  Code  Gb  sysflag.o [1]
+SetLightsOnOff          0x000022a1   0x2e  Code  Gb  lights.o [1]
+SetOneLightOnOff        0x000022cf   0xc6  Code  Gb  lights.o [1]
+SystemCoreClock         0x1fff0490    0x4  Data  Gb  system_MK60DZ10.o [1]
+SystemCoreClockUpdate   0x0000a17d   0x28  Code  Gb  system_MK60DZ10.o [1]
+SystemInit              0x0000a0dd   0xa0  Code  Gb  system_MK60DZ10.o [1]
+TSI_IRQHandler          0x0000a515   0x5c  Code  Gb  HW_TSI.o [1]
+TSI_ISR                 0x1fff0844    0x8  Data  Gb  HW_TSI.o [1]
+Test                    0x000005ef  0x7e8  Code  Gb  LPLD_Quad_V2.o [1]
+ThrottleOutFourESC      0x00001ba5   0x32  Code  Gb  PWM.o [1]
+TimerIsr                0x00004185   0x50  Code  Gb  timer.o [1]
+ToggleLights            0x000024b9   0x22  Code  Gb  lights.o [1]
+ToggleOneLight          0x00002395   0xd6  Code  Gb  lights.o [1]
+TriggerADC              0x0000184f   0x1e  Code  Gb  battery.o [1]
+TriggerBatteryADC       0x0000186d    0xc  Code  Gb  battery.o [1]
+TurnOffBuzzer           0x00001e3b    0xa  Code  Gb  buzzer.o [1]
+TurnOnBuzzer            0x00001e21   0x1a  Code  Gb  buzzer.o [1]
+TurnOnLights            0x0000227d   0x24  Code  Gb  lights.o [1]
+UART0_ERR_IRQHandler    0x00000421         Code  Wk  startup_K60.o [1]
+UART0_IRQHandler        0x00007663   0x30  Code  Gb  HW_UART.o [1]
+UART1_ERR_IRQHandler    0x00000421         Code  Wk  startup_K60.o [1]
+UART1_IRQHandler        0x00007693   0x30  Code  Gb  HW_UART.o [1]
+UART2_ERR_IRQHandler    0x00000421         Code  Wk  startup_K60.o [1]
+UART2_IRQHandler        0x000076c3   0x30  Code  Gb  HW_UART.o [1]
+UART3_ERR_IRQHandler    0x00000421         Code  Wk  startup_K60.o [1]
+UART3_IRQHandler        0x000076f3   0x30  Code  Gb  HW_UART.o [1]
+UART4_ERR_IRQHandler    0x00000421         Code  Wk  startup_K60.o [1]
+UART4_IRQHandler        0x00007723   0x30  Code  Gb  HW_UART.o [1]
+UART5_ERR_IRQHandler    0x00000421         Code  Wk  startup_K60.o [1]
+UART5_IRQHandler        0x00007753   0x30  Code  Gb  HW_UART.o [1]
+UART_R_ISR              0x1fff084c   0x18  Data  Gb  HW_UART.o [1]
+UART_T_ISR              0x1fff0864   0x18  Data  Gb  HW_UART.o [1]
+USB_CD_IRQHandler       0x00000421         Code  Wk  startup_K60.o [1]
+USB_ISR                 0x1fff087c    0x4  Data  Gb  HW_USB.o [1]
+USB_OTG_IRQHandler      0x0000a725    0xa  Code  Gb  HW_USB.o [1]
+UsageFault_Handler      0x00000421         Code  Wk  startup_K60.o [1]
+VLD_IRQHandler          0x00000421         Code  Wk  startup_K60.o [1]
+WDOG_IRQHandler         0x00000421         Code  Wk  startup_K60.o [1]
+WFLY_RC_CHX_InputPWMMeasureIsr
+                        0x000043d3  0x166  Code  Gb  WFLY_RC.o [1]
+WFLY_RC_CheckMaxRangeValid
+                        0x00002a71   0x22  Code  Gb  WFLY_RCdata.o [1]
+WFLY_RC_CheckOffsetValid
+                        0x000029f3   0x7e  Code  Gb  WFLY_RCdata.o [1]
+WFLY_RC_CheckRatioValid
+                        0x00002bb1   0x2e  Code  Gb  WFLY_RCdata.o [1]
+WFLY_RC_GetMaxRange     0x000028a7   0xcc  Code  Gb  WFLY_RCdata.o [1]
+WFLY_RC_GetMaxRangeOpe  0x000029b3   0x40  Code  Gb  WFLY_RCdata.o [1]
+WFLY_RC_GetOffset       0x00002839   0x6e  Code  Gb  WFLY_RCdata.o [1]
+WFLY_RC_GetOffsetOpe    0x00002973   0x40  Code  Gb  WFLY_RCdata.o [1]
+WFLY_RC_GetPitchRatio   0x00002b25   0x46  Code  Gb  WFLY_RCdata.o [1]
+WFLY_RC_GetRollRatio    0x00002b6b   0x46  Code  Gb  WFLY_RCdata.o [1]
+WFLY_RC_GetThrottleRatio
+                        0x00002a93   0x4c  Code  Gb  WFLY_RCdata.o [1]
+WFLY_RC_GetYawRatio     0x00002adf   0x46  Code  Gb  WFLY_RCdata.o [1]
+WFLY_RC_PWM_width_measure_timer_init_struct
+                        0x1fff08c4   0x14  Data  Lc  WFLY_RC.o [1]
+WFLY_RC_TimerOutIsr     0x000043b5   0x1e  Code  Gb  WFLY_RC.o [1]
+WriteFlashStorage       0x0000493f   0x96  Code  Gb  flash_rom.o [1]
+__BOOT_STACK_ADDRESS {Abs}
+                        0x2000fff8          --   Gb  command line/config [2]
+__VECTOR_RAM {Abs}      0x1fff0000          --   Gb  command line/config [2]
+__VECTOR_TABLE {Abs}    0x00000000          --   Gb  command line/config [2]
+__Vectors               0x00000000          --   Gb  startup_K60.o [1]
+__Vectors_End           0x00000400         Data  Gb  startup_K60.o [1]
+__Vectors_Size {Abs}    0x00000400          --   Gb  startup_K60.o [1]
+__aeabi_cdcmpeq         0x000097a1         Code  Gb  DblCmpEq.o [4]
+__aeabi_cdcmple         0x00008d25         Code  Gb  DblCmpLe.o [4]
+__aeabi_cdrcmple        0x00009509         Code  Gb  DblCmpGe.o [4]
+__aeabi_cfcmple         0x00003421         Code  Gb  FltCmpLe.o [4]
+__aeabi_cfrcmple        0x000070f1         Code  Gb  FltCmpGe.o [4]
+__aeabi_d2f             0x00007a5d         Code  Gb  DblToFlt.o [4]
+__aeabi_d2iz            0x00009549         Code  Gb  DblToI32.o [4]
+__aeabi_dadd            0x00007975         Code  Gb  DblAdd.o [4]
+__aeabi_ddiv            0x00008add         Code  Gb  DblDiv.o [4]
+__aeabi_dmul            0x00008681         Code  Gb  DblMul.o [4]
+__aeabi_dsub            0x00008929         Code  Gb  DblSub.o [4]
+__aeabi_errno_addr      0x000090d1    0x6  Code  Gb  errno.o [3]
+__aeabi_f2d             0x00007925         Code  Gb  FltToDbl.o [4]
+__aeabi_f2iz            0x00001c25         Code  Gb  FltToS32.o [4]
+__aeabi_fadd            0x00007851         Code  Gb  FltAdd.o [4]
+__aeabi_fdiv            0x00006ff5         Code  Gb  FltDiv.o [4]
+__aeabi_fmul            0x000018c1         Code  Gb  FltMul.o [4]
+__aeabi_fsub            0x00006f0d         Code  Gb  FltSub.o [4]
+__aeabi_i2d             0x00009595         Code  Gb  I32ToDbl.o [4]
+__aeabi_i2f             0x00004a55         Code  Gb  I32ToFlt.o [4]
+__aeabi_ldiv0           0x00008de5         Code  Gb  I64DivZer.o [5]
+__aeabi_ldivmod         0x0000824d         Code  Gb  I64DivMod.o [5]
+__aeabi_memclr4         0x00005921         Code  Gb  ABImemclr4.o [5]
+__aeabi_memcpy          0x000027c1         Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy4         0x000027e1         Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy8         0x000027e1         Code  Gb  ABImemcpy.o [5]
+__aeabi_ui2f            0x00004a69         Code  Gb  I32ToFlt.o [4]
+__aeabi_uldivmod        0x00008291         Code  Gb  I64DivMod.o [5]
+__cmain                 0x0000a6b5         Code  Gb  cmain.o [5]
+__exit                  0x0000a6e1   0x14  Code  Gb  exit.o [6]
+__iar_Atan              0x00008e01  0x148  Code  Gb  xatan.o [4]
+__iar_Dint              0x00009721   0x7e  Code  Gb  xdint.o [4]
+__iar_Errno             0x1fff1e10    0x4  Data  Gb  errno.o [3]
+__iar_Memset4_word      0x00008aa9         Code  Gb  ABImemset48.o [5]
+__iar_Memset8_word      0x00008aa9         Code  Gb  ABImemset48.o [5]
+__iar_Quad              0x000095c1  0x160  Code  Gb  xquad.o [4]
+__iar_Sin               0x000090dd  0x424  Code  Gb  xsin.o [4]
+__iar_d2uiz             0x00009575         Code  Gb  DblToI32.o [4]
+__iar_dadd              0x00007989         Code  Gb  DblAdd.o [4]
+__iar_data_init3        0x0000a635   0x28  Code  Gb  data_init3.o [5]
+__iar_dlib_perthread_access
+                        0x00009545    0x2  Code  Gb  xtls.o [3]
+__iar_dsub              0x0000893d         Code  Gb  DblSub.o [4]
+__iar_dsubStart         0x0000894f         Code  Gb  DblSub.o [4]
+__iar_edom              0x00009539         Code  Gb  iarEdom.o [5]
+__iar_fadd              0x00007861         Code  Gb  FltAdd.o [4]
+__iar_fmod              0x000097c1         Code  Gb  fmod.o [4]
+__iar_fmodl             0x000097c1         Code  Gb  fmod.o [4]
+__iar_fsub              0x00006f1d         Code  Gb  FltSub.o [4]
+__iar_fsubStart         0x00006f2d         Code  Gb  FltSub.o [4]
+__iar_program_start     0x0000a741         Code  Gb  cstartup_M.o [5]
+__iar_sqrt              0x00008fe1         Code  Gb  sqrt.o [4]
+__iar_ui2d              0x000095a9         Code  Gb  I32ToDbl.o [4]
+__iar_ui2f              0x00004a6d         Code  Gb  I32ToFlt.o [4]
+__iar_zero_init3        0x0000102b   0x22  Code  Gb  zero_init3.o [5]
+__low_level_init        0x0000a6cb    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000         Data  Gb  startup_K60.o [1]
+__vector_table_0x1c     0x0000001c         Data  Gb  startup_K60.o [1]
+_call_main              0x0000a6c1         Code  Gb  cmain.o [5]
+_exit                   0x0000a6d5         Code  Gb  cexit.o [5]
+_main                   0x0000a6c7         Code  Gb  cmain.o [5]
+a                       0x00008fa0   0x40  Data  Lc  xatan.o [4]
+asin                    0x00008825   0xf0  Code  Gb  asin.o [4]
+atan2                   0x00008571  0x110  Code  Gb  atan2.o [4]
+base                    0x1fff0958   0x10  Data  Lc  alloc.o [1]
+common_relocate         0x0000a1dd   0xc0  Code  Gb  relocate.o [1]
+cos                     0x0000891b    0x6  Code  Gb  cos.o [4]
+delayms                 0x00008035   0x2a  Code  Gb  delay.o [1]
+delayus                 0x00008061   0x28  Code  Gb  delay.o [1]
+exit                    0x0000a6cf    0x4  Code  Gb  exit.o [3]
+flexcan_msgobj_param_t  0x1fff05c0  0x100  Data  Gb  HW_CAN.o [1]
+fmod                    0x000097c1         Code  Gb  fmod.o [4]
+fmodl                   0x000097c1         Code  Gb  fmod.o [4]
+freep                   0x1fff0968    0x4  Data  Lc  alloc.o [1]
+g_WFLY_RC_pluse_width_us
+                        0x1fff08b4   0x10  Data  Gb  WFLY_RC.o [1]
+g_WFLY_RC_timer_out_flag
+                        0x1fff0c03    0x1  Data  Gb  WFLY_RC.o [1]
+g_battery_voltage       0x1fff0bfe    0x2  Data  Gb  battery.o [1]
+g_bus_clock             0x1fff0420    0x4  Data  Gb  HW_MCG.o [1]
+g_buzzer_mode           0x1fff0c05    0x1  Data  Gb  buzzer.o [1]
+g_core_clock            0x1fff041c    0x4  Data  Gb  HW_MCG.o [1]
+g_f32AccGain            0x1fff042c    0xc  Data  Gb  MPU6050data.o [1]
+g_f32DebugPitch         0x1fff0b40    0x4  Data  Gb  uart.o [1]
+g_f32DebugRoll          0x1fff0b3c    0x4  Data  Gb  uart.o [1]
+g_f32DebugThrottle      0x1fff0b44    0x4  Data  Gb  uart.o [1]
+g_f32DebugYaw           0x1fff0b38    0x4  Data  Gb  uart.o [1]
+g_f32GyrGain            0x1fff0438    0xc  Data  Gb  MPU6050data.o [1]
+g_f32HaltInclinationAngle
+                        0x1fff0478    0x4  Data  Gb  exception.o [1]
+g_f32HaltVoltage        0x1fff0474    0x4  Data  Gb  exception.o [1]
+g_f32MagGain            0x1fff0410    0xc  Data  Gb  AK8975Cdata.o [1]
+g_flash_clock           0x1fff0424    0x4  Data  Gb  HW_MCG.o [1]
+g_flexbus_clock         0x1fff0428    0x4  Data  Gb  HW_MCG.o [1]
+g_i16AccOffset          0x1fff047c    0x8  Data  Gb  getoffset.o [1]
+g_i16GyrOffset          0x1fff0484    0x8  Data  Gb  getoffset.o [1]
+g_i16MagOffset          0x1fff0a00    0x8  Data  Gb  getoffset.o [1]
+g_sAK8975CRawData       0x1fff0580    0x8  Data  Gb  AK8975Cdata.o [1]
+g_sHeightPidPara        0x1fff0464    0xc  Data  Gb  ctrl.o [1]
+g_sMPU6050RawData       0x1fff0880   0x10  Data  Gb  MPU6050data.o [1]
+g_sMS5611Data           0x1fff0530   0x48  Data  Gb  MS5611data.o [1]
+g_sQuadSystemFlag       0x1fff0af8   0x10  Data  Gb  sysflag.o [1]
+g_sXYZPidPara           0x1fff09d8   0x24  Data  Gb  ctrl.o [1]
+g_sonar_measure_distance_mm
+                        0x1fff0bfc    0x2  Data  Gb  HCSR04.o [1]
+g_sonar_measure_error_flag
+                        0x1fff0c00    0x1  Data  Gb  HCSR04.o [1]
+g_timer_cnt             0x1fff0b10    0x4  Data  Gb  timer.o [1]
+g_u32DebugPWM           0x1fff0b28   0x10  Data  Gb  uart.o [1]
+g_u32DelayTimerMsCnt    0x1fff0b18    0x4  Data  Gb  timer.o [1]
+g_u32LostSignalTimerCnt
+                        0x1fff0b20    0x4  Data  Gb  timer.o [1]
+g_u32ProgramPeriodTimerCnt
+                        0x1fff0b1c    0x4  Data  Gb  timer.o [1]
+g_u32TimerMsCnt         0x1fff0b14    0x4  Data  Gb  timer.o [1]
+g_u32WFLY_RC_max_range  0x1fff0454   0x10  Data  Gb  WFLY_RCdata.o [1]
+g_u32WFLY_RC_offset     0x1fff0444   0x10  Data  Gb  WFLY_RCdata.o [1]
+gc_f32LandingThrottle   0x0000a768    0x4  Data  Gb  exception.o [1]
+gc_f32LowerLimitThrottle
+                        0x0000a760    0x4  Data  Gb  ctrl.o [1]
+gc_f32MaxRCHeight       0x0000a75c    0x4  Data  Gb  WFLY_RCdata.o [1]
+gc_f32MaxRCPitchAngle   0x0000a750    0x4  Data  Gb  WFLY_RCdata.o [1]
+gc_f32MaxRCRollAngle    0x0000a754    0x4  Data  Gb  WFLY_RCdata.o [1]
+gc_f32MaxRCThrottle     0x0000a758    0x4  Data  Gb  WFLY_RCdata.o [1]
+gc_f32MaxRCYawAngle     0x0000a74c    0x4  Data  Gb  WFLY_RCdata.o [1]
+gc_f32UpperLimitThrottle
+                        0x0000a764    0x4  Data  Gb  ctrl.o [1]
+main                    0x00000425  0x1ca  Code  Gb  LPLD_Quad_V2.o [1]
+malloc                  0x00008d55   0x7e  Code  Gb  alloc.o [1]
+math_rsqrt              0x00004c15   0x66  Code  Gb  quaternion.o [1]
+miniAHRS_GetUartQueueSize
+                        0x0000135d   0x22  Code  Gb  uploaddata.o [1]
+miniAHRS_InitUartQueue  0x00001331   0x2c  Code  Gb  uploaddata.o [1]
+miniAHRS_IsUartQueueEmpty
+                        0x0000137f   0x12  Code  Gb  uploaddata.o [1]
+miniAHRS_PopUartQueue   0x000013db   0x4a  Code  Gb  uploaddata.o [1]
+miniAHRS_PushUartQueue  0x00001391   0x4a  Code  Gb  uploaddata.o [1]
+miniAHRS_ReportIMU_Queue
+                        0x00001433  0x174  Code  Gb  uploaddata.o [1]
+miniAHRS_ReportMotion_Queue
+                        0x000015a7  0x21c  Code  Gb  uploaddata.o [1]
+miniAHRS_SendOneByte    0x00001425    0xe  Code  Gb  uploaddata.o [1]
+miniAHRS_uart_queue_struct
+                        0x1fff0b78   0x84  Data  Lc  uploaddata.o [1]
+printk                  0x0000356d  0x410  Code  Gb  printf.o [1]
+printk_mknumstr         0x00003477   0xaa  Code  Lc  printf.o [1]
+printk_pad_space        0x00003547   0x26  Code  Lc  printf.o [1]
+printk_pad_zero         0x00003521   0x26  Code  Lc  printf.o [1]
+printk_putc             0x00003445   0x32  Code  Lc  printf.o [1]
+quaternion_converQuaternionToYawPitchRoll
+                        0x00004e23  0x174  Code  Gb  quaternion.o [1]
+quaternion_converYawPitchRollToQuaternion
+                        0x00004f97  0x292  Code  Gb  quaternion.o [1]
+quaternion_getConjugateQuaternion
+                        0x00004df5   0x2e  Code  Gb  quaternion.o [1]
+quaternion_loadIdentity
+                        0x00004c7b   0x10  Code  Gb  quaternion.o [1]
+quaternion_mult         0x00004cf7   0xfe  Code  Gb  quaternion.o [1]
+quaternion_normalize    0x00004c8b   0x6c  Code  Gb  quaternion.o [1]
+s_fAccFilterCurrent     0x1fff094c    0xc  Data  Lc  accfilter.o [1]
+s_fAccFilterHistory     0x1fff08ec   0x60  Data  Lc  accfilter.o [1]
+s_fGyrFilterCurrent     0x1fff0a08    0xc  Data  Lc  gyrfilter.o [1]
+s_fMagFilterCurrent     0x1fff0a14    0xc  Data  Lc  magfilter.o [1]
+s_sAttitude             0x1fff096c   0x10  Data  Lc  attitude.o [1]
+s_sControlData          0x1fff09b8   0x20  Data  Lc  ctrl.o [1]
+s_sControlParameter     0x1fff098c   0x2c  Data  Lc  ctrl.o [1]
+s_sEulerAttitude        0x1fff097c    0xc  Data  Lc  attitude.o [1]
+s_sHeightPidData        0x1fff0af0    0x8  Data  Lc  pid.o [1]
+s_sHeightPidParameter   0x1fff0ae4    0xc  Data  Lc  pid.o [1]
+s_sLastQuadSystemSettingInRam
+                        0x1fff0b08    0x8  Data  Lc  sysflag.o [1]
+s_sPWMDataStruct        0x1fff0894   0x20  Data  Lc  PWM.o [1]
+s_sQuadParamInRam       0x1fff0a20   0x88  Data  Lc  param.o [1]
+s_sUARTQueue            0x1fff0b48   0x18  Data  Gb  uartqueue.o [1]
+s_sUARTRecvQueue        0x1fff0b60   0x18  Data  Gb  uartqueue.o [1]
+s_sXYZPidData           0x1fff0acc   0x18  Data  Lc  pid.o [1]
+s_sXYZPidParameter      0x1fff0aa8   0x24  Data  Lc  pid.o [1]
+s_u32SystemClockTimerMsCnt
+                        0x1fff0b24    0x4  Data  Lc  timer.o [1]
+s_u64SystemClockTimerUsCnt
+                        0x1fff0578    0x8  Data  Lc  timer.o [1]
+s_u8AccFilterIndex      0x1fff0c04    0x1  Data  Lc  accfilter.o [1]
+s_u8DecodedFlag         0x1fff0470    0x1  Data  Lc  decodedata.o [1]
+sin                     0x00008921    0x6  Code  Gb  sin.o [4]
+sprintf                 0x0000397d   0x32  Code  Gb  printf.o [1]
+sqrt                    0x00008fe1         Code  Gb  sqrt.o [4]
+sqrtl                   0x00008fe1         Code  Gb  sqrt.o [4]
+strlen                  0x00007aed   0x22  Code  Gb  stdlib.o [1]
+
+
+[1] = E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_MINE\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = m7M_tl.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  42 478 bytes of readonly  code memory
+      80 bytes of readwrite code memory
+     374 bytes of readonly  data memory
+   6 571 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

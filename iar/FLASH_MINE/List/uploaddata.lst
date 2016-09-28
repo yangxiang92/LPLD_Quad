@@ -1,0 +1,1374 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.40.1.53790/W32 for ARM     08/Aug/2014  19:52:15 #
+# Copyright 1999-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\app\ #
+#                    Communicate\uploaddata.c                                 #
+#    Command line =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\app\ #
+#                    Communicate\uploaddata.c -D LPLD_K60 -lCN                #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\List\ -lB E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V3\iar\FLASH_MINE\List\ -o E:\ShawnDocuments\IAR_WorkSpa #
+#                    ce\LPLD_Quad_V3\iar\FLASH_MINE\Obj\ --no_cse             #
+#                    --no_unroll --no_inline --no_code_motion --no_tbaa       #
+#                    --no_clustering --no_scheduling --debug --endian=little  #
+#                    --cpu=Cortex-M4 -e --fpu=None --dlib_config "D:\Program  #
+#                    Files\IAR Systems\Embedded Workbench                     #
+#                    6.4\arm\INC\c\DLib_Config_Normal.h" -I                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\ #
+#                    iar\..\source\app\Control\ -I                            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\Others\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V3\iar\..\source\app\Communicate\ -I                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\Algorithm\ -I E:\ShawnDocuments\IAR_WorkSpace\LPL #
+#                    D_Quad_V3\iar\..\source\app\SignalProcess\ -I            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\module\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V3\iar\..\source\module\anbt_dmp\ -I                     #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\module\eMPL\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V3\iar\..\source\lib\CPU\ -I                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\common\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V3\iar\..\source\lib\LPLD\ -I                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\LPLD\HW\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V3\iar\..\source\lib\LPLD\DEV\ -I                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\uCOS-II\Ports\ -I E:\ShawnDocuments\IAR_WorkSpace #
+#                    \LPLD_Quad_V3\iar\..\source\lib\uCOS-II\Source\ -I       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\FatFs\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V3\iar\..\source\lib\FatFs\option\ -I                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\USB\common\ -I E:\ShawnDocuments\IAR_WorkSpace\LP #
+#                    LD_Quad_V3\iar\..\source\lib\USB\driver\ -I              #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\USB\descriptor\ -I E:\ShawnDocuments\IAR_WorkSpac #
+#                    e\LPLD_Quad_V3\iar\..\source\lib\USB\class\ -I           #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\MyLib\ -On -I "D:\Program Files\IAR               #
+#                    Systems\Embedded Workbench 6.4\arm\CMSIS\Include\" -D    #
+#                    ARM_MATH_CM4                                             #
+#    List file    =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\List\uploaddata.lst                                  #
+#    Object file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\Obj\uploaddata.o                                     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\app\Communicate\uploaddata.c
+      1          /****************************************************************************** 
+      2           *       uploaddata.c ----- The upload the state data of quad to upper software *
+      3           *       (c) Copyright 2012 HUST RENESAS LAB,The Department of CSE, HUST       *
+      4           *                        All Rights Reserved                                  *
+      5           *Filename             :  uploaddata.c                                           *
+      6           *Programmer(s)        :  Yang Xiang                                           *
+      7           *Description          :                                                       *
+      8           *Modification History :                                                       *
+      9           *01a 2014/4/8 16:34:59                                                       *
+     10           ******************************************************************************/
+     11          #include "uploaddata.h"
+     12          
+
+   \                                 In section .bss, align 4
+     13          static miniAHRS_UartQueue miniAHRS_uart_queue_struct;
+   \                     miniAHRS_uart_queue_struct:
+   \   00000000                      DS8 132
+     14          
+
+   \                                 In section .text, align 2, keep-with-next
+     15          void miniAHRS_InitUartQueue(void)
+     16          {
+     17              int i = 0;
+   \                     miniAHRS_InitUartQueue:
+   \   00000000   0x2000             MOVS     R0,#+0
+     18              for(i = 0; i < MINIAHRS_UART_QUEUE_SIZE; i++)
+   \   00000002   0x2100             MOVS     R1,#+0
+   \   00000004   0x0008             MOVS     R0,R1
+   \                     ??miniAHRS_InitUartQueue_0:
+   \   00000006   0x2880             CMP      R0,#+128
+   \   00000008   0xDA05             BGE.N    ??miniAHRS_InitUartQueue_1
+     19              {
+     20                  miniAHRS_uart_queue_struct.buff[i] = '\0';
+   \   0000000A   0x.... 0x....      LDR.W    R1,??DataTable8
+   \   0000000E   0x2200             MOVS     R2,#+0
+   \   00000010   0x5442             STRB     R2,[R0, R1]
+     21              }
+   \   00000012   0x1C40             ADDS     R0,R0,#+1
+   \   00000014   0xE7F7             B.N      ??miniAHRS_InitUartQueue_0
+     22              miniAHRS_uart_queue_struct.queue_front_pointer = 0;
+   \                     ??miniAHRS_InitUartQueue_1:
+   \   00000016   0x.... 0x....      LDR.W    R1,??DataTable8
+   \   0000001A   0x2200             MOVS     R2,#+0
+   \   0000001C   0xF8A1 0x2080      STRH     R2,[R1, #+128]
+     23              miniAHRS_uart_queue_struct.queue_back_pointer = 0;
+   \   00000020   0x.... 0x....      LDR.W    R1,??DataTable8
+   \   00000024   0x2200             MOVS     R2,#+0
+   \   00000026   0xF8A1 0x2082      STRH     R2,[R1, #+130]
+     24          }
+   \   0000002A   0x4770             BX       LR               ;; return
+     25          
+
+   \                                 In section .text, align 2, keep-with-next
+     26          int16 miniAHRS_GetUartQueueSize(void)
+     27          {
+     28              int16 diff = 0;
+   \                     miniAHRS_GetUartQueueSize:
+   \   00000000   0x2000             MOVS     R0,#+0
+     29          
+     30              diff = miniAHRS_uart_queue_struct.queue_front_pointer - miniAHRS_uart_queue_struct.queue_back_pointer;
+   \   00000002   0x.... 0x....      LDR.W    R1,??DataTable8
+   \   00000006   0xF8B1 0x1080      LDRH     R1,[R1, #+128]
+   \   0000000A   0x.... 0x....      LDR.W    R2,??DataTable8
+   \   0000000E   0xF8B2 0x2082      LDRH     R2,[R2, #+130]
+   \   00000012   0x1A89             SUBS     R1,R1,R2
+   \   00000014   0x0008             MOVS     R0,R1
+     31          
+     32              if(diff >= 0)
+   \   00000016   0xB200             SXTH     R0,R0            ;; SignExt  R0,R0,#+16,#+16
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD500             BPL.N    ??miniAHRS_GetUartQueueSize_0
+     33              {
+     34                  diff = diff;
+     35              }
+     36              else
+     37              {
+     38                  diff = diff + MINIAHRS_UART_QUEUE_SIZE;
+   \                     ??miniAHRS_GetUartQueueSize_1:
+   \   0000001C   0x3080             ADDS     R0,R0,#+128
+     39              }
+     40          
+     41              return diff;
+   \                     ??miniAHRS_GetUartQueueSize_0:
+   \   0000001E   0xB200             SXTH     R0,R0            ;; SignExt  R0,R0,#+16,#+16
+   \   00000020   0x4770             BX       LR               ;; return
+     42          }
+     43          
+
+   \                                 In section .text, align 2, keep-with-next
+     44          uint8 miniAHRS_IsUartQueueEmpty(void)
+     45          {
+   \                     miniAHRS_IsUartQueueEmpty:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     46              if(miniAHRS_GetUartQueueSize() > 0)
+   \   00000002   0x.... 0x....      BL       miniAHRS_GetUartQueueSize
+   \   00000006   0x2801             CMP      R0,#+1
+   \   00000008   0xDB01             BLT.N    ??miniAHRS_IsUartQueueEmpty_0
+     47              {
+     48                  return 0;
+   \   0000000A   0x2000             MOVS     R0,#+0
+   \   0000000C   0xE000             B.N      ??miniAHRS_IsUartQueueEmpty_1
+     49              }
+     50              else
+     51              {
+     52                  return 1;
+   \                     ??miniAHRS_IsUartQueueEmpty_0:
+   \   0000000E   0x2001             MOVS     R0,#+1
+   \                     ??miniAHRS_IsUartQueueEmpty_1:
+   \   00000010   0xBD02             POP      {R1,PC}          ;; return
+     53              }
+     54          }
+     55          
+
+   \                                 In section .text, align 2, keep-with-next
+     56          miniAHRS_UartQueue * miniAHRS_GetUartQueue(void)
+     57          {
+     58              return &miniAHRS_uart_queue_struct;
+   \                     miniAHRS_GetUartQueue:
+   \   00000000   0x.... 0x....      LDR.W    R0,??DataTable8
+   \   00000004   0x4770             BX       LR               ;; return
+     59          }
+     60          
+
+   \                                 In section .text, align 2, keep-with-next
+     61          uint8 miniAHRS_PushUartQueue(uint8 data)
+     62          {
+   \                     miniAHRS_PushUartQueue:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     63              if(miniAHRS_GetUartQueueSize() < (MINIAHRS_UART_QUEUE_SIZE - 1))
+   \   00000004   0x.... 0x....      BL       miniAHRS_GetUartQueueSize
+   \   00000008   0x287F             CMP      R0,#+127
+   \   0000000A   0xDA1C             BGE.N    ??miniAHRS_PushUartQueue_0
+     64              {
+     65                  miniAHRS_uart_queue_struct.buff[miniAHRS_uart_queue_struct.queue_front_pointer] = data;
+   \   0000000C   0x.... 0x....      LDR.W    R0,??DataTable8
+   \   00000010   0xF9B0 0x0080      LDRSH    R0,[R0, #+128]
+   \   00000014   0x.... 0x....      LDR.W    R1,??DataTable8
+   \   00000018   0x5444             STRB     R4,[R0, R1]
+     66                  miniAHRS_uart_queue_struct.queue_front_pointer ++;
+   \   0000001A   0x.... 0x....      LDR.W    R0,??DataTable8
+   \   0000001E   0xF8B0 0x0080      LDRH     R0,[R0, #+128]
+   \   00000022   0x1C40             ADDS     R0,R0,#+1
+   \   00000024   0x.... 0x....      LDR.W    R1,??DataTable8
+   \   00000028   0xF8A1 0x0080      STRH     R0,[R1, #+128]
+     67                  if(miniAHRS_uart_queue_struct.queue_front_pointer >= MINIAHRS_UART_QUEUE_SIZE)
+   \   0000002C   0x.... 0x....      LDR.W    R0,??DataTable8
+   \   00000030   0xF9B0 0x0080      LDRSH    R0,[R0, #+128]
+   \   00000034   0x2880             CMP      R0,#+128
+   \   00000036   0xDB04             BLT.N    ??miniAHRS_PushUartQueue_1
+     68                  {
+     69                      miniAHRS_uart_queue_struct.queue_front_pointer = 0;
+   \   00000038   0x.... 0x....      LDR.W    R0,??DataTable8
+   \   0000003C   0x2100             MOVS     R1,#+0
+   \   0000003E   0xF8A0 0x1080      STRH     R1,[R0, #+128]
+     70                  }
+     71                  return 1;
+   \                     ??miniAHRS_PushUartQueue_1:
+   \   00000042   0x2001             MOVS     R0,#+1
+   \   00000044   0xE000             B.N      ??miniAHRS_PushUartQueue_2
+     72              }
+     73              else
+     74              {
+     75                  return 0;
+   \                     ??miniAHRS_PushUartQueue_0:
+   \   00000046   0x2000             MOVS     R0,#+0
+   \                     ??miniAHRS_PushUartQueue_2:
+   \   00000048   0xBD10             POP      {R4,PC}          ;; return
+     76              }
+     77          }
+     78          
+
+   \                                 In section .text, align 2, keep-with-next
+     79          uint8 miniAHRS_PopUartQueue(void)
+     80          {
+   \                     miniAHRS_PopUartQueue:
+   \   00000000   0xB510             PUSH     {R4,LR}
+     81              uint8 ret = 0;
+   \   00000002   0x2400             MOVS     R4,#+0
+     82              ret = miniAHRS_uart_queue_struct.buff[miniAHRS_uart_queue_struct.queue_back_pointer];
+   \   00000004   0x.... 0x....      LDR.W    R0,??DataTable8
+   \   00000008   0xF9B0 0x0082      LDRSH    R0,[R0, #+130]
+   \   0000000C   0x.... 0x....      LDR.W    R1,??DataTable8
+   \   00000010   0x5C40             LDRB     R0,[R0, R1]
+   \   00000012   0x0004             MOVS     R4,R0
+     83          
+     84              if(miniAHRS_GetUartQueueSize() > 0)
+   \   00000014   0x.... 0x....      BL       miniAHRS_GetUartQueueSize
+   \   00000018   0x2801             CMP      R0,#+1
+   \   0000001A   0xDB13             BLT.N    ??miniAHRS_PopUartQueue_0
+     85              {
+     86                  miniAHRS_uart_queue_struct.queue_back_pointer ++;
+   \   0000001C   0x.... 0x....      LDR.W    R0,??DataTable8
+   \   00000020   0xF8B0 0x0082      LDRH     R0,[R0, #+130]
+   \   00000024   0x1C40             ADDS     R0,R0,#+1
+   \   00000026   0x.... 0x....      LDR.W    R1,??DataTable8
+   \   0000002A   0xF8A1 0x0082      STRH     R0,[R1, #+130]
+     87                  if(miniAHRS_uart_queue_struct.queue_back_pointer >= MINIAHRS_UART_QUEUE_SIZE)
+   \   0000002E   0x.... 0x....      LDR.W    R0,??DataTable8
+   \   00000032   0xF9B0 0x0082      LDRSH    R0,[R0, #+130]
+   \   00000036   0x2880             CMP      R0,#+128
+   \   00000038   0xDB04             BLT.N    ??miniAHRS_PopUartQueue_0
+     88                  {
+     89                      miniAHRS_uart_queue_struct.queue_back_pointer = 0;
+   \   0000003A   0x.... 0x....      LDR.W    R0,??DataTable8
+   \   0000003E   0x2100             MOVS     R1,#+0
+   \   00000040   0xF8A0 0x1082      STRH     R1,[R0, #+130]
+     90                  }
+     91              }    
+     92          
+     93              return ret;
+   \                     ??miniAHRS_PopUartQueue_0:
+   \   00000044   0x0020             MOVS     R0,R4
+   \   00000046   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000048   0xBD10             POP      {R4,PC}          ;; return
+     94          }
+     95          
+
+   \                                 In section .text, align 2, keep-with-next
+     96          void miniAHRS_SendOneByte(uint8 ch)
+     97          {
+   \                     miniAHRS_SendOneByte:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     98              CommUartSendOneByte((int8) ch);
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0xB240             SXTB     R0,R0            ;; SignExt  R0,R0,#+24,#+24
+   \   00000008   0x.... 0x....      BL       CommUartSendOneByte
+     99          }
+   \   0000000C   0xBD10             POP      {R4,PC}          ;; return
+    100          
+    101          
+    102          /**************************实现函数********************************************
+    103          *函数原型:		void UART1_ReportIMU(int16_t yaw,int16_t pitch,int16_t roll
+    104          				,int16_t alt,int16_t tempr,int16_t press)
+    105          *功　　能:		向上位机发送经过解算后的姿态数据
+    106          输入参数：
+    107          		int16_t yaw 经过解算后的航向角度。单位为0.1度 0 -> 3600  对应 0 -> 360.0度
+    108          		int16_t pitch 解算得到的俯仰角度，单位 0.1度。-900 - 900 对应 -90.0 -> 90.0 度
+    109          		int16_t roll  解算后得到的横滚角度，单位0.1度。 -1800 -> 1800 对应 -180.0  ->  180.0度
+    110          		int16_t alt   气压高度。 单位0.1米。  范围一个整型变量
+    111          		int16_t tempr 温度 。 单位0.1摄氏度   范围：直到你的电路板不能正常工作
+    112          		int16_t press 气压压力。单位10Pa  一个大气压强在101300pa 这个已经超过一个整型的范围。需要除以10再发给上位机
+    113          		int16_t IMUpersec  姿态解算速率。运算IMUpersec每秒。
+    114          输出参数：没有	
+    115          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    116          void miniAHRS_ReportIMU(int16_t yaw,int16_t pitch,int16_t roll,int16_t alt,int16_t tempr,int16_t press,int16_t IMUpersec)
+    117          {
+   \                     miniAHRS_ReportIMU:
+   \   00000000   0xE92D 0x4FF8      PUSH     {R3-R11,LR}
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000D             MOVS     R5,R1
+   \   00000008   0x0016             MOVS     R6,R2
+   \   0000000A   0x001F             MOVS     R7,R3
+   \   0000000C   0xF9BD 0x8028      LDRSH    R8,[SP, #+40]
+   \   00000010   0xF9BD 0x902C      LDRSH    R9,[SP, #+44]
+    118           	unsigned int temp=0xaF+2;
+   \   00000014   0xF05F 0x0AB1      MOVS     R10,#+177
+    119          	char ctemp;
+    120          	miniAHRS_SendOneByte(0xa5);
+   \   00000018   0x20A5             MOVS     R0,#+165
+   \   0000001A   0x.... 0x....      BL       miniAHRS_SendOneByte
+    121          	miniAHRS_SendOneByte(0x5a);
+   \   0000001E   0x205A             MOVS     R0,#+90
+   \   00000020   0x.... 0x....      BL       miniAHRS_SendOneByte
+    122          	miniAHRS_SendOneByte(14+2);
+   \   00000024   0x2010             MOVS     R0,#+16
+   \   00000026   0x.... 0x....      BL       miniAHRS_SendOneByte
+    123          	miniAHRS_SendOneByte(0xA1);
+   \   0000002A   0x20A1             MOVS     R0,#+161
+   \   0000002C   0x.... 0x....      BL       miniAHRS_SendOneByte
+    124          
+    125          	if(yaw<0)yaw=32768-yaw;
+   \   00000030   0xB224             SXTH     R4,R4            ;; SignExt  R4,R4,#+16,#+16
+   \   00000032   0x2C00             CMP      R4,#+0
+   \   00000034   0xD502             BPL.N    ??miniAHRS_ReportIMU_0
+   \   00000036   0x.... 0x....      LDR.W    R0,??DataTable8_1  ;; 0xffff8000
+   \   0000003A   0x1B04             SUBS     R4,R0,R4
+    126          	ctemp=yaw>>8;
+   \                     ??miniAHRS_ReportIMU_0:
+   \   0000003C   0xB224             SXTH     R4,R4            ;; SignExt  R4,R4,#+16,#+16
+   \   0000003E   0x1220             ASRS     R0,R4,#+8
+   \   00000040   0x4683             MOV      R11,R0
+    127          	miniAHRS_SendOneByte(ctemp);
+   \   00000042   0x4658             MOV      R0,R11
+   \   00000044   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000046   0x.... 0x....      BL       miniAHRS_SendOneByte
+    128          	temp+=ctemp;
+   \   0000004A   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    129          	ctemp=yaw;
+   \   0000004E   0x0020             MOVS     R0,R4
+   \   00000050   0x4683             MOV      R11,R0
+    130          	miniAHRS_SendOneByte(ctemp);
+   \   00000052   0x4658             MOV      R0,R11
+   \   00000054   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000056   0x.... 0x....      BL       miniAHRS_SendOneByte
+    131          	temp+=ctemp;
+   \   0000005A   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    132          
+    133          	if(pitch<0)pitch=32768-pitch;
+   \   0000005E   0xB22D             SXTH     R5,R5            ;; SignExt  R5,R5,#+16,#+16
+   \   00000060   0x2D00             CMP      R5,#+0
+   \   00000062   0xD502             BPL.N    ??miniAHRS_ReportIMU_1
+   \   00000064   0x.... 0x....      LDR.W    R0,??DataTable8_1  ;; 0xffff8000
+   \   00000068   0x1B45             SUBS     R5,R0,R5
+    134          	ctemp=pitch>>8;
+   \                     ??miniAHRS_ReportIMU_1:
+   \   0000006A   0xB22D             SXTH     R5,R5            ;; SignExt  R5,R5,#+16,#+16
+   \   0000006C   0x1228             ASRS     R0,R5,#+8
+   \   0000006E   0x4683             MOV      R11,R0
+    135          	miniAHRS_SendOneByte(ctemp);
+   \   00000070   0x4658             MOV      R0,R11
+   \   00000072   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000074   0x.... 0x....      BL       miniAHRS_SendOneByte
+    136          	temp+=ctemp;
+   \   00000078   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    137          	ctemp=pitch;
+   \   0000007C   0x0028             MOVS     R0,R5
+   \   0000007E   0x4683             MOV      R11,R0
+    138          	miniAHRS_SendOneByte(ctemp);
+   \   00000080   0x4658             MOV      R0,R11
+   \   00000082   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000084   0x.... 0x....      BL       miniAHRS_SendOneByte
+    139          	temp+=ctemp;
+   \   00000088   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    140          
+    141          	if(roll<0)roll=32768-roll;
+   \   0000008C   0xB236             SXTH     R6,R6            ;; SignExt  R6,R6,#+16,#+16
+   \   0000008E   0x2E00             CMP      R6,#+0
+   \   00000090   0xD502             BPL.N    ??miniAHRS_ReportIMU_2
+   \   00000092   0x.... 0x....      LDR.W    R0,??DataTable8_1  ;; 0xffff8000
+   \   00000096   0x1B86             SUBS     R6,R0,R6
+    142          	ctemp=roll>>8;
+   \                     ??miniAHRS_ReportIMU_2:
+   \   00000098   0xB236             SXTH     R6,R6            ;; SignExt  R6,R6,#+16,#+16
+   \   0000009A   0x1230             ASRS     R0,R6,#+8
+   \   0000009C   0x4683             MOV      R11,R0
+    143          	miniAHRS_SendOneByte(ctemp);
+   \   0000009E   0x4658             MOV      R0,R11
+   \   000000A0   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000A2   0x.... 0x....      BL       miniAHRS_SendOneByte
+    144          	temp+=ctemp;
+   \   000000A6   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    145          	ctemp=roll;
+   \   000000AA   0x0030             MOVS     R0,R6
+   \   000000AC   0x4683             MOV      R11,R0
+    146          	miniAHRS_SendOneByte(ctemp);
+   \   000000AE   0x4658             MOV      R0,R11
+   \   000000B0   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000B2   0x.... 0x....      BL       miniAHRS_SendOneByte
+    147          	temp+=ctemp;
+   \   000000B6   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    148          
+    149          	if(alt<0)alt=32768-alt;
+   \   000000BA   0xB23F             SXTH     R7,R7            ;; SignExt  R7,R7,#+16,#+16
+   \   000000BC   0x2F00             CMP      R7,#+0
+   \   000000BE   0xD502             BPL.N    ??miniAHRS_ReportIMU_3
+   \   000000C0   0x.... 0x....      LDR.W    R0,??DataTable8_1  ;; 0xffff8000
+   \   000000C4   0x1BC7             SUBS     R7,R0,R7
+    150          	ctemp=alt>>8;
+   \                     ??miniAHRS_ReportIMU_3:
+   \   000000C6   0xB23F             SXTH     R7,R7            ;; SignExt  R7,R7,#+16,#+16
+   \   000000C8   0x1238             ASRS     R0,R7,#+8
+   \   000000CA   0x4683             MOV      R11,R0
+    151          	miniAHRS_SendOneByte(ctemp);
+   \   000000CC   0x4658             MOV      R0,R11
+   \   000000CE   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000D0   0x.... 0x....      BL       miniAHRS_SendOneByte
+    152          	temp+=ctemp;
+   \   000000D4   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    153          	ctemp=alt;
+   \   000000D8   0x0038             MOVS     R0,R7
+   \   000000DA   0x4683             MOV      R11,R0
+    154          	miniAHRS_SendOneByte(ctemp);
+   \   000000DC   0x4658             MOV      R0,R11
+   \   000000DE   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000E0   0x.... 0x....      BL       miniAHRS_SendOneByte
+    155          	temp+=ctemp;
+   \   000000E4   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    156          
+    157          	if(tempr<0)tempr=32768-tempr;
+   \   000000E8   0xFA0F 0xF888      SXTH     R8,R8            ;; SignExt  R8,R8,#+16,#+16
+   \   000000EC   0xF1B8 0x0F00      CMP      R8,#+0
+   \   000000F0   0xD503             BPL.N    ??miniAHRS_ReportIMU_4
+   \   000000F2   0x.... 0x....      LDR.W    R0,??DataTable8_1  ;; 0xffff8000
+   \   000000F6   0xEBB0 0x0808      SUBS     R8,R0,R8
+    158          	ctemp=tempr>>8;
+   \                     ??miniAHRS_ReportIMU_4:
+   \   000000FA   0xFA0F 0xF888      SXTH     R8,R8            ;; SignExt  R8,R8,#+16,#+16
+   \   000000FE   0xEA5F 0x2028      ASRS     R0,R8,#+8
+   \   00000102   0x4683             MOV      R11,R0
+    159          	miniAHRS_SendOneByte(ctemp);
+   \   00000104   0x4658             MOV      R0,R11
+   \   00000106   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000108   0x.... 0x....      BL       miniAHRS_SendOneByte
+    160          	temp+=ctemp;
+   \   0000010C   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    161          	ctemp=tempr;
+   \   00000110   0x4640             MOV      R0,R8
+   \   00000112   0x4683             MOV      R11,R0
+    162          	miniAHRS_SendOneByte(ctemp);
+   \   00000114   0x4658             MOV      R0,R11
+   \   00000116   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000118   0x.... 0x....      BL       miniAHRS_SendOneByte
+    163          	temp+=ctemp;
+   \   0000011C   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    164          
+    165          	if(press<0)press=32768-press;
+   \   00000120   0xFA0F 0xF989      SXTH     R9,R9            ;; SignExt  R9,R9,#+16,#+16
+   \   00000124   0xF1B9 0x0F00      CMP      R9,#+0
+   \   00000128   0xD503             BPL.N    ??miniAHRS_ReportIMU_5
+   \   0000012A   0x.... 0x....      LDR.W    R0,??DataTable8_1  ;; 0xffff8000
+   \   0000012E   0xEBB0 0x0909      SUBS     R9,R0,R9
+    166          	ctemp=press>>8;
+   \                     ??miniAHRS_ReportIMU_5:
+   \   00000132   0xFA0F 0xF989      SXTH     R9,R9            ;; SignExt  R9,R9,#+16,#+16
+   \   00000136   0xEA5F 0x2029      ASRS     R0,R9,#+8
+   \   0000013A   0x4683             MOV      R11,R0
+    167          	miniAHRS_SendOneByte(ctemp);
+   \   0000013C   0x4658             MOV      R0,R11
+   \   0000013E   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000140   0x.... 0x....      BL       miniAHRS_SendOneByte
+    168          	temp+=ctemp;
+   \   00000144   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    169          	ctemp=press;
+   \   00000148   0x4648             MOV      R0,R9
+   \   0000014A   0x4683             MOV      R11,R0
+    170          	miniAHRS_SendOneByte(ctemp);
+   \   0000014C   0x4658             MOV      R0,R11
+   \   0000014E   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000150   0x.... 0x....      BL       miniAHRS_SendOneByte
+    171          	temp+=ctemp;
+   \   00000154   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    172          
+    173          	miniAHRS_SendOneByte(temp%256);
+   \   00000158   0xF44F 0x7180      MOV      R1,#+256
+   \   0000015C   0xFBBA 0xF0F1      UDIV     R0,R10,R1
+   \   00000160   0xFB00 0xA011      MLS      R0,R0,R1,R10
+   \   00000164   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000166   0x.... 0x....      BL       miniAHRS_SendOneByte
+    174          	miniAHRS_SendOneByte(0xaa);
+   \   0000016A   0x20AA             MOVS     R0,#+170
+   \   0000016C   0x.... 0x....      BL       miniAHRS_SendOneByte
+    175          }
+   \   00000170   0xE8BD 0x8FF1      POP      {R0,R4-R11,PC}   ;; return
+    176          
+
+   \                                 In section .text, align 2, keep-with-next
+    177          void miniAHRS_ReportIMU_Queue(int16_t yaw,int16_t pitch,int16_t roll,int16_t alt,int16_t tempr,int16_t press,int16_t IMUpersec)
+    178          {
+   \                     miniAHRS_ReportIMU_Queue:
+   \   00000000   0xE92D 0x4FF8      PUSH     {R3-R11,LR}
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000D             MOVS     R5,R1
+   \   00000008   0x0016             MOVS     R6,R2
+   \   0000000A   0x001F             MOVS     R7,R3
+   \   0000000C   0xF9BD 0x8028      LDRSH    R8,[SP, #+40]
+   \   00000010   0xF9BD 0x902C      LDRSH    R9,[SP, #+44]
+    179           	unsigned int temp=0xaF+2;
+   \   00000014   0xF05F 0x0AB1      MOVS     R10,#+177
+    180          	char ctemp;
+    181          	miniAHRS_PushUartQueue(0xa5);
+   \   00000018   0x20A5             MOVS     R0,#+165
+   \   0000001A   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    182          	miniAHRS_PushUartQueue(0x5a);
+   \   0000001E   0x205A             MOVS     R0,#+90
+   \   00000020   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    183          	miniAHRS_PushUartQueue(14+2);
+   \   00000024   0x2010             MOVS     R0,#+16
+   \   00000026   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    184          	miniAHRS_PushUartQueue(0xA1);
+   \   0000002A   0x20A1             MOVS     R0,#+161
+   \   0000002C   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    185          
+    186          	if(yaw<0)yaw=32768-yaw;
+   \   00000030   0xB224             SXTH     R4,R4            ;; SignExt  R4,R4,#+16,#+16
+   \   00000032   0x2C00             CMP      R4,#+0
+   \   00000034   0xD502             BPL.N    ??miniAHRS_ReportIMU_Queue_0
+   \   00000036   0x.... 0x....      LDR.W    R0,??DataTable8_1  ;; 0xffff8000
+   \   0000003A   0x1B04             SUBS     R4,R0,R4
+    187          	ctemp=yaw>>8;
+   \                     ??miniAHRS_ReportIMU_Queue_0:
+   \   0000003C   0xB224             SXTH     R4,R4            ;; SignExt  R4,R4,#+16,#+16
+   \   0000003E   0x1220             ASRS     R0,R4,#+8
+   \   00000040   0x4683             MOV      R11,R0
+    188          	miniAHRS_PushUartQueue(ctemp);
+   \   00000042   0x4658             MOV      R0,R11
+   \   00000044   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000046   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    189          	temp+=ctemp;
+   \   0000004A   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    190          	ctemp=yaw;
+   \   0000004E   0x0020             MOVS     R0,R4
+   \   00000050   0x4683             MOV      R11,R0
+    191          	miniAHRS_PushUartQueue(ctemp);
+   \   00000052   0x4658             MOV      R0,R11
+   \   00000054   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000056   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    192          	temp+=ctemp;
+   \   0000005A   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    193          
+    194          	if(pitch<0)pitch=32768-pitch;
+   \   0000005E   0xB22D             SXTH     R5,R5            ;; SignExt  R5,R5,#+16,#+16
+   \   00000060   0x2D00             CMP      R5,#+0
+   \   00000062   0xD502             BPL.N    ??miniAHRS_ReportIMU_Queue_1
+   \   00000064   0x.... 0x....      LDR.W    R0,??DataTable8_1  ;; 0xffff8000
+   \   00000068   0x1B45             SUBS     R5,R0,R5
+    195          	ctemp=pitch>>8;
+   \                     ??miniAHRS_ReportIMU_Queue_1:
+   \   0000006A   0xB22D             SXTH     R5,R5            ;; SignExt  R5,R5,#+16,#+16
+   \   0000006C   0x1228             ASRS     R0,R5,#+8
+   \   0000006E   0x4683             MOV      R11,R0
+    196          	miniAHRS_PushUartQueue(ctemp);
+   \   00000070   0x4658             MOV      R0,R11
+   \   00000072   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000074   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    197          	temp+=ctemp;
+   \   00000078   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    198          	ctemp=pitch;
+   \   0000007C   0x0028             MOVS     R0,R5
+   \   0000007E   0x4683             MOV      R11,R0
+    199          	miniAHRS_PushUartQueue(ctemp);
+   \   00000080   0x4658             MOV      R0,R11
+   \   00000082   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000084   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    200          	temp+=ctemp;
+   \   00000088   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    201          
+    202          	if(roll<0)roll=32768-roll;
+   \   0000008C   0xB236             SXTH     R6,R6            ;; SignExt  R6,R6,#+16,#+16
+   \   0000008E   0x2E00             CMP      R6,#+0
+   \   00000090   0xD502             BPL.N    ??miniAHRS_ReportIMU_Queue_2
+   \   00000092   0x.... 0x....      LDR.W    R0,??DataTable8_1  ;; 0xffff8000
+   \   00000096   0x1B86             SUBS     R6,R0,R6
+    203          	ctemp=roll>>8;
+   \                     ??miniAHRS_ReportIMU_Queue_2:
+   \   00000098   0xB236             SXTH     R6,R6            ;; SignExt  R6,R6,#+16,#+16
+   \   0000009A   0x1230             ASRS     R0,R6,#+8
+   \   0000009C   0x4683             MOV      R11,R0
+    204          	miniAHRS_PushUartQueue(ctemp);
+   \   0000009E   0x4658             MOV      R0,R11
+   \   000000A0   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000A2   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    205          	temp+=ctemp;
+   \   000000A6   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    206          	ctemp=roll;
+   \   000000AA   0x0030             MOVS     R0,R6
+   \   000000AC   0x4683             MOV      R11,R0
+    207          	miniAHRS_PushUartQueue(ctemp);
+   \   000000AE   0x4658             MOV      R0,R11
+   \   000000B0   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000B2   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    208          	temp+=ctemp;
+   \   000000B6   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    209          
+    210          	if(alt<0)alt=32768-alt;
+   \   000000BA   0xB23F             SXTH     R7,R7            ;; SignExt  R7,R7,#+16,#+16
+   \   000000BC   0x2F00             CMP      R7,#+0
+   \   000000BE   0xD502             BPL.N    ??miniAHRS_ReportIMU_Queue_3
+   \   000000C0   0x.... 0x....      LDR.W    R0,??DataTable8_1  ;; 0xffff8000
+   \   000000C4   0x1BC7             SUBS     R7,R0,R7
+    211          	ctemp=alt>>8;
+   \                     ??miniAHRS_ReportIMU_Queue_3:
+   \   000000C6   0xB23F             SXTH     R7,R7            ;; SignExt  R7,R7,#+16,#+16
+   \   000000C8   0x1238             ASRS     R0,R7,#+8
+   \   000000CA   0x4683             MOV      R11,R0
+    212          	miniAHRS_PushUartQueue(ctemp);
+   \   000000CC   0x4658             MOV      R0,R11
+   \   000000CE   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000D0   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    213          	temp+=ctemp;
+   \   000000D4   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    214          	ctemp=alt;
+   \   000000D8   0x0038             MOVS     R0,R7
+   \   000000DA   0x4683             MOV      R11,R0
+    215          	miniAHRS_PushUartQueue(ctemp);
+   \   000000DC   0x4658             MOV      R0,R11
+   \   000000DE   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000E0   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    216          	temp+=ctemp;
+   \   000000E4   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    217          
+    218          	if(tempr<0)tempr=32768-tempr;
+   \   000000E8   0xFA0F 0xF888      SXTH     R8,R8            ;; SignExt  R8,R8,#+16,#+16
+   \   000000EC   0xF1B8 0x0F00      CMP      R8,#+0
+   \   000000F0   0xD503             BPL.N    ??miniAHRS_ReportIMU_Queue_4
+   \   000000F2   0x.... 0x....      LDR.W    R0,??DataTable8_1  ;; 0xffff8000
+   \   000000F6   0xEBB0 0x0808      SUBS     R8,R0,R8
+    219          	ctemp=tempr>>8;
+   \                     ??miniAHRS_ReportIMU_Queue_4:
+   \   000000FA   0xFA0F 0xF888      SXTH     R8,R8            ;; SignExt  R8,R8,#+16,#+16
+   \   000000FE   0xEA5F 0x2028      ASRS     R0,R8,#+8
+   \   00000102   0x4683             MOV      R11,R0
+    220          	miniAHRS_PushUartQueue(ctemp);
+   \   00000104   0x4658             MOV      R0,R11
+   \   00000106   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000108   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    221          	temp+=ctemp;
+   \   0000010C   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    222          	ctemp=tempr;
+   \   00000110   0x4640             MOV      R0,R8
+   \   00000112   0x4683             MOV      R11,R0
+    223          	miniAHRS_PushUartQueue(ctemp);
+   \   00000114   0x4658             MOV      R0,R11
+   \   00000116   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000118   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    224          	temp+=ctemp;
+   \   0000011C   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    225          
+    226          	if(press<0)press=32768-press;
+   \   00000120   0xFA0F 0xF989      SXTH     R9,R9            ;; SignExt  R9,R9,#+16,#+16
+   \   00000124   0xF1B9 0x0F00      CMP      R9,#+0
+   \   00000128   0xD503             BPL.N    ??miniAHRS_ReportIMU_Queue_5
+   \   0000012A   0x.... 0x....      LDR.W    R0,??DataTable8_1  ;; 0xffff8000
+   \   0000012E   0xEBB0 0x0909      SUBS     R9,R0,R9
+    227          	ctemp=press>>8;
+   \                     ??miniAHRS_ReportIMU_Queue_5:
+   \   00000132   0xFA0F 0xF989      SXTH     R9,R9            ;; SignExt  R9,R9,#+16,#+16
+   \   00000136   0xEA5F 0x2029      ASRS     R0,R9,#+8
+   \   0000013A   0x4683             MOV      R11,R0
+    228          	miniAHRS_PushUartQueue(ctemp);
+   \   0000013C   0x4658             MOV      R0,R11
+   \   0000013E   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000140   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    229          	temp+=ctemp;
+   \   00000144   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    230          	ctemp=press;
+   \   00000148   0x4648             MOV      R0,R9
+   \   0000014A   0x4683             MOV      R11,R0
+    231          	miniAHRS_PushUartQueue(ctemp);
+   \   0000014C   0x4658             MOV      R0,R11
+   \   0000014E   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000150   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    232          	temp+=ctemp;
+   \   00000154   0xFA5A 0xFA8B      UXTAB    R10,R10,R11
+    233          
+    234          	miniAHRS_PushUartQueue(temp%256);
+   \   00000158   0xF44F 0x7180      MOV      R1,#+256
+   \   0000015C   0xFBBA 0xF0F1      UDIV     R0,R10,R1
+   \   00000160   0xFB00 0xA011      MLS      R0,R0,R1,R10
+   \   00000164   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000166   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    235          	miniAHRS_PushUartQueue(0xaa);
+   \   0000016A   0x20AA             MOVS     R0,#+170
+   \   0000016C   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    236          }
+   \   00000170   0xE8BD 0x8FF1      POP      {R0,R4-R11,PC}   ;; return
+    237          
+    238          
+    239          /**************************实现函数********************************************
+    240          *函数原型:		void UART1_ReportMotion(int16_t ax,int16_t ay,int16_t az,int16_t gx,int16_t gy,int16_t gz,
+    241          					int16_t hx,int16_t hy,int16_t hz)
+    242          *功　　能:		向上位机发送当前传感器的输出值
+    243          输入参数：
+    244          	int16_t ax  加速度 X轴ADC输出 范围 ：一个有符号整型
+    245          	int16_t ay  加速度 Y轴ADC输出 范围 ：一个有符号整型
+    246          	int16_t az  加速度 Z轴ADC输出 范围 ：一个有符号整型
+    247          	int16_t gx  陀螺仪 X轴ADC输出 范围 ：一个有符号整型
+    248          	int16_t gy  陀螺仪 Y轴ADC输出 范围 ：一个有符号整型
+    249          	int16_t gz  陀螺仪 Z轴ADC输出 范围 ：一个有符号整型
+    250          	int16_t hx  磁罗盘 X轴ADC输出 范围 ：一个有符号整型
+    251          	int16_t hy  磁罗盘 Y轴ADC输出 范围 ：一个有符号整型
+    252          	int16_t hz  磁罗盘 Z轴ADC输出 范围 ：一个有符号整型
+    253          	
+    254          输出参数：没有	
+    255          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    256          void miniAHRS_ReportMotion(int16_t ax,int16_t ay,int16_t az,int16_t gx,int16_t gy,int16_t gz,	int16_t hx,int16_t hy,int16_t hz)
+    257          {
+   \                     miniAHRS_ReportMotion:
+   \   00000000   0xE92D 0x4FF7      PUSH     {R0-R2,R4-R11,LR}
+   \   00000004   0x001C             MOVS     R4,R3
+   \   00000006   0xF9BD 0x5030      LDRSH    R5,[SP, #+48]
+   \   0000000A   0xF9BD 0x6034      LDRSH    R6,[SP, #+52]
+   \   0000000E   0xF9BD 0x7038      LDRSH    R7,[SP, #+56]
+   \   00000012   0xF9BD 0x803C      LDRSH    R8,[SP, #+60]
+   \   00000016   0xF9BD 0x9040      LDRSH    R9,[SP, #+64]
+    258           	unsigned int temp=0xaF+9;
+   \   0000001A   0xF05F 0x0BB8      MOVS     R11,#+184
+    259          	char ctemp;
+    260          	miniAHRS_SendOneByte(0xa5);
+   \   0000001E   0x20A5             MOVS     R0,#+165
+   \   00000020   0x.... 0x....      BL       miniAHRS_SendOneByte
+    261          	miniAHRS_SendOneByte(0x5a);
+   \   00000024   0x205A             MOVS     R0,#+90
+   \   00000026   0x.... 0x....      BL       miniAHRS_SendOneByte
+    262          	miniAHRS_SendOneByte(14+8);
+   \   0000002A   0x2016             MOVS     R0,#+22
+   \   0000002C   0x.... 0x....      BL       miniAHRS_SendOneByte
+    263          	miniAHRS_SendOneByte(0xA2);
+   \   00000030   0x20A2             MOVS     R0,#+162
+   \   00000032   0x.... 0x....      BL       miniAHRS_SendOneByte
+    264          
+    265          	if(ax<0)ax=32768-ax;
+   \   00000036   0xF9BD 0x0000      LDRSH    R0,[SP, #+0]
+   \   0000003A   0x2800             CMP      R0,#+0
+   \   0000003C   0xD506             BPL.N    ??miniAHRS_ReportMotion_0
+   \   0000003E   0x.... 0x....      LDR.W    R0,??DataTable8_1  ;; 0xffff8000
+   \   00000042   0xF8BD 0x1000      LDRH     R1,[SP, #+0]
+   \   00000046   0x1A40             SUBS     R0,R0,R1
+   \   00000048   0xF8AD 0x0000      STRH     R0,[SP, #+0]
+    266          	ctemp=ax>>8;
+   \                     ??miniAHRS_ReportMotion_0:
+   \   0000004C   0xF9BD 0x0000      LDRSH    R0,[SP, #+0]
+   \   00000050   0x1200             ASRS     R0,R0,#+8
+   \   00000052   0x4682             MOV      R10,R0
+    267          	miniAHRS_SendOneByte(ctemp);
+   \   00000054   0x4650             MOV      R0,R10
+   \   00000056   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000058   0x.... 0x....      BL       miniAHRS_SendOneByte
+    268          	temp+=ctemp;
+   \   0000005C   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    269          	ctemp=ax;
+   \   00000060   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000064   0x4682             MOV      R10,R0
+    270          	miniAHRS_SendOneByte(ctemp);
+   \   00000066   0x4650             MOV      R0,R10
+   \   00000068   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000006A   0x.... 0x....      BL       miniAHRS_SendOneByte
+    271          	temp+=ctemp;
+   \   0000006E   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    272          
+    273          	if(ay<0)ay=32768-ay;
+   \   00000072   0xF9BD 0x0004      LDRSH    R0,[SP, #+4]
+   \   00000076   0x2800             CMP      R0,#+0
+   \   00000078   0xD506             BPL.N    ??miniAHRS_ReportMotion_1
+   \   0000007A   0x.... 0x....      LDR.W    R0,??DataTable8_1  ;; 0xffff8000
+   \   0000007E   0xF8BD 0x1004      LDRH     R1,[SP, #+4]
+   \   00000082   0x1A40             SUBS     R0,R0,R1
+   \   00000084   0xF8AD 0x0004      STRH     R0,[SP, #+4]
+    274          	ctemp=ay>>8;
+   \                     ??miniAHRS_ReportMotion_1:
+   \   00000088   0xF9BD 0x0004      LDRSH    R0,[SP, #+4]
+   \   0000008C   0x1200             ASRS     R0,R0,#+8
+   \   0000008E   0x4682             MOV      R10,R0
+    275          	miniAHRS_SendOneByte(ctemp);
+   \   00000090   0x4650             MOV      R0,R10
+   \   00000092   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000094   0x.... 0x....      BL       miniAHRS_SendOneByte
+    276          	temp+=ctemp;
+   \   00000098   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    277          	ctemp=ay;
+   \   0000009C   0xF8BD 0x0004      LDRH     R0,[SP, #+4]
+   \   000000A0   0x4682             MOV      R10,R0
+    278          	miniAHRS_SendOneByte(ctemp);
+   \   000000A2   0x4650             MOV      R0,R10
+   \   000000A4   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000A6   0x.... 0x....      BL       miniAHRS_SendOneByte
+    279          	temp+=ctemp;
+   \   000000AA   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    280          
+    281          	if(az<0)az=32768-az;
+   \   000000AE   0xF9BD 0x0008      LDRSH    R0,[SP, #+8]
+   \   000000B2   0x2800             CMP      R0,#+0
+   \   000000B4   0xD505             BPL.N    ??miniAHRS_ReportMotion_2
+   \   000000B6   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   000000B8   0xF8BD 0x1008      LDRH     R1,[SP, #+8]
+   \   000000BC   0x1A40             SUBS     R0,R0,R1
+   \   000000BE   0xF8AD 0x0008      STRH     R0,[SP, #+8]
+    282          	ctemp=az>>8;
+   \                     ??miniAHRS_ReportMotion_2:
+   \   000000C2   0xF9BD 0x0008      LDRSH    R0,[SP, #+8]
+   \   000000C6   0x1200             ASRS     R0,R0,#+8
+   \   000000C8   0x4682             MOV      R10,R0
+    283          	miniAHRS_SendOneByte(ctemp);
+   \   000000CA   0x4650             MOV      R0,R10
+   \   000000CC   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000CE   0x.... 0x....      BL       miniAHRS_SendOneByte
+    284          	temp+=ctemp;
+   \   000000D2   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    285          	ctemp=az;
+   \   000000D6   0xF8BD 0x0008      LDRH     R0,[SP, #+8]
+   \   000000DA   0x4682             MOV      R10,R0
+    286          	miniAHRS_SendOneByte(ctemp);
+   \   000000DC   0x4650             MOV      R0,R10
+   \   000000DE   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000E0   0x.... 0x....      BL       miniAHRS_SendOneByte
+    287          	temp+=ctemp;
+   \   000000E4   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    288          
+    289          	if(gx<0)gx=32768-gx;
+   \   000000E8   0xB224             SXTH     R4,R4            ;; SignExt  R4,R4,#+16,#+16
+   \   000000EA   0x2C00             CMP      R4,#+0
+   \   000000EC   0xD501             BPL.N    ??miniAHRS_ReportMotion_3
+   \   000000EE   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   000000F0   0x1B04             SUBS     R4,R0,R4
+    290          	ctemp=gx>>8;
+   \                     ??miniAHRS_ReportMotion_3:
+   \   000000F2   0xB224             SXTH     R4,R4            ;; SignExt  R4,R4,#+16,#+16
+   \   000000F4   0x1220             ASRS     R0,R4,#+8
+   \   000000F6   0x4682             MOV      R10,R0
+    291          	miniAHRS_SendOneByte(ctemp);
+   \   000000F8   0x4650             MOV      R0,R10
+   \   000000FA   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000FC   0x.... 0x....      BL       miniAHRS_SendOneByte
+    292          	temp+=ctemp;
+   \   00000100   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    293          	ctemp=gx;
+   \   00000104   0x0020             MOVS     R0,R4
+   \   00000106   0x4682             MOV      R10,R0
+    294          	miniAHRS_SendOneByte(ctemp);
+   \   00000108   0x4650             MOV      R0,R10
+   \   0000010A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000010C   0x.... 0x....      BL       miniAHRS_SendOneByte
+    295          	temp+=ctemp;
+   \   00000110   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    296          
+    297          	if(gy<0)gy=32768-gy;
+   \   00000114   0xB22D             SXTH     R5,R5            ;; SignExt  R5,R5,#+16,#+16
+   \   00000116   0x2D00             CMP      R5,#+0
+   \   00000118   0xD501             BPL.N    ??miniAHRS_ReportMotion_4
+   \   0000011A   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   0000011C   0x1B45             SUBS     R5,R0,R5
+    298          	ctemp=gy>>8;
+   \                     ??miniAHRS_ReportMotion_4:
+   \   0000011E   0xB22D             SXTH     R5,R5            ;; SignExt  R5,R5,#+16,#+16
+   \   00000120   0x1228             ASRS     R0,R5,#+8
+   \   00000122   0x4682             MOV      R10,R0
+    299          	miniAHRS_SendOneByte(ctemp);
+   \   00000124   0x4650             MOV      R0,R10
+   \   00000126   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000128   0x.... 0x....      BL       miniAHRS_SendOneByte
+    300          	temp+=ctemp;
+   \   0000012C   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    301          	ctemp=gy;
+   \   00000130   0x0028             MOVS     R0,R5
+   \   00000132   0x4682             MOV      R10,R0
+    302          	miniAHRS_SendOneByte(ctemp);
+   \   00000134   0x4650             MOV      R0,R10
+   \   00000136   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000138   0x.... 0x....      BL       miniAHRS_SendOneByte
+    303          	temp+=ctemp;
+   \   0000013C   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    304          //-------------------------
+    305          	if(gz<0)gz=32768-gz;
+   \   00000140   0xB236             SXTH     R6,R6            ;; SignExt  R6,R6,#+16,#+16
+   \   00000142   0x2E00             CMP      R6,#+0
+   \   00000144   0xD501             BPL.N    ??miniAHRS_ReportMotion_5
+   \   00000146   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   00000148   0x1B86             SUBS     R6,R0,R6
+    306          	ctemp=gz>>8;
+   \                     ??miniAHRS_ReportMotion_5:
+   \   0000014A   0xB236             SXTH     R6,R6            ;; SignExt  R6,R6,#+16,#+16
+   \   0000014C   0x1230             ASRS     R0,R6,#+8
+   \   0000014E   0x4682             MOV      R10,R0
+    307          	miniAHRS_SendOneByte(ctemp);
+   \   00000150   0x4650             MOV      R0,R10
+   \   00000152   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000154   0x.... 0x....      BL       miniAHRS_SendOneByte
+    308          	temp+=ctemp;
+   \   00000158   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    309          	ctemp=gz;
+   \   0000015C   0x0030             MOVS     R0,R6
+   \   0000015E   0x4682             MOV      R10,R0
+    310          	miniAHRS_SendOneByte(ctemp);
+   \   00000160   0x4650             MOV      R0,R10
+   \   00000162   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000164   0x.... 0x....      BL       miniAHRS_SendOneByte
+    311          	temp+=ctemp;
+   \   00000168   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    312          
+    313          	if(hx<0)hx=32768-hx;
+   \   0000016C   0xB23F             SXTH     R7,R7            ;; SignExt  R7,R7,#+16,#+16
+   \   0000016E   0x2F00             CMP      R7,#+0
+   \   00000170   0xD501             BPL.N    ??miniAHRS_ReportMotion_6
+   \   00000172   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   00000174   0x1BC7             SUBS     R7,R0,R7
+    314          	ctemp=hx>>8;
+   \                     ??miniAHRS_ReportMotion_6:
+   \   00000176   0xB23F             SXTH     R7,R7            ;; SignExt  R7,R7,#+16,#+16
+   \   00000178   0x1238             ASRS     R0,R7,#+8
+   \   0000017A   0x4682             MOV      R10,R0
+    315          	miniAHRS_SendOneByte(ctemp);
+   \   0000017C   0x4650             MOV      R0,R10
+   \   0000017E   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000180   0x.... 0x....      BL       miniAHRS_SendOneByte
+    316          	temp+=ctemp;
+   \   00000184   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    317          	ctemp=hx;
+   \   00000188   0x0038             MOVS     R0,R7
+   \   0000018A   0x4682             MOV      R10,R0
+    318          	miniAHRS_SendOneByte(ctemp);
+   \   0000018C   0x4650             MOV      R0,R10
+   \   0000018E   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000190   0x.... 0x....      BL       miniAHRS_SendOneByte
+    319          	temp+=ctemp;
+   \   00000194   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    320          
+    321          	if(hy<0)hy=32768-hy;
+   \   00000198   0xFA0F 0xF888      SXTH     R8,R8            ;; SignExt  R8,R8,#+16,#+16
+   \   0000019C   0xF1B8 0x0F00      CMP      R8,#+0
+   \   000001A0   0xD502             BPL.N    ??miniAHRS_ReportMotion_7
+   \   000001A2   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   000001A4   0xEBB0 0x0808      SUBS     R8,R0,R8
+    322          	ctemp=hy>>8;
+   \                     ??miniAHRS_ReportMotion_7:
+   \   000001A8   0xFA0F 0xF888      SXTH     R8,R8            ;; SignExt  R8,R8,#+16,#+16
+   \   000001AC   0xEA5F 0x2028      ASRS     R0,R8,#+8
+   \   000001B0   0x4682             MOV      R10,R0
+    323          	miniAHRS_SendOneByte(ctemp);
+   \   000001B2   0x4650             MOV      R0,R10
+   \   000001B4   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000001B6   0x.... 0x....      BL       miniAHRS_SendOneByte
+    324          	temp+=ctemp;
+   \   000001BA   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    325          	ctemp=hy;
+   \   000001BE   0x4640             MOV      R0,R8
+   \   000001C0   0x4682             MOV      R10,R0
+    326          	miniAHRS_SendOneByte(ctemp);
+   \   000001C2   0x4650             MOV      R0,R10
+   \   000001C4   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000001C6   0x.... 0x....      BL       miniAHRS_SendOneByte
+    327          	temp+=ctemp;
+   \   000001CA   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    328          
+    329          	if(hz<0)hz=32768-hz;
+   \   000001CE   0xFA0F 0xF989      SXTH     R9,R9            ;; SignExt  R9,R9,#+16,#+16
+   \   000001D2   0xF1B9 0x0F00      CMP      R9,#+0
+   \   000001D6   0xD502             BPL.N    ??miniAHRS_ReportMotion_8
+   \   000001D8   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   000001DA   0xEBB0 0x0909      SUBS     R9,R0,R9
+    330          	ctemp=hz>>8;
+   \                     ??miniAHRS_ReportMotion_8:
+   \   000001DE   0xFA0F 0xF989      SXTH     R9,R9            ;; SignExt  R9,R9,#+16,#+16
+   \   000001E2   0xEA5F 0x2029      ASRS     R0,R9,#+8
+   \   000001E6   0x4682             MOV      R10,R0
+    331          	miniAHRS_SendOneByte(ctemp);
+   \   000001E8   0x4650             MOV      R0,R10
+   \   000001EA   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000001EC   0x.... 0x....      BL       miniAHRS_SendOneByte
+    332          	temp+=ctemp;
+   \   000001F0   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    333          	ctemp=hz;
+   \   000001F4   0x4648             MOV      R0,R9
+   \   000001F6   0x4682             MOV      R10,R0
+    334          	miniAHRS_SendOneByte(ctemp);
+   \   000001F8   0x4650             MOV      R0,R10
+   \   000001FA   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000001FC   0x.... 0x....      BL       miniAHRS_SendOneByte
+    335          	temp+=ctemp;
+   \   00000200   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    336          
+    337          	miniAHRS_SendOneByte(temp%256);
+   \   00000204   0xF44F 0x7180      MOV      R1,#+256
+   \   00000208   0xFBBB 0xF0F1      UDIV     R0,R11,R1
+   \   0000020C   0xFB00 0xB011      MLS      R0,R0,R1,R11
+   \   00000210   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000212   0x.... 0x....      BL       miniAHRS_SendOneByte
+    338          	miniAHRS_SendOneByte(0xaa);
+   \   00000216   0x20AA             MOVS     R0,#+170
+   \   00000218   0x.... 0x....      BL       miniAHRS_SendOneByte
+    339          }
+   \   0000021C   0xE8BD 0x8FF7      POP      {R0-R2,R4-R11,PC}  ;; return
+    340          
+
+   \                                 In section .text, align 2, keep-with-next
+    341          void miniAHRS_ReportMotion_Queue(int16_t ax,int16_t ay,int16_t az,int16_t gx,int16_t gy,int16_t gz,	int16_t hx,int16_t hy,int16_t hz)
+    342          {
+   \                     miniAHRS_ReportMotion_Queue:
+   \   00000000   0xE92D 0x4FF7      PUSH     {R0-R2,R4-R11,LR}
+   \   00000004   0x001C             MOVS     R4,R3
+   \   00000006   0xF9BD 0x5030      LDRSH    R5,[SP, #+48]
+   \   0000000A   0xF9BD 0x6034      LDRSH    R6,[SP, #+52]
+   \   0000000E   0xF9BD 0x7038      LDRSH    R7,[SP, #+56]
+   \   00000012   0xF9BD 0x803C      LDRSH    R8,[SP, #+60]
+   \   00000016   0xF9BD 0x9040      LDRSH    R9,[SP, #+64]
+    343           	unsigned int temp=0xaF+9;
+   \   0000001A   0xF05F 0x0BB8      MOVS     R11,#+184
+    344          	char ctemp;
+    345          	miniAHRS_PushUartQueue(0xa5);
+   \   0000001E   0x20A5             MOVS     R0,#+165
+   \   00000020   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    346          	miniAHRS_PushUartQueue(0x5a);
+   \   00000024   0x205A             MOVS     R0,#+90
+   \   00000026   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    347          	miniAHRS_PushUartQueue(14+8);
+   \   0000002A   0x2016             MOVS     R0,#+22
+   \   0000002C   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    348          	miniAHRS_PushUartQueue(0xA2);
+   \   00000030   0x20A2             MOVS     R0,#+162
+   \   00000032   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    349          
+    350          	if(ax<0)ax=32768-ax;
+   \   00000036   0xF9BD 0x0000      LDRSH    R0,[SP, #+0]
+   \   0000003A   0x2800             CMP      R0,#+0
+   \   0000003C   0xD505             BPL.N    ??miniAHRS_ReportMotion_Queue_0
+   \   0000003E   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   00000040   0xF8BD 0x1000      LDRH     R1,[SP, #+0]
+   \   00000044   0x1A40             SUBS     R0,R0,R1
+   \   00000046   0xF8AD 0x0000      STRH     R0,[SP, #+0]
+    351          	ctemp=ax>>8;
+   \                     ??miniAHRS_ReportMotion_Queue_0:
+   \   0000004A   0xF9BD 0x0000      LDRSH    R0,[SP, #+0]
+   \   0000004E   0x1200             ASRS     R0,R0,#+8
+   \   00000050   0x4682             MOV      R10,R0
+    352          	miniAHRS_PushUartQueue(ctemp);
+   \   00000052   0x4650             MOV      R0,R10
+   \   00000054   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000056   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    353          	temp+=ctemp;
+   \   0000005A   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    354          	ctemp=ax;
+   \   0000005E   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000062   0x4682             MOV      R10,R0
+    355          	miniAHRS_PushUartQueue(ctemp);
+   \   00000064   0x4650             MOV      R0,R10
+   \   00000066   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000068   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    356          	temp+=ctemp;
+   \   0000006C   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    357          
+    358          	if(ay<0)ay=32768-ay;
+   \   00000070   0xF9BD 0x0004      LDRSH    R0,[SP, #+4]
+   \   00000074   0x2800             CMP      R0,#+0
+   \   00000076   0xD505             BPL.N    ??miniAHRS_ReportMotion_Queue_1
+   \   00000078   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   0000007A   0xF8BD 0x1004      LDRH     R1,[SP, #+4]
+   \   0000007E   0x1A40             SUBS     R0,R0,R1
+   \   00000080   0xF8AD 0x0004      STRH     R0,[SP, #+4]
+    359          	ctemp=ay>>8;
+   \                     ??miniAHRS_ReportMotion_Queue_1:
+   \   00000084   0xF9BD 0x0004      LDRSH    R0,[SP, #+4]
+   \   00000088   0x1200             ASRS     R0,R0,#+8
+   \   0000008A   0x4682             MOV      R10,R0
+    360          	miniAHRS_PushUartQueue(ctemp);
+   \   0000008C   0x4650             MOV      R0,R10
+   \   0000008E   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000090   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    361          	temp+=ctemp;
+   \   00000094   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    362          	ctemp=ay;
+   \   00000098   0xF8BD 0x0004      LDRH     R0,[SP, #+4]
+   \   0000009C   0x4682             MOV      R10,R0
+    363          	miniAHRS_PushUartQueue(ctemp);
+   \   0000009E   0x4650             MOV      R0,R10
+   \   000000A0   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000A2   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    364          	temp+=ctemp;
+   \   000000A6   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    365          
+    366          	if(az<0)az=32768-az;
+   \   000000AA   0xF9BD 0x0008      LDRSH    R0,[SP, #+8]
+   \   000000AE   0x2800             CMP      R0,#+0
+   \   000000B0   0xD505             BPL.N    ??miniAHRS_ReportMotion_Queue_2
+   \   000000B2   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   000000B4   0xF8BD 0x1008      LDRH     R1,[SP, #+8]
+   \   000000B8   0x1A40             SUBS     R0,R0,R1
+   \   000000BA   0xF8AD 0x0008      STRH     R0,[SP, #+8]
+    367          	ctemp=az>>8;
+   \                     ??miniAHRS_ReportMotion_Queue_2:
+   \   000000BE   0xF9BD 0x0008      LDRSH    R0,[SP, #+8]
+   \   000000C2   0x1200             ASRS     R0,R0,#+8
+   \   000000C4   0x4682             MOV      R10,R0
+    368          	miniAHRS_PushUartQueue(ctemp);
+   \   000000C6   0x4650             MOV      R0,R10
+   \   000000C8   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000CA   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    369          	temp+=ctemp;
+   \   000000CE   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    370          	ctemp=az;
+   \   000000D2   0xF8BD 0x0008      LDRH     R0,[SP, #+8]
+   \   000000D6   0x4682             MOV      R10,R0
+    371          	miniAHRS_PushUartQueue(ctemp);
+   \   000000D8   0x4650             MOV      R0,R10
+   \   000000DA   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000DC   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    372          	temp+=ctemp;
+   \   000000E0   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    373          
+    374          	if(gx<0)gx=32768-gx;
+   \   000000E4   0xB224             SXTH     R4,R4            ;; SignExt  R4,R4,#+16,#+16
+   \   000000E6   0x2C00             CMP      R4,#+0
+   \   000000E8   0xD501             BPL.N    ??miniAHRS_ReportMotion_Queue_3
+   \   000000EA   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   000000EC   0x1B04             SUBS     R4,R0,R4
+    375          	ctemp=gx>>8;
+   \                     ??miniAHRS_ReportMotion_Queue_3:
+   \   000000EE   0xB224             SXTH     R4,R4            ;; SignExt  R4,R4,#+16,#+16
+   \   000000F0   0x1220             ASRS     R0,R4,#+8
+   \   000000F2   0x4682             MOV      R10,R0
+    376          	miniAHRS_PushUartQueue(ctemp);
+   \   000000F4   0x4650             MOV      R0,R10
+   \   000000F6   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000F8   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    377          	temp+=ctemp;
+   \   000000FC   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    378          	ctemp=gx;
+   \   00000100   0x0020             MOVS     R0,R4
+   \   00000102   0x4682             MOV      R10,R0
+    379          	miniAHRS_PushUartQueue(ctemp);
+   \   00000104   0x4650             MOV      R0,R10
+   \   00000106   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000108   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    380          	temp+=ctemp;
+   \   0000010C   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    381          
+    382          	if(gy<0)gy=32768-gy;
+   \   00000110   0xB22D             SXTH     R5,R5            ;; SignExt  R5,R5,#+16,#+16
+   \   00000112   0x2D00             CMP      R5,#+0
+   \   00000114   0xD501             BPL.N    ??miniAHRS_ReportMotion_Queue_4
+   \   00000116   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   00000118   0x1B45             SUBS     R5,R0,R5
+    383          	ctemp=gy>>8;
+   \                     ??miniAHRS_ReportMotion_Queue_4:
+   \   0000011A   0xB22D             SXTH     R5,R5            ;; SignExt  R5,R5,#+16,#+16
+   \   0000011C   0x1228             ASRS     R0,R5,#+8
+   \   0000011E   0x4682             MOV      R10,R0
+    384          	miniAHRS_PushUartQueue(ctemp);
+   \   00000120   0x4650             MOV      R0,R10
+   \   00000122   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000124   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    385          	temp+=ctemp;
+   \   00000128   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    386          	ctemp=gy;
+   \   0000012C   0x0028             MOVS     R0,R5
+   \   0000012E   0x4682             MOV      R10,R0
+    387          	miniAHRS_PushUartQueue(ctemp);
+   \   00000130   0x4650             MOV      R0,R10
+   \   00000132   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000134   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    388          	temp+=ctemp;
+   \   00000138   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    389          //-------------------------
+    390          	if(gz<0)gz=32768-gz;
+   \   0000013C   0xB236             SXTH     R6,R6            ;; SignExt  R6,R6,#+16,#+16
+   \   0000013E   0x2E00             CMP      R6,#+0
+   \   00000140   0xD501             BPL.N    ??miniAHRS_ReportMotion_Queue_5
+   \   00000142   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   00000144   0x1B86             SUBS     R6,R0,R6
+    391          	ctemp=gz>>8;
+   \                     ??miniAHRS_ReportMotion_Queue_5:
+   \   00000146   0xB236             SXTH     R6,R6            ;; SignExt  R6,R6,#+16,#+16
+   \   00000148   0x1230             ASRS     R0,R6,#+8
+   \   0000014A   0x4682             MOV      R10,R0
+    392          	miniAHRS_PushUartQueue(ctemp);
+   \   0000014C   0x4650             MOV      R0,R10
+   \   0000014E   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000150   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    393          	temp+=ctemp;
+   \   00000154   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    394          	ctemp=gz;
+   \   00000158   0x0030             MOVS     R0,R6
+   \   0000015A   0x4682             MOV      R10,R0
+    395          	miniAHRS_PushUartQueue(ctemp);
+   \   0000015C   0x4650             MOV      R0,R10
+   \   0000015E   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000160   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    396          	temp+=ctemp;
+   \   00000164   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    397          
+    398          	if(hx<0)hx=32768-hx;
+   \   00000168   0xB23F             SXTH     R7,R7            ;; SignExt  R7,R7,#+16,#+16
+   \   0000016A   0x2F00             CMP      R7,#+0
+   \   0000016C   0xD501             BPL.N    ??miniAHRS_ReportMotion_Queue_6
+   \   0000016E   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   00000170   0x1BC7             SUBS     R7,R0,R7
+    399          	ctemp=hx>>8;
+   \                     ??miniAHRS_ReportMotion_Queue_6:
+   \   00000172   0xB23F             SXTH     R7,R7            ;; SignExt  R7,R7,#+16,#+16
+   \   00000174   0x1238             ASRS     R0,R7,#+8
+   \   00000176   0x4682             MOV      R10,R0
+    400          	miniAHRS_PushUartQueue(ctemp);
+   \   00000178   0x4650             MOV      R0,R10
+   \   0000017A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000017C   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    401          	temp+=ctemp;
+   \   00000180   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    402          	ctemp=hx;
+   \   00000184   0x0038             MOVS     R0,R7
+   \   00000186   0x4682             MOV      R10,R0
+    403          	miniAHRS_PushUartQueue(ctemp);
+   \   00000188   0x4650             MOV      R0,R10
+   \   0000018A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000018C   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    404          	temp+=ctemp;
+   \   00000190   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    405          
+    406          	if(hy<0)hy=32768-hy;
+   \   00000194   0xFA0F 0xF888      SXTH     R8,R8            ;; SignExt  R8,R8,#+16,#+16
+   \   00000198   0xF1B8 0x0F00      CMP      R8,#+0
+   \   0000019C   0xD502             BPL.N    ??miniAHRS_ReportMotion_Queue_7
+   \   0000019E   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   000001A0   0xEBB0 0x0808      SUBS     R8,R0,R8
+    407          	ctemp=hy>>8;
+   \                     ??miniAHRS_ReportMotion_Queue_7:
+   \   000001A4   0xFA0F 0xF888      SXTH     R8,R8            ;; SignExt  R8,R8,#+16,#+16
+   \   000001A8   0xEA5F 0x2028      ASRS     R0,R8,#+8
+   \   000001AC   0x4682             MOV      R10,R0
+    408          	miniAHRS_PushUartQueue(ctemp);
+   \   000001AE   0x4650             MOV      R0,R10
+   \   000001B0   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000001B2   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    409          	temp+=ctemp;
+   \   000001B6   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    410          	ctemp=hy;
+   \   000001BA   0x4640             MOV      R0,R8
+   \   000001BC   0x4682             MOV      R10,R0
+    411          	miniAHRS_PushUartQueue(ctemp);
+   \   000001BE   0x4650             MOV      R0,R10
+   \   000001C0   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000001C2   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    412          	temp+=ctemp;
+   \   000001C6   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    413          
+    414          	if(hz<0)hz=32768-hz;
+   \   000001CA   0xFA0F 0xF989      SXTH     R9,R9            ;; SignExt  R9,R9,#+16,#+16
+   \   000001CE   0xF1B9 0x0F00      CMP      R9,#+0
+   \   000001D2   0xD502             BPL.N    ??miniAHRS_ReportMotion_Queue_8
+   \   000001D4   0x....             LDR.N    R0,??DataTable8_1  ;; 0xffff8000
+   \   000001D6   0xEBB0 0x0909      SUBS     R9,R0,R9
+    415          	ctemp=hz>>8;
+   \                     ??miniAHRS_ReportMotion_Queue_8:
+   \   000001DA   0xFA0F 0xF989      SXTH     R9,R9            ;; SignExt  R9,R9,#+16,#+16
+   \   000001DE   0xEA5F 0x2029      ASRS     R0,R9,#+8
+   \   000001E2   0x4682             MOV      R10,R0
+    416          	miniAHRS_PushUartQueue(ctemp);
+   \   000001E4   0x4650             MOV      R0,R10
+   \   000001E6   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000001E8   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    417          	temp+=ctemp;
+   \   000001EC   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    418          	ctemp=hz;
+   \   000001F0   0x4648             MOV      R0,R9
+   \   000001F2   0x4682             MOV      R10,R0
+    419          	miniAHRS_PushUartQueue(ctemp);
+   \   000001F4   0x4650             MOV      R0,R10
+   \   000001F6   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000001F8   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    420          	temp+=ctemp;
+   \   000001FC   0xFA5B 0xFB8A      UXTAB    R11,R11,R10
+    421          
+    422          	miniAHRS_PushUartQueue(temp%256);
+   \   00000200   0xF44F 0x7180      MOV      R1,#+256
+   \   00000204   0xFBBB 0xF0F1      UDIV     R0,R11,R1
+   \   00000208   0xFB00 0xB011      MLS      R0,R0,R1,R11
+   \   0000020C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000020E   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    423          	miniAHRS_PushUartQueue(0xaa);
+   \   00000212   0x20AA             MOVS     R0,#+170
+   \   00000214   0x.... 0x....      BL       miniAHRS_PushUartQueue
+    424          }
+   \   00000218   0xE8BD 0x8FF7      POP      {R0-R2,R4-R11,PC}  ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8:
+   \   00000000   0x........         DC32     miniAHRS_uart_queue_struct
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_1:
+   \   00000000   0xFFFF8000         DC32     0xffff8000
+    425          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+        0  miniAHRS_GetUartQueue
+        0  miniAHRS_GetUartQueueSize
+        0  miniAHRS_InitUartQueue
+        8  miniAHRS_IsUartQueueEmpty
+              8 -> miniAHRS_GetUartQueueSize
+        8  miniAHRS_PopUartQueue
+              8 -> miniAHRS_GetUartQueueSize
+        8  miniAHRS_PushUartQueue
+              8 -> miniAHRS_GetUartQueueSize
+       40  miniAHRS_ReportIMU
+             40 -> miniAHRS_SendOneByte
+       40  miniAHRS_ReportIMU_Queue
+             40 -> miniAHRS_PushUartQueue
+       48  miniAHRS_ReportMotion
+             48 -> miniAHRS_SendOneByte
+       48  miniAHRS_ReportMotion_Queue
+             48 -> miniAHRS_PushUartQueue
+        8  miniAHRS_SendOneByte
+              8 -> CommUartSendOneByte
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable8
+       4  ??DataTable8_1
+       6  miniAHRS_GetUartQueue
+      34  miniAHRS_GetUartQueueSize
+      44  miniAHRS_InitUartQueue
+      18  miniAHRS_IsUartQueueEmpty
+      74  miniAHRS_PopUartQueue
+      74  miniAHRS_PushUartQueue
+     372  miniAHRS_ReportIMU
+     372  miniAHRS_ReportIMU_Queue
+     544  miniAHRS_ReportMotion
+     540  miniAHRS_ReportMotion_Queue
+      14  miniAHRS_SendOneByte
+     132  miniAHRS_uart_queue_struct
+
+ 
+   132 bytes in section .bss
+ 2 100 bytes in section .text
+ 
+ 2 100 bytes of CODE memory
+   132 bytes of DATA memory
+
+Errors: none
+Warnings: none

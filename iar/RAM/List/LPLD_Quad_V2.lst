@@ -1,0 +1,216 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.40.1.53790/W32 for ARM     21/Mar/2014  17:00:42 #
+# Copyright 1999-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\source\app\ #
+#                    LPLD_Quad_V2.c                                           #
+#    Command line =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\source\app\ #
+#                    LPLD_Quad_V2.c -D LPLD_K60 -lCN                          #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\RAM\Lis #
+#                    t\ -lB E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\ #
+#                    RAM\List\ -o E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V #
+#                    2\iar\RAM\Obj\ --no_cse --no_unroll --no_inline          #
+#                    --no_code_motion --no_tbaa --no_clustering               #
+#                    --no_scheduling --debug --endian=little --cpu=Cortex-M4  #
+#                    -e --fpu=None --dlib_config "D:\Program Files\IAR        #
+#                    Systems\Embedded Workbench 6.4\arm\INC\c\DLib_Config_Nor #
+#                    mal.h" -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\i #
+#                    ar\..\source\app\ -I E:\ShawnDocuments\IAR_WorkSpace\LPL #
+#                    D_Quad_V2\iar\..\source\module\ -I                       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\CPU\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad #
+#                    _V2\iar\..\source\lib\common\ -I                         #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\LPLD\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qua #
+#                    d_V2\iar\..\source\lib\LPLD\HW\ -I                       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\LPLD\DEV\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD #
+#                    _Quad_V2\iar\..\source\lib\uCOS-II\Ports\ -I             #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\uCOS-II\Source\ -I E:\ShawnDocuments\IAR_WorkSpac #
+#                    e\LPLD_Quad_V2\iar\..\source\lib\FatFs\ -I               #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\FatFs\option\ -I E:\ShawnDocuments\IAR_WorkSpace\ #
+#                    LPLD_Quad_V2\iar\..\source\lib\USB\common\ -I            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\USB\driver\ -I E:\ShawnDocuments\IAR_WorkSpace\LP #
+#                    LD_Quad_V2\iar\..\source\lib\USB\descriptor\ -I          #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\USB\class\ -Ol -I "D:\Program Files\IAR           #
+#                    Systems\Embedded Workbench 6.4\arm\CMSIS\Include\" -D    #
+#                    ARM_MATH_CM4                                             #
+#    List file    =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\RAM\Lis #
+#                    t\LPLD_Quad_V2.lst                                       #
+#    Object file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\RAM\Obj #
+#                    \LPLD_Quad_V2.o                                          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\source\app\LPLD_Quad_V2.c
+      1          /**
+      2           * --------------基于"拉普兰德K60底层库V3"的工程（LPLD_Quad_V2）-----------------
+      3           * @file LPLD_Quad_V2.c
+      4           * @version 0.0
+      5           * @date 2013-9-29
+      6           * @brief 关于该工程的描述
+      7           *
+      8           * 版权所有:北京拉普兰德电子技术有限公司
+      9           * http://www.lpld.cn
+     10           * mail:support@lpld.cn
+     11           * 硬件平台:  LPLD K60 Card / LPLD K60 Nano
+     12           *
+     13           * 本工程基于"拉普兰德K60底层库V3"开发，
+     14           * 所有开源代码均在"lib"文件夹下，用户不必更改该目录下代码，
+     15           * 所有用户工程需保存在"project"文件夹下，以工程名定义文件夹名，
+     16           * 底层库使用方法见相关文档。 
+     17           *
+     18           */
+     19          #include "includes.h"
+     20          
+     21          void uart_init(void);
+     22          
+
+   \                                 In section .text, align 2, keep-with-next
+     23          void main (void)
+     24          {
+     25              //int8 recv;
+     26              uint32 counts = 0;
+   \                     main:
+   \   00000000   0x2400             MOVS     R4,#+0
+     27          
+     28              DisableInterrupts;
+   \   00000002   0xB672             CPSID    I
+     29              uart_init();
+   \   00000004   0x.... 0x....      BL       uart_init
+     30              EnableInterrupts;
+   \   00000008   0xB662             CPSIE    I
+     31              DisableInterrupts;
+   \   0000000A   0xB672             CPSID    I
+     32              light_init();
+   \   0000000C   0x.... 0x....      BL       light_init
+     33              EnableInterrupts;
+   \   00000010   0xB662             CPSIE    I
+     34          
+     35              //turn_lights_on(0xff);
+     36             
+     37              //LPLD_UART_PutCharArr(UART4, "Input something:\r\n", 18);
+     38          
+     39              while(1)
+     40              {
+     41                  if(counts > 500000)
+   \                     ??main_0:
+   \   00000012   0x....             LDR.N    R0,??DataTable1  ;; 0x7a121
+   \   00000014   0x4284             CMP      R4,R0
+   \   00000016   0xD308             BCC.N    ??main_1
+     42                  {
+     43                      toggle_lights(0xff);
+   \   00000018   0x20FF             MOVS     R0,#+255
+   \   0000001A   0x.... 0x....      BL       toggle_lights
+     44                      LPLD_UART_PutCharArr(UART4, "请输入:\r\n", 18);
+   \   0000001E   0x2212             MOVS     R2,#+18
+   \   00000020   0x....             LDR.N    R1,??DataTable1_1
+   \   00000022   0x....             LDR.N    R0,??DataTable1_2  ;; 0x400ea000
+   \   00000024   0x.... 0x....      BL       LPLD_UART_PutCharArr
+     45                      counts = 0;
+   \   00000028   0x2400             MOVS     R4,#+0
+     46                  }
+     47                  //recv = LPLD_UART_GetChar(UART4);
+     48                  //LPLD_UART_PutChar(UART4, recv);
+     49                  counts ++;
+   \                     ??main_1:
+   \   0000002A   0x1C64             ADDS     R4,R4,#+1
+   \   0000002C   0xE7F1             B.N      ??main_0
+     50              } 
+     51          }
+     52          
+
+   \                                 In section .text, align 2, keep-with-next
+     53          void uart_init(void)
+     54          {
+   \                     uart_init:
+   \   00000000   0xB500             PUSH     {LR}
+   \   00000002   0xB087             SUB      SP,SP,#+28
+     55              UART_InitTypeDef uart4_init_struct;
+     56              uart4_init_struct.UART_Uartx = UART4;
+   \   00000004   0x....             LDR.N    R0,??DataTable1_2  ;; 0x400ea000
+   \   00000006   0x9001             STR      R0,[SP, #+4]
+     57              uart4_init_struct.UART_BaudRate = 9600;
+   \   00000008   0xF44F 0x5016      MOV      R0,#+9600
+   \   0000000C   0x9002             STR      R0,[SP, #+8]
+     58              uart4_init_struct.UART_RxPin = PTE25;
+   \   0000000E   0x2095             MOVS     R0,#+149
+   \   00000010   0xF88D 0x000D      STRB     R0,[SP, #+13]
+     59              uart4_init_struct.UART_TxPin = PTE24;
+   \   00000014   0x2094             MOVS     R0,#+148
+   \   00000016   0xF88D 0x000C      STRB     R0,[SP, #+12]
+     60              LPLD_UART_Init(uart4_init_struct);
+   \   0000001A   0xA901             ADD      R1,SP,#+4
+   \   0000001C   0xB084             SUB      SP,SP,#+16
+   \   0000001E   0x4668             MOV      R0,SP
+   \   00000020   0x2214             MOVS     R2,#+20
+   \   00000022   0x.... 0x....      BL       __aeabi_memcpy4
+   \   00000026   0xBC0F             POP      {R0-R3}
+   \   00000028   0x.... 0x....      BL       LPLD_UART_Init
+     61          }
+   \   0000002C   0xB007             ADD      SP,SP,#+28
+   \   0000002E   0xBD00             POP      {PC}             ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \   00000000   0x0007A121         DC32     0x7a121
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_1:
+   \   00000000   0x........         DC32     `?<Constant "\\307\\353\\312\\344\\310\\353:\\r\\n">`
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_2:
+   \   00000000   0x400EA000         DC32     0x400ea000
+
+   \                                 In section .rodata, align 4
+   \                     `?<Constant "\\307\\353\\312\\344\\310\\353:\\r\\n">`:
+   \   00000000   0xC7 0xEB          DC8 "\307\353\312\344\310\353:\015\012"
+   \              0xCA 0xE4    
+   \              0xC8 0xEB    
+   \              0x3A 0x0D    
+   \              0x0A 0x00    
+   \   0000000A   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+        0  main
+              0 -> LPLD_UART_PutCharArr
+              0 -> light_init
+              0 -> toggle_lights
+              0 -> uart_init
+       48  uart_init
+             32 -> LPLD_UART_Init
+             48 -> __aeabi_memcpy4
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  ?<Constant "\307\353\312\344\310\353:\r\n">
+       4  ??DataTable1
+       4  ??DataTable1_1
+       4  ??DataTable1_2
+      46  main
+      48  uart_init
+
+ 
+  12 bytes in section .rodata
+ 106 bytes in section .text
+ 
+ 106 bytes of CODE  memory
+  12 bytes of CONST memory
+
+Errors: none
+Warnings: none

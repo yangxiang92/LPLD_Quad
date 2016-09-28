@@ -1,0 +1,626 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.40.1.53790/W32 for ARM     07/Aug/2014  15:34:34 #
+# Copyright 1999-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\modu #
+#                    le\MPU9150_IO.c                                          #
+#    Command line =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\modu #
+#                    le\MPU9150_IO.c -D LPLD_K60 -lCN                         #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\List\ -lB E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V3\iar\FLASH_MINE\List\ -o E:\ShawnDocuments\IAR_WorkSpa #
+#                    ce\LPLD_Quad_V3\iar\FLASH_MINE\Obj\ --no_cse             #
+#                    --no_unroll --no_inline --no_code_motion --no_tbaa       #
+#                    --no_clustering --no_scheduling --debug --endian=little  #
+#                    --cpu=Cortex-M4 -e --fpu=None --dlib_config "D:\Program  #
+#                    Files\IAR Systems\Embedded Workbench                     #
+#                    6.4\arm\INC\c\DLib_Config_Normal.h" -I                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\ #
+#                    iar\..\source\app\Control\ -I                            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\Others\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V3\iar\..\source\app\Communicate\ -I                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\Algorithm\ -I E:\ShawnDocuments\IAR_WorkSpace\LPL #
+#                    D_Quad_V3\iar\..\source\app\SignalProcess\ -I            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\module\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V3\iar\..\source\module\anbt_dmp\ -I                     #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\module\eMPL\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V3\iar\..\source\lib\CPU\ -I                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\common\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V3\iar\..\source\lib\LPLD\ -I                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\LPLD\HW\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V3\iar\..\source\lib\LPLD\DEV\ -I                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\uCOS-II\Ports\ -I E:\ShawnDocuments\IAR_WorkSpace #
+#                    \LPLD_Quad_V3\iar\..\source\lib\uCOS-II\Source\ -I       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\FatFs\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V3\iar\..\source\lib\FatFs\option\ -I                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\USB\common\ -I E:\ShawnDocuments\IAR_WorkSpace\LP #
+#                    LD_Quad_V3\iar\..\source\lib\USB\driver\ -I              #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\USB\descriptor\ -I E:\ShawnDocuments\IAR_WorkSpac #
+#                    e\LPLD_Quad_V3\iar\..\source\lib\USB\class\ -I           #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\MyLib\ -On -I "D:\Program Files\IAR               #
+#                    Systems\Embedded Workbench 6.4\arm\CMSIS\Include\" -D    #
+#                    ARM_MATH_CM4                                             #
+#    List file    =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\List\MPU9150_IO.lst                                  #
+#    Object file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\Obj\MPU9150_IO.o                                     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\module\MPU9150_IO.c
+      1          /****************************************************************************** 
+      2           *       MPU9150_IO.c ----- The MPU9150 Operation Function use IO          *
+      3           *       (c) Copyright 2012 HUST RENESAS LAB,The Department of CSE, HUST       *
+      4           *                        All Rights Reserved                                  *
+      5           *Filename             :  MPU9150_IO.c                                           *
+      6           *Programmer(s)        :  Yang Xiang                                           *
+      7           *Description          :                                                       *
+      8           *Modification History :                                                       *
+      9           *01a 2014/3/29 17:46:45                                                       *
+     10           ******************************************************************************/
+     11          #include "MPU9150_IO.h"
+
+   \                                 In section .text, align 2, keep-with-next
+     12          void InitMPU9150_IO(void)
+     13          {
+   \                     InitMPU9150_IO:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     14              static GPIO_InitTypeDef MPU9150_AD0_pin_init_struct;
+     15          
+     16              MPU9150_AD0_pin_init_struct.GPIO_PTx = PTB;
+   \   00000002   0x....             LDR.N    R0,??DataTable3
+   \   00000004   0x....             LDR.N    R1,??DataTable3_1  ;; 0x400ff040
+   \   00000006   0x6001             STR      R1,[R0, #+0]
+     17              MPU9150_AD0_pin_init_struct.GPIO_Pins = GPIO_Pin21;
+   \   00000008   0x....             LDR.N    R0,??DataTable3
+   \   0000000A   0xF45F 0x1100      MOVS     R1,#+2097152
+   \   0000000E   0x6041             STR      R1,[R0, #+4]
+     18              MPU9150_AD0_pin_init_struct.GPIO_Dir = DIR_OUTPUT;
+   \   00000010   0x....             LDR.N    R0,??DataTable3
+   \   00000012   0x2101             MOVS     R1,#+1
+   \   00000014   0x7301             STRB     R1,[R0, #+12]
+     19              MPU9150_AD0_pin_init_struct.GPIO_Output = OUTPUT_L;
+   \   00000016   0x....             LDR.N    R0,??DataTable3
+   \   00000018   0x2100             MOVS     R1,#+0
+   \   0000001A   0x7341             STRB     R1,[R0, #+13]
+     20              LPLD_GPIO_Init(MPU9150_AD0_pin_init_struct);
+   \   0000001C   0x....             LDR.N    R1,??DataTable3
+   \   0000001E   0xB084             SUB      SP,SP,#+16
+   \   00000020   0x4668             MOV      R0,SP
+   \   00000022   0x2214             MOVS     R2,#+20
+   \   00000024   0x.... 0x....      BL       __aeabi_memcpy4
+   \   00000028   0xBC0F             POP      {R0-R3}
+   \   0000002A   0x.... 0x....      BL       LPLD_GPIO_Init
+     21          
+     22              MPU9150_AD0_pin_init_struct.GPIO_PTx = PTB;
+   \   0000002E   0x....             LDR.N    R0,??DataTable3
+   \   00000030   0x....             LDR.N    R1,??DataTable3_1  ;; 0x400ff040
+   \   00000032   0x6001             STR      R1,[R0, #+0]
+     23              MPU9150_AD0_pin_init_struct.GPIO_Pins = GPIO_Pin2;
+   \   00000034   0x....             LDR.N    R0,??DataTable3
+   \   00000036   0x2104             MOVS     R1,#+4
+   \   00000038   0x6041             STR      R1,[R0, #+4]
+     24              MPU9150_AD0_pin_init_struct.GPIO_Dir = DIR_OUTPUT;
+   \   0000003A   0x....             LDR.N    R0,??DataTable3
+   \   0000003C   0x2101             MOVS     R1,#+1
+   \   0000003E   0x7301             STRB     R1,[R0, #+12]
+     25              MPU9150_AD0_pin_init_struct.GPIO_Output = OUTPUT_H;
+   \   00000040   0x....             LDR.N    R0,??DataTable3
+   \   00000042   0x2101             MOVS     R1,#+1
+   \   00000044   0x7341             STRB     R1,[R0, #+13]
+     26              LPLD_GPIO_Init(MPU9150_AD0_pin_init_struct);
+   \   00000046   0x....             LDR.N    R1,??DataTable3
+   \   00000048   0xB084             SUB      SP,SP,#+16
+   \   0000004A   0x4668             MOV      R0,SP
+   \   0000004C   0x2214             MOVS     R2,#+20
+   \   0000004E   0x.... 0x....      BL       __aeabi_memcpy4
+   \   00000052   0xBC0F             POP      {R0-R3}
+   \   00000054   0x.... 0x....      BL       LPLD_GPIO_Init
+     27          
+     28              MPU9150_AD0_pin_init_struct.GPIO_PTx = PTB;
+   \   00000058   0x....             LDR.N    R0,??DataTable3
+   \   0000005A   0x....             LDR.N    R1,??DataTable3_1  ;; 0x400ff040
+   \   0000005C   0x6001             STR      R1,[R0, #+0]
+     29              MPU9150_AD0_pin_init_struct.GPIO_Pins = GPIO_Pin3;
+   \   0000005E   0x....             LDR.N    R0,??DataTable3
+   \   00000060   0x2108             MOVS     R1,#+8
+   \   00000062   0x6041             STR      R1,[R0, #+4]
+     30              MPU9150_AD0_pin_init_struct.GPIO_Dir = DIR_OUTPUT;
+   \   00000064   0x....             LDR.N    R0,??DataTable3
+   \   00000066   0x2101             MOVS     R1,#+1
+   \   00000068   0x7301             STRB     R1,[R0, #+12]
+     31              MPU9150_AD0_pin_init_struct.GPIO_Output = OUTPUT_H;
+   \   0000006A   0x....             LDR.N    R0,??DataTable3
+   \   0000006C   0x2101             MOVS     R1,#+1
+   \   0000006E   0x7341             STRB     R1,[R0, #+13]
+     32              LPLD_GPIO_Init(MPU9150_AD0_pin_init_struct);
+   \   00000070   0x....             LDR.N    R1,??DataTable3
+   \   00000072   0xB084             SUB      SP,SP,#+16
+   \   00000074   0x4668             MOV      R0,SP
+   \   00000076   0x2214             MOVS     R2,#+20
+   \   00000078   0x.... 0x....      BL       __aeabi_memcpy4
+   \   0000007C   0xBC0F             POP      {R0-R3}
+   \   0000007E   0x.... 0x....      BL       LPLD_GPIO_Init
+     33          
+     34          
+     35              InitMPU6050_IO();
+   \   00000082   0x.... 0x....      BL       InitMPU6050_IO
+     36          }
+   \   00000086   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .bss, align 4
+   \                     ??MPU9150_AD0_pin_init_struct:
+   \   00000000                      DS8 20
+     37          
+
+   \                                 In section .text, align 2, keep-with-next
+     38          void SetSCLOutput_IO(uint8 state)
+     39          {
+   \                     SetSCLOutput_IO:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     40              LPLD_GPIO_Output_b(PTB, 2, state);
+   \   00000004   0x0022             MOVS     R2,R4
+   \   00000006   0xB2D2             UXTB     R2,R2            ;; ZeroExt  R2,R2,#+24,#+24
+   \   00000008   0x2102             MOVS     R1,#+2
+   \   0000000A   0x....             LDR.N    R0,??DataTable3_1  ;; 0x400ff040
+   \   0000000C   0x.... 0x....      BL       LPLD_GPIO_Output_b
+     41          }
+   \   00000010   0xBD10             POP      {R4,PC}          ;; return
+     42          
+
+   \                                 In section .text, align 2, keep-with-next
+     43          void SetSDAOutput_IO(uint8 state)
+     44          {
+   \                     SetSDAOutput_IO:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     45              LPLD_GPIO_Output_b(PTB, 3, state);
+   \   00000004   0x0022             MOVS     R2,R4
+   \   00000006   0xB2D2             UXTB     R2,R2            ;; ZeroExt  R2,R2,#+24,#+24
+   \   00000008   0x2103             MOVS     R1,#+3
+   \   0000000A   0x....             LDR.N    R0,??DataTable3_1  ;; 0x400ff040
+   \   0000000C   0x.... 0x....      BL       LPLD_GPIO_Output_b
+     46          }
+   \   00000010   0xBD10             POP      {R4,PC}          ;; return
+     47          
+
+   \                                 In section .text, align 2, keep-with-next
+     48          uint8 GetSDAInput_IO(void)
+     49          {
+   \                     GetSDAInput_IO:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     50              return LPLD_GPIO_Input_b(PTB, 3);
+   \   00000002   0x2103             MOVS     R1,#+3
+   \   00000004   0x....             LDR.N    R0,??DataTable3_1  ;; 0x400ff040
+   \   00000006   0x.... 0x....      BL       LPLD_GPIO_Input_b
+   \   0000000A   0xBD02             POP      {R1,PC}          ;; return
+     51          }
+     52          
+     53          //I2C起始信号
+
+   \                                 In section .text, align 2, keep-with-next
+     54          void I2C_Start_IO()
+     55          {
+   \                     I2C_Start_IO:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     56              SetSDAOutput_IO(1);                    //拉高数据线
+   \   00000002   0x2001             MOVS     R0,#+1
+   \   00000004   0x.... 0x....      BL       SetSDAOutput_IO
+     57              SetSCLOutput_IO(1);                    //拉高时钟线
+   \   00000008   0x2001             MOVS     R0,#+1
+   \   0000000A   0x.... 0x....      BL       SetSCLOutput_IO
+     58              Delay5us();                 //延时
+   \   0000000E   0x.... 0x....      BL       Delay5us
+     59              SetSDAOutput_IO(0);                    //产生下降沿
+   \   00000012   0x2000             MOVS     R0,#+0
+   \   00000014   0x.... 0x....      BL       SetSDAOutput_IO
+     60              Delay5us();                 //延时
+   \   00000018   0x.... 0x....      BL       Delay5us
+     61              SetSCLOutput_IO(0);                    //拉低时钟线
+   \   0000001C   0x2000             MOVS     R0,#+0
+   \   0000001E   0x.... 0x....      BL       SetSCLOutput_IO
+     62          }
+   \   00000022   0xBD01             POP      {R0,PC}          ;; return
+     63          //I2C停止信号
+
+   \                                 In section .text, align 2, keep-with-next
+     64          void I2C_Stop_IO()
+     65          {
+   \                     I2C_Stop_IO:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     66              SetSDAOutput_IO(0);                    //拉低数据线
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0x.... 0x....      BL       SetSDAOutput_IO
+     67              SetSCLOutput_IO(1);                    //拉高时钟线
+   \   00000008   0x2001             MOVS     R0,#+1
+   \   0000000A   0x.... 0x....      BL       SetSCLOutput_IO
+     68              Delay5us();                 //延时
+   \   0000000E   0x.... 0x....      BL       Delay5us
+     69              SetSDAOutput_IO(1);                    //产生上升沿
+   \   00000012   0x2001             MOVS     R0,#+1
+   \   00000014   0x.... 0x....      BL       SetSDAOutput_IO
+     70              Delay5us();                 //延时
+   \   00000018   0x.... 0x....      BL       Delay5us
+     71          }
+   \   0000001C   0xBD01             POP      {R0,PC}          ;; return
+     72          //I2C发送应答信号
+     73          //入口参数:ack (0:ACK 1:NAK)
+
+   \                                 In section .text, align 2, keep-with-next
+     74          void I2C_SendACK_IO(uint8 ack)
+     75          {
+   \                     I2C_SendACK_IO:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     76              SetSDAOutput_IO(ack);                  //写应答信号
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000008   0x.... 0x....      BL       SetSDAOutput_IO
+     77              SetSCLOutput_IO(1);                    //拉高时钟线
+   \   0000000C   0x2001             MOVS     R0,#+1
+   \   0000000E   0x.... 0x....      BL       SetSCLOutput_IO
+     78              Delay5us();                 //延时
+   \   00000012   0x.... 0x....      BL       Delay5us
+     79              SetSCLOutput_IO(0);                    //拉低时钟线
+   \   00000016   0x2000             MOVS     R0,#+0
+   \   00000018   0x.... 0x....      BL       SetSCLOutput_IO
+     80              Delay5us();                 //延时
+   \   0000001C   0x.... 0x....      BL       Delay5us
+     81          }
+   \   00000020   0xBD10             POP      {R4,PC}          ;; return
+     82          //I2C接收应答信号
+
+   \                                 In section .text, align 2, keep-with-next
+     83          uint8 I2C_RecvACK_IO()
+     84          {
+   \                     I2C_RecvACK_IO:
+   \   00000000   0xB510             PUSH     {R4,LR}
+     85              uint8 CY = 0;
+   \   00000002   0x2400             MOVS     R4,#+0
+     86              SetSCLOutput_IO(1);                    //拉高时钟线
+   \   00000004   0x2001             MOVS     R0,#+1
+   \   00000006   0x.... 0x....      BL       SetSCLOutput_IO
+     87              Delay5us();                 //延时
+   \   0000000A   0x.... 0x....      BL       Delay5us
+     88              CY = GetSDAInput_IO();                   //读应答信号
+   \   0000000E   0x.... 0x....      BL       GetSDAInput_IO
+   \   00000012   0x0004             MOVS     R4,R0
+     89              SetSCLOutput_IO(0);                    //拉低时钟线
+   \   00000014   0x2000             MOVS     R0,#+0
+   \   00000016   0x.... 0x....      BL       SetSCLOutput_IO
+     90              Delay5us();                 //延时
+   \   0000001A   0x.... 0x....      BL       Delay5us
+     91              return CY;
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000022   0xBD10             POP      {R4,PC}          ;; return
+     92          }
+     93          //向I2C总线发送一个字节数据
+
+   \                                 In section .text, align 2, keep-with-next
+     94          void I2C_SendByte_IO(uint8 dat)
+     95          {
+   \                     I2C_SendByte_IO:
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     96              uint8 i;
+     97              for (i=0; i<8; i++)         //8位计数器
+   \   00000004   0x2000             MOVS     R0,#+0
+   \   00000006   0x0005             MOVS     R5,R0
+   \                     ??I2C_SendByte_IO_0:
+   \   00000008   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000000A   0x2D08             CMP      R5,#+8
+   \   0000000C   0xD211             BCS.N    ??I2C_SendByte_IO_1
+     98              {
+     99                  SetSDAOutput_IO(!!(dat & 0x80));               //送数据口
+   \   0000000E   0xF3C4 0x10C0      UBFX     R0,R4,#+7,#+1
+   \   00000012   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000014   0x.... 0x....      BL       SetSDAOutput_IO
+    100                  dat <<= 1;//移出数据的最高位 
+   \   00000018   0x0064             LSLS     R4,R4,#+1
+    101                  SetSCLOutput_IO(1);                //拉高时钟线
+   \   0000001A   0x2001             MOVS     R0,#+1
+   \   0000001C   0x.... 0x....      BL       SetSCLOutput_IO
+    102                  Delay5us();             //延时
+   \   00000020   0x.... 0x....      BL       Delay5us
+    103                  SetSCLOutput_IO(0);                //拉低时钟线
+   \   00000024   0x2000             MOVS     R0,#+0
+   \   00000026   0x.... 0x....      BL       SetSCLOutput_IO
+    104                  Delay5us();             //延时
+   \   0000002A   0x.... 0x....      BL       Delay5us
+    105              }
+   \   0000002E   0x1C6D             ADDS     R5,R5,#+1
+   \   00000030   0xE7EA             B.N      ??I2C_SendByte_IO_0
+    106              I2C_RecvACK_IO();
+   \                     ??I2C_SendByte_IO_1:
+   \   00000032   0x.... 0x....      BL       I2C_RecvACK_IO
+    107          }
+   \   00000036   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    108          //从I2C总线接收一个字节数据
+
+   \                                 In section .text, align 2, keep-with-next
+    109          uint8 I2C_RecvByte_IO()
+    110          {
+   \                     I2C_RecvByte_IO:
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+    111              uint8 i;
+    112              uint8 dat = 0;
+   \   00000002   0x2500             MOVS     R5,#+0
+    113              SetSDAOutput_IO(1);                    //使能内部上拉,准备读取数据,
+   \   00000004   0x2001             MOVS     R0,#+1
+   \   00000006   0x.... 0x....      BL       SetSDAOutput_IO
+    114              for (i=0; i<8; i++)         //8位计数器
+   \   0000000A   0x2000             MOVS     R0,#+0
+   \   0000000C   0x0004             MOVS     R4,R0
+   \                     ??I2C_RecvByte_IO_0:
+   \   0000000E   0xB2E4             UXTB     R4,R4            ;; ZeroExt  R4,R4,#+24,#+24
+   \   00000010   0x2C08             CMP      R4,#+8
+   \   00000012   0xD210             BCS.N    ??I2C_RecvByte_IO_1
+    115              {
+    116                  dat <<= 1;
+   \   00000014   0x006D             LSLS     R5,R5,#+1
+    117                  SetSCLOutput_IO(1);                //拉高时钟线
+   \   00000016   0x2001             MOVS     R0,#+1
+   \   00000018   0x.... 0x....      BL       SetSCLOutput_IO
+    118                  Delay5us();             //延时
+   \   0000001C   0x.... 0x....      BL       Delay5us
+    119                  dat |= GetSDAInput_IO();             //读数据               
+   \   00000020   0x.... 0x....      BL       GetSDAInput_IO
+   \   00000024   0x4328             ORRS     R0,R0,R5
+   \   00000026   0x0005             MOVS     R5,R0
+    120                  SetSCLOutput_IO(0);                //拉低时钟线
+   \   00000028   0x2000             MOVS     R0,#+0
+   \   0000002A   0x.... 0x....      BL       SetSCLOutput_IO
+    121                  Delay5us();             //延时
+   \   0000002E   0x.... 0x....      BL       Delay5us
+    122              }
+   \   00000032   0x1C64             ADDS     R4,R4,#+1
+   \   00000034   0xE7EB             B.N      ??I2C_RecvByte_IO_0
+    123              return dat;
+   \                     ??I2C_RecvByte_IO_1:
+   \   00000036   0x0028             MOVS     R0,R5
+   \   00000038   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000003A   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    124          }
+    125          //向I2C设备写入一个字节数据
+
+   \                                 In section .text, align 2, keep-with-next
+    126          void Single_WriteI2C_IO(uint8 REG_Address,uint8 REG_data)
+    127          {
+   \                     Single_WriteI2C_IO:
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    128              I2C_Start_IO();                  //起始信号
+   \   00000006   0x.... 0x....      BL       I2C_Start_IO
+    129              I2C_SendByte_IO(MPU6050_ADDRESS_IO);   //发送设备地址+写信号
+   \   0000000A   0x20D0             MOVS     R0,#+208
+   \   0000000C   0x.... 0x....      BL       I2C_SendByte_IO
+    130              I2C_SendByte_IO(REG_Address);    //内部寄存器地址，
+   \   00000010   0x0020             MOVS     R0,R4
+   \   00000012   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000014   0x.... 0x....      BL       I2C_SendByte_IO
+    131              I2C_SendByte_IO(REG_data);       //内部寄存器数据，
+   \   00000018   0x0028             MOVS     R0,R5
+   \   0000001A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000001C   0x.... 0x....      BL       I2C_SendByte_IO
+    132              I2C_Stop_IO();                   //发送停止信号
+   \   00000020   0x.... 0x....      BL       I2C_Stop_IO
+    133          }
+   \   00000024   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    134          //从I2C设备读取一个字节数据
+
+   \                                 In section .text, align 2, keep-with-next
+    135          uint8 Single_ReadI2C_IO(uint8 REG_Address)
+    136          {
+   \                     Single_ReadI2C_IO:
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    137          	uint8 REG_data;
+    138          	I2C_Start_IO();                   //起始信号
+   \   00000004   0x.... 0x....      BL       I2C_Start_IO
+    139          	I2C_SendByte_IO(MPU6050_ADDRESS_IO);    //发送设备地址+写信号
+   \   00000008   0x20D0             MOVS     R0,#+208
+   \   0000000A   0x.... 0x....      BL       I2C_SendByte_IO
+    140          	I2C_SendByte_IO(REG_Address);     //发送存储单元地址，从0开始	
+   \   0000000E   0x0020             MOVS     R0,R4
+   \   00000010   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000012   0x.... 0x....      BL       I2C_SendByte_IO
+    141          	I2C_Start_IO();                   //起始信号
+   \   00000016   0x.... 0x....      BL       I2C_Start_IO
+    142          	I2C_SendByte_IO(MPU6050_ADDRESS_IO+1);  //发送设备地址+读信号
+   \   0000001A   0x20D1             MOVS     R0,#+209
+   \   0000001C   0x.... 0x....      BL       I2C_SendByte_IO
+    143          	REG_data=I2C_RecvByte_IO();       //读出寄存器数据
+   \   00000020   0x.... 0x....      BL       I2C_RecvByte_IO
+   \   00000024   0x0005             MOVS     R5,R0
+    144          	I2C_SendACK_IO(1);                //接收应答信号
+   \   00000026   0x2001             MOVS     R0,#+1
+   \   00000028   0x.... 0x....      BL       I2C_SendACK_IO
+    145          	I2C_Stop_IO();                    //停止信号
+   \   0000002C   0x.... 0x....      BL       I2C_Stop_IO
+    146          	return REG_data;
+   \   00000030   0x0028             MOVS     R0,R5
+   \   00000032   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000034   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    147          }
+    148          //初始化MPU6050
+
+   \                                 In section .text, align 2, keep-with-next
+    149          void InitMPU6050_IO()
+    150          {
+   \                     InitMPU6050_IO:
+   \   00000000   0xB580             PUSH     {R7,LR}
+    151          	Single_WriteI2C_IO(MPU6050_PWR_MGMT_1, 0x00);	//解除休眠状态
+   \   00000002   0x2100             MOVS     R1,#+0
+   \   00000004   0x206B             MOVS     R0,#+107
+   \   00000006   0x.... 0x....      BL       Single_WriteI2C_IO
+    152          	Single_WriteI2C_IO(MPU6050_SMPLRT_DIV, 0x07);
+   \   0000000A   0x2107             MOVS     R1,#+7
+   \   0000000C   0x2019             MOVS     R0,#+25
+   \   0000000E   0x.... 0x....      BL       Single_WriteI2C_IO
+    153          	Single_WriteI2C_IO(MPU6050_CONFIG, 0x06);
+   \   00000012   0x2106             MOVS     R1,#+6
+   \   00000014   0x201A             MOVS     R0,#+26
+   \   00000016   0x.... 0x....      BL       Single_WriteI2C_IO
+    154          	Single_WriteI2C_IO(MPU6050_GYRO_CONFIG, 0x18);
+   \   0000001A   0x2118             MOVS     R1,#+24
+   \   0000001C   0x201B             MOVS     R0,#+27
+   \   0000001E   0x.... 0x....      BL       Single_WriteI2C_IO
+    155          	Single_WriteI2C_IO(MPU6050_ACCEL_CONFIG, 0x01);
+   \   00000022   0x2101             MOVS     R1,#+1
+   \   00000024   0x201C             MOVS     R0,#+28
+   \   00000026   0x.... 0x....      BL       Single_WriteI2C_IO
+    156          }
+   \   0000002A   0xBD01             POP      {R0,PC}          ;; return
+    157          //合成数据
+
+   \                                 In section .text, align 2, keep-with-next
+    158          int GetData_IO(uint8 REG_Address)
+    159          {
+   \                     GetData_IO:
+   \   00000000   0xE92D 0x41F0      PUSH     {R4-R8,LR}
+   \   00000004   0x0004             MOVS     R4,R0
+    160              uint16 result = 0;
+   \   00000006   0x2500             MOVS     R5,#+0
+    161              int16 ret = 0;
+   \   00000008   0x2600             MOVS     R6,#+0
+    162          
+    163          	uint8 H,L;
+    164          	H=Single_ReadI2C_IO(REG_Address);
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000E   0x.... 0x....      BL       Single_ReadI2C_IO
+   \   00000012   0x0007             MOVS     R7,R0
+    165          	L=Single_ReadI2C_IO(REG_Address+1);
+   \   00000014   0x1C60             ADDS     R0,R4,#+1
+   \   00000016   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000018   0x.... 0x....      BL       Single_ReadI2C_IO
+   \   0000001C   0x4680             MOV      R8,R0
+    166          	result = (H<<8)+L;   //合成数据
+   \   0000001E   0xB2FF             UXTB     R7,R7            ;; ZeroExt  R7,R7,#+24,#+24
+   \   00000020   0x0238             LSLS     R0,R7,#+8
+   \   00000022   0xFA50 0xF088      UXTAB    R0,R0,R8
+   \   00000026   0x0005             MOVS     R5,R0
+    167          
+    168              ret = (int16)result;
+   \   00000028   0x002E             MOVS     R6,R5
+    169          
+    170              return ret;
+   \   0000002A   0xB236             SXTH     R6,R6            ;; SignExt  R6,R6,#+16,#+16
+   \   0000002C   0x0030             MOVS     R0,R6
+   \   0000002E   0xE8BD 0x81F0      POP      {R4-R8,PC}       ;; return
+    171          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3:
+   \   00000000   0x........         DC32     ??MPU9150_AD0_pin_init_struct
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_1:
+   \   00000000   0x400FF040         DC32     0x400ff040
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       24  GetData_IO
+             24 -> Single_ReadI2C_IO
+        8  GetSDAInput_IO
+              8 -> LPLD_GPIO_Input_b
+        8  I2C_RecvACK_IO
+              8 -> Delay5us
+              8 -> GetSDAInput_IO
+              8 -> SetSCLOutput_IO
+       16  I2C_RecvByte_IO
+             16 -> Delay5us
+             16 -> GetSDAInput_IO
+             16 -> SetSCLOutput_IO
+             16 -> SetSDAOutput_IO
+        8  I2C_SendACK_IO
+              8 -> Delay5us
+              8 -> SetSCLOutput_IO
+              8 -> SetSDAOutput_IO
+       16  I2C_SendByte_IO
+             16 -> Delay5us
+             16 -> I2C_RecvACK_IO
+             16 -> SetSCLOutput_IO
+             16 -> SetSDAOutput_IO
+        8  I2C_Start_IO
+              8 -> Delay5us
+              8 -> SetSCLOutput_IO
+              8 -> SetSDAOutput_IO
+        8  I2C_Stop_IO
+              8 -> Delay5us
+              8 -> SetSCLOutput_IO
+              8 -> SetSDAOutput_IO
+        8  InitMPU6050_IO
+              8 -> Single_WriteI2C_IO
+       24  InitMPU9150_IO
+              8 -> InitMPU6050_IO
+              8 -> LPLD_GPIO_Init
+             24 -> __aeabi_memcpy4
+        8  SetSCLOutput_IO
+              8 -> LPLD_GPIO_Output_b
+        8  SetSDAOutput_IO
+              8 -> LPLD_GPIO_Output_b
+       16  Single_ReadI2C_IO
+             16 -> I2C_RecvByte_IO
+             16 -> I2C_SendACK_IO
+             16 -> I2C_SendByte_IO
+             16 -> I2C_Start_IO
+             16 -> I2C_Stop_IO
+       16  Single_WriteI2C_IO
+             16 -> I2C_SendByte_IO
+             16 -> I2C_Start_IO
+             16 -> I2C_Stop_IO
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+      50  GetData_IO
+      12  GetSDAInput_IO
+      36  I2C_RecvACK_IO
+      60  I2C_RecvByte_IO
+      34  I2C_SendACK_IO
+      56  I2C_SendByte_IO
+      36  I2C_Start_IO
+      30  I2C_Stop_IO
+      44  InitMPU6050_IO
+     136  InitMPU9150_IO
+      20  MPU9150_AD0_pin_init_struct
+      18  SetSCLOutput_IO
+      18  SetSDAOutput_IO
+      54  Single_ReadI2C_IO
+      38  Single_WriteI2C_IO
+
+ 
+  20 bytes in section .bss
+ 630 bytes in section .text
+ 
+ 630 bytes of CODE memory
+  20 bytes of DATA memory
+
+Errors: none
+Warnings: none

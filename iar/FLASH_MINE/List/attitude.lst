@@ -1,0 +1,409 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.40.1.53790/W32 for ARM     08/Aug/2014  19:52:18 #
+# Copyright 1999-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\app\ #
+#                    Algorithm\attitude.c                                     #
+#    Command line =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\app\ #
+#                    Algorithm\attitude.c -D LPLD_K60 -lCN                    #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\List\ -lB E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V3\iar\FLASH_MINE\List\ -o E:\ShawnDocuments\IAR_WorkSpa #
+#                    ce\LPLD_Quad_V3\iar\FLASH_MINE\Obj\ --no_cse             #
+#                    --no_unroll --no_inline --no_code_motion --no_tbaa       #
+#                    --no_clustering --no_scheduling --debug --endian=little  #
+#                    --cpu=Cortex-M4 -e --fpu=None --dlib_config "D:\Program  #
+#                    Files\IAR Systems\Embedded Workbench                     #
+#                    6.4\arm\INC\c\DLib_Config_Normal.h" -I                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\ #
+#                    iar\..\source\app\Control\ -I                            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\Others\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V3\iar\..\source\app\Communicate\ -I                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\Algorithm\ -I E:\ShawnDocuments\IAR_WorkSpace\LPL #
+#                    D_Quad_V3\iar\..\source\app\SignalProcess\ -I            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\module\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V3\iar\..\source\module\anbt_dmp\ -I                     #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\module\eMPL\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V3\iar\..\source\lib\CPU\ -I                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\common\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V3\iar\..\source\lib\LPLD\ -I                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\LPLD\HW\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V3\iar\..\source\lib\LPLD\DEV\ -I                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\uCOS-II\Ports\ -I E:\ShawnDocuments\IAR_WorkSpace #
+#                    \LPLD_Quad_V3\iar\..\source\lib\uCOS-II\Source\ -I       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\FatFs\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V3\iar\..\source\lib\FatFs\option\ -I                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\USB\common\ -I E:\ShawnDocuments\IAR_WorkSpace\LP #
+#                    LD_Quad_V3\iar\..\source\lib\USB\driver\ -I              #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\USB\descriptor\ -I E:\ShawnDocuments\IAR_WorkSpac #
+#                    e\LPLD_Quad_V3\iar\..\source\lib\USB\class\ -I           #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\MyLib\ -On -I "D:\Program Files\IAR               #
+#                    Systems\Embedded Workbench 6.4\arm\CMSIS\Include\" -D    #
+#                    ARM_MATH_CM4                                             #
+#    List file    =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\List\attitude.lst                                    #
+#    Object file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\Obj\attitude.o                                       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\app\Algorithm\attitude.c
+      1          /****************************************************************************** 
+      2           *       attitude.c ----- The attitude Caculation          *
+      3           *       (c) Copyright 2012 HUST RENESAS LAB,The Department of CSE, HUST       *
+      4           *                        All Rights Reserved                                  *
+      5           *Filename             :  attitude.c                                           *
+      6           *Programmer(s)        :  Yang Xiang                                           *
+      7           *Description          :                                                       *
+      8           *Modification History :                                                       *
+      9           *01a 2014/4/7 11:20:46                                                       *
+     10           ******************************************************************************/
+     11          #include "attitude.h"
+     12          
+
+   \                                 In section .bss, align 4
+     13          static quaternion s_sAttitude;
+   \                     s_sAttitude:
+   \   00000000                      DS8 16
+     14          
+
+   \                                 In section .bss, align 4
+     15          static EulerAttitudeTypeDef s_sEulerAttitude;
+   \                     s_sEulerAttitude:
+   \   00000000                      DS8 12
+     16          
+
+   \                                 In section .text, align 2, keep-with-next
+     17          void AttitudeInit(void)
+     18          {
+   \                     AttitudeInit:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     19              InitAccFilter();
+   \   00000002   0x.... 0x....      BL       InitAccFilter
+     20              InitGyrFilter();
+   \   00000006   0x.... 0x....      BL       InitGyrFilter
+     21              InitMagFilter();
+   \   0000000A   0x.... 0x....      BL       InitMagFilter
+     22          
+     23              InitEulerAttitude();
+   \   0000000E   0x.... 0x....      BL       InitEulerAttitude
+     24          
+     25              quaternion_loadIdentity(&s_sAttitude);
+   \   00000012   0x....             LDR.N    R0,??DataTable6
+   \   00000014   0x.... 0x....      BL       quaternion_loadIdentity
+     26          }
+   \   00000018   0xBD01             POP      {R0,PC}          ;; return
+     27          
+
+   \                                 In section .text, align 2, keep-with-next
+     28          quaternion * GetAttitude(void)
+     29          {
+     30              return & s_sAttitude;
+   \                     GetAttitude:
+   \   00000000   0x....             LDR.N    R0,??DataTable6
+   \   00000002   0x4770             BX       LR               ;; return
+     31          }
+     32          
+
+   \                                 In section .text, align 2, keep-with-next
+     33          void AttitudeInputAcc(float acc[3])
+     34          {
+   \                     AttitudeInputAcc:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     35              AccFilterInput(acc);
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0x.... 0x....      BL       AccFilterInput
+     36          }
+   \   0000000A   0xBD10             POP      {R4,PC}          ;; return
+     37          
+
+   \                                 In section .text, align 2, keep-with-next
+     38          void AttitudeInputGyr(float gyr[3])
+     39          {
+   \                     AttitudeInputGyr:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     40              GyrFilterInput(gyr);
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0x.... 0x....      BL       GyrFilterInput
+     41          }
+   \   0000000A   0xBD10             POP      {R4,PC}          ;; return
+     42          
+
+   \                                 In section .text, align 2, keep-with-next
+     43          void AttitudeInputMag(float mag[3])
+     44          {
+   \                     AttitudeInputMag:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     45              MagFilterInput(mag);
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0x.... 0x....      BL       MagFilterInput
+     46          }
+   \   0000000A   0xBD10             POP      {R4,PC}          ;; return
+     47          
+
+   \                                 In section .text, align 2, keep-with-next
+     48          void AttitudeMixGyrAccMag(void)
+     49          {
+   \                     AttitudeMixGyrAccMag:
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+     50              FuseGyrAccMagCrossMethod(&s_sAttitude, GyrFilterGetCurrent(), AccFilterGetCurrent(), MagFilterGetCurrent(), PROGRAM_PERIOD_MS * 0.001f);
+   \   00000002   0x.... 0x....      BL       MagFilterGetCurrent
+   \   00000006   0x0004             MOVS     R4,R0
+   \   00000008   0x.... 0x....      BL       AccFilterGetCurrent
+   \   0000000C   0x0005             MOVS     R5,R0
+   \   0000000E   0x.... 0x....      BL       GyrFilterGetCurrent
+   \   00000012   0x....             LDR.N    R1,??DataTable6_1  ;; 0x3b83126f
+   \   00000014   0x9100             STR      R1,[SP, #+0]
+   \   00000016   0x0023             MOVS     R3,R4
+   \   00000018   0x002A             MOVS     R2,R5
+   \   0000001A   0x0001             MOVS     R1,R0
+   \   0000001C   0x....             LDR.N    R0,??DataTable6
+   \   0000001E   0x.... 0x....      BL       FuseGyrAccMagCrossMethod
+     51          }
+   \   00000022   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     52          
+
+   \                                 In section .text, align 2, keep-with-next
+     53          void AttitudeMixGyrAcc(void)
+     54          {
+   \                     AttitudeMixGyrAcc:
+   \   00000000   0xB510             PUSH     {R4,LR}
+     55              FuseGyrAccCrossMethod(&s_sAttitude, GyrFilterGetCurrent(), AccFilterGetCurrent(), PROGRAM_PERIOD_MS * 0.001f);
+   \   00000002   0x.... 0x....      BL       AccFilterGetCurrent
+   \   00000006   0x0004             MOVS     R4,R0
+   \   00000008   0x.... 0x....      BL       GyrFilterGetCurrent
+   \   0000000C   0x....             LDR.N    R3,??DataTable6_1  ;; 0x3b83126f
+   \   0000000E   0x0022             MOVS     R2,R4
+   \   00000010   0x0001             MOVS     R1,R0
+   \   00000012   0x....             LDR.N    R0,??DataTable6
+   \   00000014   0x.... 0x....      BL       FuseGyrAccCrossMethod
+     56          }
+   \   00000018   0xBD10             POP      {R4,PC}          ;; return
+     57          
+
+   \                                 In section .text, align 2, keep-with-next
+     58          void InitEulerAttitude(void)
+     59          {
+     60              s_sEulerAttitude.yaw = 0;
+   \                     InitEulerAttitude:
+   \   00000000   0x....             LDR.N    R0,??DataTable6_2
+   \   00000002   0x2100             MOVS     R1,#+0
+   \   00000004   0x6001             STR      R1,[R0, #+0]
+     61              s_sEulerAttitude.pitch = 0;
+   \   00000006   0x....             LDR.N    R0,??DataTable6_2
+   \   00000008   0x2100             MOVS     R1,#+0
+   \   0000000A   0x6041             STR      R1,[R0, #+4]
+     62              s_sEulerAttitude.roll = 0;
+   \   0000000C   0x....             LDR.N    R0,??DataTable6_2
+   \   0000000E   0x2100             MOVS     R1,#+0
+   \   00000010   0x6081             STR      R1,[R0, #+8]
+     63          }
+   \   00000012   0x4770             BX       LR               ;; return
+     64          
+
+   \                                 In section .text, align 2, keep-with-next
+     65          EulerAttitudeTypeDef * GetEulerAttitude(void)
+     66          {
+     67              return & s_sEulerAttitude;
+   \                     GetEulerAttitude:
+   \   00000000   0x....             LDR.N    R0,??DataTable6_2
+   \   00000002   0x4770             BX       LR               ;; return
+     68          }
+     69          
+
+   \                                 In section .text, align 2, keep-with-next
+     70          void RefreshAttitude(void)
+     71          {
+   \                     RefreshAttitude:
+   \   00000000   0xB500             PUSH     {LR}
+   \   00000002   0xB08D             SUB      SP,SP,#+52
+     72              float acc[3], gyr[3], mag[3];
+     73              float ypr[3];
+     74          
+     75              MPU6050_GetCalibratedAcc(acc);
+   \   00000004   0xA80A             ADD      R0,SP,#+40
+   \   00000006   0x.... 0x....      BL       MPU6050_GetCalibratedAcc
+     76              MPU6050_GetCalibratedGyr(gyr);
+   \   0000000A   0xA807             ADD      R0,SP,#+28
+   \   0000000C   0x.... 0x....      BL       MPU6050_GetCalibratedGyr
+     77              if(g_sQuadSystemFlag.sys_setting.use_ak8975c)
+   \   00000010   0x....             LDR.N    R0,??DataTable6_3
+   \   00000012   0x7A40             LDRB     R0,[R0, #+9]
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD002             BEQ.N    ??RefreshAttitude_0
+     78              {
+     79                  AK8975C_GetCalibratedMag(mag);
+   \   00000018   0xA804             ADD      R0,SP,#+16
+   \   0000001A   0x.... 0x....      BL       AK8975C_GetCalibratedMag
+     80              }
+     81          
+     82              AttitudeInputAcc(acc);
+   \                     ??RefreshAttitude_0:
+   \   0000001E   0xA80A             ADD      R0,SP,#+40
+   \   00000020   0x.... 0x....      BL       AttitudeInputAcc
+     83              AttitudeInputGyr(gyr);
+   \   00000024   0xA807             ADD      R0,SP,#+28
+   \   00000026   0x.... 0x....      BL       AttitudeInputGyr
+     84              if(g_sQuadSystemFlag.sys_setting.use_ak8975c)
+   \   0000002A   0x....             LDR.N    R0,??DataTable6_3
+   \   0000002C   0x7A40             LDRB     R0,[R0, #+9]
+   \   0000002E   0x2800             CMP      R0,#+0
+   \   00000030   0xD006             BEQ.N    ??RefreshAttitude_1
+     85              {
+     86                  mag[0] = - mag[0];                       // 把坐标系转换成从下面观察的，这样一来才跟姿态结算出来的方向是一致的。 
+   \   00000032   0x9804             LDR      R0,[SP, #+16]
+   \   00000034   0xF090 0x4000      EORS     R0,R0,#0x80000000
+   \   00000038   0x9004             STR      R0,[SP, #+16]
+     87                  AttitudeInputMag(mag);
+   \   0000003A   0xA804             ADD      R0,SP,#+16
+   \   0000003C   0x.... 0x....      BL       AttitudeInputMag
+     88              }
+     89          
+     90              if(g_sQuadSystemFlag.sys_setting.use_ak8975c)
+   \                     ??RefreshAttitude_1:
+   \   00000040   0x....             LDR.N    R0,??DataTable6_3
+   \   00000042   0x7A40             LDRB     R0,[R0, #+9]
+   \   00000044   0x2800             CMP      R0,#+0
+   \   00000046   0xD002             BEQ.N    ??RefreshAttitude_2
+     91              {
+     92                  AttitudeMixGyrAccMag();
+   \   00000048   0x.... 0x....      BL       AttitudeMixGyrAccMag
+   \   0000004C   0xE001             B.N      ??RefreshAttitude_3
+     93              }
+     94              else
+     95              {
+     96                  AttitudeMixGyrAcc();
+   \                     ??RefreshAttitude_2:
+   \   0000004E   0x.... 0x....      BL       AttitudeMixGyrAcc
+     97              }
+     98              
+     99              quaternion_converQuaternionToYawPitchRoll(*GetAttitude(), ypr);
+   \                     ??RefreshAttitude_3:
+   \   00000052   0x.... 0x....      BL       GetAttitude
+   \   00000056   0xA901             ADD      R1,SP,#+4
+   \   00000058   0x9100             STR      R1,[SP, #+0]
+   \   0000005A   0xC80F             LDM      R0,{R0-R3}
+   \   0000005C   0x.... 0x....      BL       quaternion_converQuaternionToYawPitchRoll
+    100          
+    101              s_sEulerAttitude.yaw = ypr[0];
+   \   00000060   0x....             LDR.N    R0,??DataTable6_2
+   \   00000062   0x9901             LDR      R1,[SP, #+4]
+   \   00000064   0x6001             STR      R1,[R0, #+0]
+    102              s_sEulerAttitude.pitch = ypr[1];
+   \   00000066   0x....             LDR.N    R0,??DataTable6_2
+   \   00000068   0x9902             LDR      R1,[SP, #+8]
+   \   0000006A   0x6041             STR      R1,[R0, #+4]
+    103              s_sEulerAttitude.roll = ypr[2];
+   \   0000006C   0x....             LDR.N    R0,??DataTable6_2
+   \   0000006E   0x9903             LDR      R1,[SP, #+12]
+   \   00000070   0x6081             STR      R1,[R0, #+8]
+    104          }
+   \   00000072   0xB00D             ADD      SP,SP,#+52
+   \   00000074   0xBD00             POP      {PC}             ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6:
+   \   00000000   0x........         DC32     s_sAttitude
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_1:
+   \   00000000   0x3B83126F         DC32     0x3b83126f
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_2:
+   \   00000000   0x........         DC32     s_sEulerAttitude
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_3:
+   \   00000000   0x........         DC32     g_sQuadSystemFlag
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+        8  AttitudeInit
+              8 -> InitAccFilter
+              8 -> InitEulerAttitude
+              8 -> InitGyrFilter
+              8 -> InitMagFilter
+              8 -> quaternion_loadIdentity
+        8  AttitudeInputAcc
+              8 -> AccFilterInput
+        8  AttitudeInputGyr
+              8 -> GyrFilterInput
+        8  AttitudeInputMag
+              8 -> MagFilterInput
+        8  AttitudeMixGyrAcc
+              8 -> AccFilterGetCurrent
+              8 -> FuseGyrAccCrossMethod
+              8 -> GyrFilterGetCurrent
+       16  AttitudeMixGyrAccMag
+             16 -> AccFilterGetCurrent
+             16 -> FuseGyrAccMagCrossMethod
+             16 -> GyrFilterGetCurrent
+             16 -> MagFilterGetCurrent
+        0  GetAttitude
+        0  GetEulerAttitude
+        0  InitEulerAttitude
+       56  RefreshAttitude
+             56 -> AK8975C_GetCalibratedMag
+             56 -> AttitudeInputAcc
+             56 -> AttitudeInputGyr
+             56 -> AttitudeInputMag
+             56 -> AttitudeMixGyrAcc
+             56 -> AttitudeMixGyrAccMag
+             56 -> GetAttitude
+             56 -> MPU6050_GetCalibratedAcc
+             56 -> MPU6050_GetCalibratedGyr
+             56 -> quaternion_converQuaternionToYawPitchRoll
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable6
+       4  ??DataTable6_1
+       4  ??DataTable6_2
+       4  ??DataTable6_3
+      26  AttitudeInit
+      12  AttitudeInputAcc
+      12  AttitudeInputGyr
+      12  AttitudeInputMag
+      26  AttitudeMixGyrAcc
+      36  AttitudeMixGyrAccMag
+       4  GetAttitude
+       4  GetEulerAttitude
+      20  InitEulerAttitude
+     118  RefreshAttitude
+      16  s_sAttitude
+      12  s_sEulerAttitude
+
+ 
+  28 bytes in section .bss
+ 286 bytes in section .text
+ 
+ 286 bytes of CODE memory
+  28 bytes of DATA memory
+
+Errors: none
+Warnings: none

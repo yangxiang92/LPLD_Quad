@@ -1,0 +1,245 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.40.1.53790/W32 for ARM     05/May/2014  11:38:08 #
+# Copyright 1999-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\source\app\ #
+#                    Control\control.c                                        #
+#    Command line =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\source\app\ #
+#                    Control\control.c -D LPLD_K60 -lCN                       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\List\ -lB E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V2\iar\FLASH_MINE\List\ -o E:\ShawnDocuments\IAR_WorkSpa #
+#                    ce\LPLD_Quad_V2\iar\FLASH_MINE\Obj\ --no_cse             #
+#                    --no_unroll --no_inline --no_code_motion --no_tbaa       #
+#                    --no_clustering --no_scheduling --debug --endian=little  #
+#                    --cpu=Cortex-M4 -e --fpu=None --dlib_config "D:\Program  #
+#                    Files\IAR Systems\Embedded Workbench                     #
+#                    6.4\arm\INC\c\DLib_Config_Normal.h" -I                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\app\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\ #
+#                    iar\..\source\app\Control\ -I                            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\app\Others\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V2\iar\..\source\app\Communicate\ -I                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\app\Algorithm\ -I E:\ShawnDocuments\IAR_WorkSpace\LPL #
+#                    D_Quad_V2\iar\..\source\app\SignalProcess\ -I            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\module\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V2\iar\..\source\module\anbt_dmp\ -I                     #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\module\eMPL\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V2\iar\..\source\lib\CPU\ -I                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\common\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V2\iar\..\source\lib\LPLD\ -I                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\LPLD\HW\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V2\iar\..\source\lib\LPLD\DEV\ -I                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\uCOS-II\Ports\ -I E:\ShawnDocuments\IAR_WorkSpace #
+#                    \LPLD_Quad_V2\iar\..\source\lib\uCOS-II\Source\ -I       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\FatFs\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V2\iar\..\source\lib\FatFs\option\ -I                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\USB\common\ -I E:\ShawnDocuments\IAR_WorkSpace\LP #
+#                    LD_Quad_V2\iar\..\source\lib\USB\driver\ -I              #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\USB\descriptor\ -I E:\ShawnDocuments\IAR_WorkSpac #
+#                    e\LPLD_Quad_V2\iar\..\source\lib\USB\class\ -I           #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\..\sour #
+#                    ce\lib\MyLib\ -On -I "D:\Program Files\IAR               #
+#                    Systems\Embedded Workbench 6.4\arm\CMSIS\Include\" -D    #
+#                    ARM_MATH_CM4                                             #
+#    List file    =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\List\control.lst                                     #
+#    Object file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\iar\FLASH_M #
+#                    INE\Obj\control.o                                        #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V2\source\app\Control\control.c
+      1          /****************************************************************************** 
+      2           *       control.c ----- The basic Control Function of Quad          *
+      3           *       (c) Copyright 2012 HUST RENESAS LAB,The Department of CSE, HUST       *
+      4           *                        All Rights Reserved                                  *
+      5           *Filename             :  control.c                                           *
+      6           *Programmer(s)        :  Yang Xiang                                           *
+      7           *Description          :                                                       *
+      8           *Modification History :                                                       *
+      9           *01a 2014/4/14 15:34:07                                                       *
+     10           ******************************************************************************/
+     11          #include "control.h"
+     12          
+     13          static CtrlParameter s_sControlParameter;
+     14          static CtrlData s_sControlData;
+     15          
+     16          PID_Parameters g_sXYZPidPara[3] = {0};// = {{0.45, 0.0025, 15}, {0.45, 0.0025, 15}, (0.25, 0, 0)};
+     17          PID_Parameters g_sHeightPidPara = {0.1, 0, 0};
+     18          
+     19          void InitControl(void)
+     20          {
+     21              int i = 0;
+     22          
+     23              s_sControlParameter.mode = 0;
+     24          
+     25              InitPID(g_sXYZPidPara);
+     26              InitHeightPID(g_sHeightPidPara);
+     27          
+     28              for(i = 0; i < 4; i++)
+     29              {
+     30                  s_sControlParameter.throttle[i] = 0;
+     31              }
+     32          
+     33              quaternion_loadIdentity( &(s_sControlParameter.lock_attitude_struct.targetAttitude));
+     34          }
+     35          
+     36          void CtrlLockTargetAttitude(void)
+     37          {
+     38              if(s_sControlParameter.lock_attitude_struct.baseThrottle < gc_f32LowerLimitThrottle)
+     39              {
+     40                  CtrlOutputSameThrottle(0);
+     41              }
+     42              else
+     43              {
+     44                  CtrlOutputByTargetAttitude(&(s_sControlParameter.lock_attitude_struct.targetAttitude), s_sControlParameter.lock_attitude_struct.baseThrottle);
+     45              }
+     46          }
+     47          
+     48          void CtrlOutputSameThrottle(float esc_throttle)
+     49          {
+     50              int i = 0;
+     51          
+     52              for(i = 0; i < 4; i ++)
+     53              {
+     54                  s_sControlParameter.throttle[i] = esc_throttle;
+     55              }
+     56          
+     57              CtrlOutputThrottle();
+     58          }
+     59          
+     60          void CtrlOutputThrottle(void)
+     61          {
+     62              ThrottleOutFourESC(s_sControlParameter.throttle);
+     63          }
+     64          
+     65          void CtrlOutputByTargetAttitude(quaternion * targetAttitude, float baseThrottle)
+     66          {   
+     67              //Pay Attention: If you are using this function to do the attitude control, the yaw pitch roll
+     68              //               here is HALF the real yaw pitch roll. So, if you were using the euler attitude
+     69              //               to do the control job, and now you want to use this function to do the control
+     70              //               job, you have to DOUBLE your pid parameter to adapt to this algorithm!!!
+     71              int i = 0;
+     72              quaternion * cur = GetAttitude();
+     73          
+     74              quaternion cur_rev;
+     75              quaternion delta;
+     76          
+     77              cur_rev = quaternion_getConjugateQuaternion(*cur);
+     78          
+     79              quaternion_mult(&delta, &cur_rev, targetAttitude);
+     80              quaternion_normalize(&delta);
+     81              
+     82              s_sControlData.delta_quaternion = delta;
+     83          
+     84              float output[3] = {0,0,0};
+     85              float input[3] = {0,0,0};
+     86              /* To make it the same as using the euler angle to control */
+     87              input[0] = delta.x * 2;
+     88              input[1] = delta.y * 2;
+     89              input[2] = delta.z * 2;
+     90              PIDInterate(input, output);
+     91              
+     92              for(i = 0; i < 3; i++)
+     93              {
+     94                  s_sControlData.pid_output[i] = output[i];
+     95              }
+     96              
+     97              /*
+     98               * “+”控制模式
+     99               */
+    100              /* 
+    101              s_sControlParameter.throttle[0] = baseThrottle             - output[1] - output[2];
+    102              s_sControlParameter.throttle[1] = baseThrottle + output[0]             + output[2];
+    103              s_sControlParameter.throttle[2] = baseThrottle             + output[1] - output[2];
+    104              s_sControlParameter.throttle[3] = baseThrottle - output[0]             + output[2];
+    105              */
+    106          
+    107              /* 
+    108               * “X”控制模式
+    109               * */
+    110              s_sControlParameter.throttle[0] = baseThrottle + (output[0]/2) - (output[1]/2) - output[2];
+    111              s_sControlParameter.throttle[1] = baseThrottle - (output[0]/2) - (output[1]/2) + output[2];
+    112              s_sControlParameter.throttle[2] = baseThrottle - (output[0]/2) + (output[1]/2) - output[2];
+    113              s_sControlParameter.throttle[3] = baseThrottle + (output[0]/2) + (output[1]/2) + output[2];    
+    114              
+    115          
+    116              CtrlOutputThrottle();
+    117          }
+    118          
+    119          CtrlParameter* GetControlParameter(void)
+    120          {
+    121              return &s_sControlParameter;
+    122          }
+    123          
+    124          CtrlData * GetControlData(void)
+    125          {
+    126              return &s_sControlData;
+    127          }
+    128          
+    129          float CtrlGetLockTargetHeightThrottle(float height)
+    130          {
+    131              return 0;
+    132          }
+    133          
+    134          void CtrlEvent(void)
+    135          {
+    136              if(s_sControlParameter.mode != CTRL_MODE_HALT)
+    137              {
+    138                  if(ExceptionCheckInclination(*GetEulerAttitude()))
+    139                  {
+    140                      g_sQuadSystemFlag.incline_halt_flag = 1;
+    141                      CtrlEnterHaltMode();
+    142                  }
+    143              }
+    144          
+    145              switch(s_sControlParameter.mode)
+    146              {
+    147                  case CTRL_MODE_HALT:
+    148                      CtrlOutputSameThrottle(0);
+    149                      break;
+    150                  case CTRL_MODE_LOCK_ATTITUDE:
+    151                      CtrlLockTargetAttitude();
+    152                      break;
+    153                  case CTRL_MODE_LOCK_HEIGHT_ATTITUDE:
+    154                      CtrlLockHeightThrottle((float)g_sonar_measure_distance_cm / 100);
+    155                      CtrlLockTargetAttitude();
+    156                      break;
+    157                  default:
+    158                      CtrlOutputSameThrottle(0);
+    159                      break;
+    160              }
+    161          }
+    162          
+    163          void CtrlEnterHaltMode(void)
+    164          {
+    165              s_sControlParameter.mode = CTRL_MODE_HALT;
+    166              CtrlOutputSameThrottle(0);
+    167          }
+    168          
+    169          void CtrlLockHeightThrottle(float height)
+    170          {
+    171              float height_err = 0;
+    172          
+    173              height_err = s_sControlParameter.lock_attitude_struct.targetHeight - height;
+    174          
+    175              s_sControlParameter.lock_attitude_struct.baseThrottle = HeightPIDInterate(height_err);
+    176          }
+
+Errors: 2
+Warnings: none

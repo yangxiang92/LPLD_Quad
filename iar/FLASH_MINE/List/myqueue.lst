@@ -1,0 +1,378 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.40.1.53790/W32 for ARM     07/Aug/2014  15:34:40 #
+# Copyright 1999-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\app\ #
+#                    Communicate\myqueue.c                                    #
+#    Command line =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\app\ #
+#                    Communicate\myqueue.c -D LPLD_K60 -lCN                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\List\ -lB E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V3\iar\FLASH_MINE\List\ -o E:\ShawnDocuments\IAR_WorkSpa #
+#                    ce\LPLD_Quad_V3\iar\FLASH_MINE\Obj\ --no_cse             #
+#                    --no_unroll --no_inline --no_code_motion --no_tbaa       #
+#                    --no_clustering --no_scheduling --debug --endian=little  #
+#                    --cpu=Cortex-M4 -e --fpu=None --dlib_config "D:\Program  #
+#                    Files\IAR Systems\Embedded Workbench                     #
+#                    6.4\arm\INC\c\DLib_Config_Normal.h" -I                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\ #
+#                    iar\..\source\app\Control\ -I                            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\Others\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V3\iar\..\source\app\Communicate\ -I                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\Algorithm\ -I E:\ShawnDocuments\IAR_WorkSpace\LPL #
+#                    D_Quad_V3\iar\..\source\app\SignalProcess\ -I            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\module\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V3\iar\..\source\module\anbt_dmp\ -I                     #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\module\eMPL\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V3\iar\..\source\lib\CPU\ -I                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\common\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V3\iar\..\source\lib\LPLD\ -I                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\LPLD\HW\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V3\iar\..\source\lib\LPLD\DEV\ -I                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\uCOS-II\Ports\ -I E:\ShawnDocuments\IAR_WorkSpace #
+#                    \LPLD_Quad_V3\iar\..\source\lib\uCOS-II\Source\ -I       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\FatFs\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V3\iar\..\source\lib\FatFs\option\ -I                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\USB\common\ -I E:\ShawnDocuments\IAR_WorkSpace\LP #
+#                    LD_Quad_V3\iar\..\source\lib\USB\driver\ -I              #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\USB\descriptor\ -I E:\ShawnDocuments\IAR_WorkSpac #
+#                    e\LPLD_Quad_V3\iar\..\source\lib\USB\class\ -I           #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\MyLib\ -On -I "D:\Program Files\IAR               #
+#                    Systems\Embedded Workbench 6.4\arm\CMSIS\Include\" -D    #
+#                    ARM_MATH_CM4                                             #
+#    List file    =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\List\myqueue.lst                                     #
+#    Object file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\Obj\myqueue.o                                        #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\app\Communicate\myqueue.c
+      1          /****************************************************************************** 
+      2           *       myqueue.c ----- The queue data structure algorithm          *
+      3           *       (c) Copyright 2012 HUST RENESAS LAB,The Department of CSE, HUST       *
+      4           *                        All Rights Reserved                                  *
+      5           *Filename             :  myqueue.c                                           *
+      6           *Programmer(s)        :  Yang Xiang                                           *
+      7           *Description          :                                                       *
+      8           *Modification History :                                                       *
+      9           *01a 2014/4/12 9:25:13                                                       *
+     10           ******************************************************************************/
+     11          #include "myqueue.h"
+     12          
+
+   \                                 In section .text, align 2, keep-with-next
+     13          MyQueue * CreateMyQueue(uint16 buf_size)
+     14          {
+   \                     CreateMyQueue:
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     15              MyQueue * ret_queue;
+     16              int i = 0;
+   \   00000004   0x2600             MOVS     R6,#+0
+     17          
+     18              ret_queue = (MyQueue *)malloc(sizeof(MyQueue));
+   \   00000006   0x200C             MOVS     R0,#+12
+   \   00000008   0x.... 0x....      BL       malloc
+   \   0000000C   0x0005             MOVS     R5,R0
+     19              ret_queue->buff_size = buf_size;
+   \   0000000E   0x812C             STRH     R4,[R5, #+8]
+     20              ret_queue->buff = (int8 *)malloc(ret_queue->buff_size * sizeof(int8));
+   \   00000010   0x8928             LDRH     R0,[R5, #+8]
+   \   00000012   0x.... 0x....      BL       malloc
+   \   00000016   0x6028             STR      R0,[R5, #+0]
+     21              for(i = 0; i < ret_queue->buff_size; i++)
+   \   00000018   0x2000             MOVS     R0,#+0
+   \   0000001A   0x0006             MOVS     R6,R0
+   \                     ??CreateMyQueue_0:
+   \   0000001C   0x8928             LDRH     R0,[R5, #+8]
+   \   0000001E   0x4286             CMP      R6,R0
+   \   00000020   0xDA04             BGE.N    ??CreateMyQueue_1
+     22              {
+     23                  ret_queue->buff[i] = '\0';
+   \   00000022   0x6828             LDR      R0,[R5, #+0]
+   \   00000024   0x2100             MOVS     R1,#+0
+   \   00000026   0x5431             STRB     R1,[R6, R0]
+     24              }
+   \   00000028   0x1C76             ADDS     R6,R6,#+1
+   \   0000002A   0xE7F7             B.N      ??CreateMyQueue_0
+     25              ret_queue->front_pointer = 0;
+   \                     ??CreateMyQueue_1:
+   \   0000002C   0x2000             MOVS     R0,#+0
+   \   0000002E   0x80A8             STRH     R0,[R5, #+4]
+     26              ret_queue->back_pointer = 0;
+   \   00000030   0x2000             MOVS     R0,#+0
+   \   00000032   0x80E8             STRH     R0,[R5, #+6]
+     27              
+     28              return ret_queue;
+   \   00000034   0x0028             MOVS     R0,R5
+   \   00000036   0xBD70             POP      {R4-R6,PC}       ;; return
+     29          }
+     30          
+
+   \                                 In section .text, align 2, keep-with-next
+     31          void DestoryMyQueue(MyQueue * queue)
+     32          {
+   \                     DestoryMyQueue:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     33              free(queue->buff);
+   \   00000004   0x6820             LDR      R0,[R4, #+0]
+   \   00000006   0x.... 0x....      BL       free
+     34              free(queue);
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0x.... 0x....      BL       free
+     35          }
+   \   00000010   0xBD10             POP      {R4,PC}          ;; return
+     36          
+
+   \                                 In section .text, align 2, keep-with-next
+     37          int16 GetMyQueueSize(MyQueue * queue)
+     38          {
+   \                     GetMyQueueSize:
+   \   00000000   0x0001             MOVS     R1,R0
+     39              int16 diff = 0;
+   \   00000002   0x2000             MOVS     R0,#+0
+     40          
+     41              diff = queue->front_pointer - queue->back_pointer;
+   \   00000004   0x888A             LDRH     R2,[R1, #+4]
+   \   00000006   0x88CB             LDRH     R3,[R1, #+6]
+   \   00000008   0x1AD2             SUBS     R2,R2,R3
+   \   0000000A   0x0010             MOVS     R0,R2
+     42          
+     43              if(diff >= 0)
+   \   0000000C   0xB200             SXTH     R0,R0            ;; SignExt  R0,R0,#+16,#+16
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD502             BPL.N    ??GetMyQueueSize_0
+     44              {
+     45                  diff = diff;
+     46              }
+     47              else
+     48              {
+     49                  diff = diff + queue->buff_size;
+   \                     ??GetMyQueueSize_1:
+   \   00000012   0xF9B1 0x2008      LDRSH    R2,[R1, #+8]
+   \   00000016   0x1810             ADDS     R0,R2,R0
+     50              }
+     51          
+     52              return diff;
+   \                     ??GetMyQueueSize_0:
+   \   00000018   0xB200             SXTH     R0,R0            ;; SignExt  R0,R0,#+16,#+16
+   \   0000001A   0x4770             BX       LR               ;; return
+     53          }
+     54          
+
+   \                                 In section .text, align 2, keep-with-next
+     55          uint8 IsMyQueueEmpty(MyQueue * queue)
+     56          {
+   \                     IsMyQueueEmpty:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     57              if(GetMyQueueSize(queue) > 0)
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0x.... 0x....      BL       GetMyQueueSize
+   \   0000000A   0x2801             CMP      R0,#+1
+   \   0000000C   0xDB01             BLT.N    ??IsMyQueueEmpty_0
+     58              {
+     59                  return 0;
+   \   0000000E   0x2000             MOVS     R0,#+0
+   \   00000010   0xE000             B.N      ??IsMyQueueEmpty_1
+     60              }
+     61              else
+     62              {
+     63                  return 1;
+   \                     ??IsMyQueueEmpty_0:
+   \   00000012   0x2001             MOVS     R0,#+1
+   \                     ??IsMyQueueEmpty_1:
+   \   00000014   0xBD10             POP      {R4,PC}          ;; return
+     64              }
+     65          }
+     66          
+
+   \                                 In section .text, align 2, keep-with-next
+     67          uint8 IsMyQueueFull(MyQueue * queue)
+     68          {
+   \                     IsMyQueueFull:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     69              if(GetMyQueueSize(queue) < (queue->buff_size-1))
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0x.... 0x....      BL       GetMyQueueSize
+   \   0000000A   0x8921             LDRH     R1,[R4, #+8]
+   \   0000000C   0x1E49             SUBS     R1,R1,#+1
+   \   0000000E   0x4288             CMP      R0,R1
+   \   00000010   0xDA01             BGE.N    ??IsMyQueueFull_0
+     70              {
+     71                  return 0;
+   \   00000012   0x2000             MOVS     R0,#+0
+   \   00000014   0xE000             B.N      ??IsMyQueueFull_1
+     72              }
+     73              else
+     74              {
+     75                  return 1;
+   \                     ??IsMyQueueFull_0:
+   \   00000016   0x2001             MOVS     R0,#+1
+   \                     ??IsMyQueueFull_1:
+   \   00000018   0xBD10             POP      {R4,PC}          ;; return
+     76              }
+     77          }
+     78          
+
+   \                                 In section .text, align 2, keep-with-next
+     79          uint8 PushMyQueue(MyQueue * queue, int8 data)
+     80          {
+   \                     PushMyQueue:
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+     81              if(!IsMyQueueFull(queue))
+   \   00000006   0x0020             MOVS     R0,R4
+   \   00000008   0x.... 0x....      BL       IsMyQueueFull
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD10F             BNE.N    ??PushMyQueue_0
+     82              {
+     83                  queue->buff[queue->front_pointer] = data;
+   \   00000010   0xF9B4 0x0004      LDRSH    R0,[R4, #+4]
+   \   00000014   0x6821             LDR      R1,[R4, #+0]
+   \   00000016   0x5445             STRB     R5,[R0, R1]
+     84                  queue->front_pointer ++;
+   \   00000018   0x88A0             LDRH     R0,[R4, #+4]
+   \   0000001A   0x1C40             ADDS     R0,R0,#+1
+   \   0000001C   0x80A0             STRH     R0,[R4, #+4]
+     85                  if(queue->front_pointer >= queue->buff_size)
+   \   0000001E   0xF9B4 0x0004      LDRSH    R0,[R4, #+4]
+   \   00000022   0x8921             LDRH     R1,[R4, #+8]
+   \   00000024   0x4288             CMP      R0,R1
+   \   00000026   0xDB01             BLT.N    ??PushMyQueue_1
+     86                  {
+     87                      queue->front_pointer = 0;
+   \   00000028   0x2000             MOVS     R0,#+0
+   \   0000002A   0x80A0             STRH     R0,[R4, #+4]
+     88                  }
+     89                  return 1;
+   \                     ??PushMyQueue_1:
+   \   0000002C   0x2001             MOVS     R0,#+1
+   \   0000002E   0xE000             B.N      ??PushMyQueue_2
+     90              }
+     91              else
+     92              {
+     93                  return 0;
+   \                     ??PushMyQueue_0:
+   \   00000030   0x2000             MOVS     R0,#+0
+   \                     ??PushMyQueue_2:
+   \   00000032   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+     94              }
+     95          }
+     96          
+
+   \                                 In section .text, align 2, keep-with-next
+     97          int8 PopMyQueue(MyQueue * queue)
+     98          {
+   \                     PopMyQueue:
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     99              int8 ret = 0;
+   \   00000004   0x2500             MOVS     R5,#+0
+    100          
+    101              ret = queue->buff[queue->back_pointer];
+   \   00000006   0xF9B4 0x0006      LDRSH    R0,[R4, #+6]
+   \   0000000A   0x6821             LDR      R1,[R4, #+0]
+   \   0000000C   0x5640             LDRSB    R0,[R0, R1]
+   \   0000000E   0x0005             MOVS     R5,R0
+    102          
+    103              if(!IsMyQueueEmpty(queue))
+   \   00000010   0x0020             MOVS     R0,R4
+   \   00000012   0x.... 0x....      BL       IsMyQueueEmpty
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD109             BNE.N    ??PopMyQueue_0
+    104              {
+    105                  queue->back_pointer ++;
+   \   0000001A   0x88E0             LDRH     R0,[R4, #+6]
+   \   0000001C   0x1C40             ADDS     R0,R0,#+1
+   \   0000001E   0x80E0             STRH     R0,[R4, #+6]
+    106                  if(queue->back_pointer >= (queue->buff_size))
+   \   00000020   0xF9B4 0x0006      LDRSH    R0,[R4, #+6]
+   \   00000024   0x8921             LDRH     R1,[R4, #+8]
+   \   00000026   0x4288             CMP      R0,R1
+   \   00000028   0xDB01             BLT.N    ??PopMyQueue_0
+    107                  {
+    108                      queue->back_pointer = 0;
+   \   0000002A   0x2000             MOVS     R0,#+0
+   \   0000002C   0x80E0             STRH     R0,[R4, #+6]
+    109                  }
+    110              }
+    111          
+    112              return ret;
+   \                     ??PopMyQueue_0:
+   \   0000002E   0x0028             MOVS     R0,R5
+   \   00000030   0xB240             SXTB     R0,R0            ;; SignExt  R0,R0,#+24,#+24
+   \   00000032   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    113          }
+    114          
+
+   \                                 In section .text, align 2, keep-with-next
+    115          void ClearMyQueue(MyQueue * queue)
+    116          {
+    117              queue->front_pointer = queue->back_pointer;
+   \                     ClearMyQueue:
+   \   00000000   0x88C1             LDRH     R1,[R0, #+6]
+   \   00000002   0x8081             STRH     R1,[R0, #+4]
+    118          }
+   \   00000004   0x4770             BX       LR               ;; return
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+        0  ClearMyQueue
+       16  CreateMyQueue
+             16 -> malloc
+        8  DestoryMyQueue
+              8 -> free
+        0  GetMyQueueSize
+        8  IsMyQueueEmpty
+              8 -> GetMyQueueSize
+        8  IsMyQueueFull
+              8 -> GetMyQueueSize
+       16  PopMyQueue
+             16 -> IsMyQueueEmpty
+       16  PushMyQueue
+             16 -> IsMyQueueFull
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ClearMyQueue
+      56  CreateMyQueue
+      18  DestoryMyQueue
+      28  GetMyQueueSize
+      22  IsMyQueueEmpty
+      26  IsMyQueueFull
+      52  PopMyQueue
+      52  PushMyQueue
+
+ 
+ 260 bytes in section .text
+ 
+ 260 bytes of CODE memory
+
+Errors: none
+Warnings: none

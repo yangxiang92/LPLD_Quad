@@ -1,0 +1,784 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.40.1.53790/W32 for ARM     07/Aug/2014  15:34:34 #
+# Copyright 1999-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\modu #
+#                    le\MPU9150.c                                             #
+#    Command line =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\modu #
+#                    le\MPU9150.c -D LPLD_K60 -lCN                            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\List\ -lB E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V3\iar\FLASH_MINE\List\ -o E:\ShawnDocuments\IAR_WorkSpa #
+#                    ce\LPLD_Quad_V3\iar\FLASH_MINE\Obj\ --no_cse             #
+#                    --no_unroll --no_inline --no_code_motion --no_tbaa       #
+#                    --no_clustering --no_scheduling --debug --endian=little  #
+#                    --cpu=Cortex-M4 -e --fpu=None --dlib_config "D:\Program  #
+#                    Files\IAR Systems\Embedded Workbench                     #
+#                    6.4\arm\INC\c\DLib_Config_Normal.h" -I                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\ #
+#                    iar\..\source\app\Control\ -I                            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\Others\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V3\iar\..\source\app\Communicate\ -I                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\app\Algorithm\ -I E:\ShawnDocuments\IAR_WorkSpace\LPL #
+#                    D_Quad_V3\iar\..\source\app\SignalProcess\ -I            #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\module\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_ #
+#                    V3\iar\..\source\module\anbt_dmp\ -I                     #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\module\eMPL\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V3\iar\..\source\lib\CPU\ -I                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\common\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Q #
+#                    uad_V3\iar\..\source\lib\LPLD\ -I                        #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\LPLD\HW\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_ #
+#                    Quad_V3\iar\..\source\lib\LPLD\DEV\ -I                   #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\uCOS-II\Ports\ -I E:\ShawnDocuments\IAR_WorkSpace #
+#                    \LPLD_Quad_V3\iar\..\source\lib\uCOS-II\Source\ -I       #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\FatFs\ -I E:\ShawnDocuments\IAR_WorkSpace\LPLD_Qu #
+#                    ad_V3\iar\..\source\lib\FatFs\option\ -I                 #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\USB\common\ -I E:\ShawnDocuments\IAR_WorkSpace\LP #
+#                    LD_Quad_V3\iar\..\source\lib\USB\driver\ -I              #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\USB\descriptor\ -I E:\ShawnDocuments\IAR_WorkSpac #
+#                    e\LPLD_Quad_V3\iar\..\source\lib\USB\class\ -I           #
+#                    E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\..\sour #
+#                    ce\lib\MyLib\ -On -I "D:\Program Files\IAR               #
+#                    Systems\Embedded Workbench 6.4\arm\CMSIS\Include\" -D    #
+#                    ARM_MATH_CM4                                             #
+#    List file    =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\List\MPU9150.lst                                     #
+#    Object file  =  E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\iar\FLASH_M #
+#                    INE\Obj\MPU9150.o                                        #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\ShawnDocuments\IAR_WorkSpace\LPLD_Quad_V3\source\module\MPU9150.c
+      1          /****************************************************************************** 
+      2           *       MPU9150.c ----- The Code to use MPU9150          *
+      3           *       (c) Copyright 2012 HUST RENESAS LAB,The Department of CSE, HUST       *
+      4           *                        All Rights Reserved                                  *
+      5           *Filename             :  MPU9150.c                                           *
+      6           *Programmer(s)        :  Yang Xiang                                           *
+      7           *Description          :                                                       *
+      8           *Modification History :                                                       *
+      9           *01a 2014/3/27 21:51:25                                                       *
+     10           ******************************************************************************/
+     11          #include "MPU9150.h"
+     12          
+
+   \                                 In section .text, align 2, keep-with-next
+     13          void InitMPU9150(void)
+     14          {
+   \                     InitMPU9150:
+   \   00000000   0xB500             PUSH     {LR}
+   \   00000002   0xB08B             SUB      SP,SP,#+44
+     15              I2C_InitTypeDef MPU9150_I2C_init_struct = {0};
+   \   00000004   0xA801             ADD      R0,SP,#+4
+   \   00000006   0x2110             MOVS     R1,#+16
+   \   00000008   0x.... 0x....      BL       __aeabi_memclr4
+     16              GPIO_InitTypeDef MPU9150_AD0_pin_init_struct = {0};
+   \   0000000C   0xA805             ADD      R0,SP,#+20
+   \   0000000E   0x2114             MOVS     R1,#+20
+   \   00000010   0x.... 0x....      BL       __aeabi_memclr4
+     17          
+     18              MPU9150_I2C_init_struct.I2C_I2Cx = MPU9150_I2C_PORT;
+   \   00000014   0x....             LDR.N    R0,??DataTable9  ;; 0x40066000
+   \   00000016   0x9001             STR      R0,[SP, #+4]
+     19              MPU9150_I2C_init_struct.I2C_IntEnable = FALSE;
+   \   00000018   0x2000             MOVS     R0,#+0
+   \   0000001A   0xF88D 0x0009      STRB     R0,[SP, #+9]
+     20              MPU9150_I2C_init_struct.I2C_ICR  = MPU9150_SCL_400KHZ;
+   \   0000001E   0x2017             MOVS     R0,#+23
+   \   00000020   0xF88D 0x0008      STRB     R0,[SP, #+8]
+     21              MPU9150_I2C_init_struct.I2C_SclPin = MPU9150_I2C_SCLPIN;
+   \   00000024   0x2022             MOVS     R0,#+34
+   \   00000026   0xF88D 0x000A      STRB     R0,[SP, #+10]
+     22              MPU9150_I2C_init_struct.I2C_SdaPin = MPU9150_I2C_SDAPIN;
+   \   0000002A   0x2023             MOVS     R0,#+35
+   \   0000002C   0xF88D 0x000B      STRB     R0,[SP, #+11]
+     23              MPU9150_I2C_init_struct.I2C_Isr = NULL;
+   \   00000030   0x2000             MOVS     R0,#+0
+   \   00000032   0x9004             STR      R0,[SP, #+16]
+     24              MPU9150_I2C_init_struct.I2C_OpenDrainEnable = TRUE;
+   \   00000034   0x2001             MOVS     R0,#+1
+   \   00000036   0xF88D 0x000C      STRB     R0,[SP, #+12]
+     25              LPLD_I2C_Init(MPU9150_I2C_init_struct);
+   \   0000003A   0xA801             ADD      R0,SP,#+4
+   \   0000003C   0xC80F             LDM      R0,{R0-R3}
+   \   0000003E   0x.... 0x....      BL       LPLD_I2C_Init
+     26          
+     27              MPU9150_AD0_pin_init_struct.GPIO_PTx = PTB;
+   \   00000042   0x....             LDR.N    R0,??DataTable9_1  ;; 0x400ff040
+   \   00000044   0x9005             STR      R0,[SP, #+20]
+     28              MPU9150_AD0_pin_init_struct.GPIO_Pins = GPIO_Pin21;
+   \   00000046   0xF45F 0x1000      MOVS     R0,#+2097152
+   \   0000004A   0x9006             STR      R0,[SP, #+24]
+     29              MPU9150_AD0_pin_init_struct.GPIO_Dir = DIR_OUTPUT;
+   \   0000004C   0x2001             MOVS     R0,#+1
+   \   0000004E   0xF88D 0x0020      STRB     R0,[SP, #+32]
+     30              MPU9150_AD0_pin_init_struct.GPIO_Output = OUTPUT_L;
+   \   00000052   0x2000             MOVS     R0,#+0
+   \   00000054   0xF88D 0x0021      STRB     R0,[SP, #+33]
+     31              LPLD_GPIO_Init(MPU9150_AD0_pin_init_struct);
+   \   00000058   0xA905             ADD      R1,SP,#+20
+   \   0000005A   0xB084             SUB      SP,SP,#+16
+   \   0000005C   0x4668             MOV      R0,SP
+   \   0000005E   0x2214             MOVS     R2,#+20
+   \   00000060   0x.... 0x....      BL       __aeabi_memcpy4
+   \   00000064   0xBC0F             POP      {R0-R3}
+   \   00000066   0x.... 0x....      BL       LPLD_GPIO_Init
+     32              
+     33              delayms(10);
+   \   0000006A   0x200A             MOVS     R0,#+10
+   \   0000006C   0x.... 0x....      BL       delayms
+     34          
+     35              InitMPU6050();
+   \   00000070   0x.... 0x....      BL       InitMPU6050
+     36              InitAK8975C();
+   \   00000074   0x.... 0x....      BL       InitAK8975C
+     37          }
+   \   00000078   0xB00B             ADD      SP,SP,#+44
+   \   0000007A   0xBD00             POP      {PC}             ;; return
+     38          
+
+   \                                 In section .text, align 2, keep-with-next
+     39          int16 MPU6050_GetData(uint8 reg_address)
+     40          {
+   \                     MPU6050_GetData:
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     41              int16 ret = 0;
+   \   00000004   0x2500             MOVS     R5,#+0
+     42              uint8 buf[2] = {0,0};
+   \   00000006   0x2000             MOVS     R0,#+0
+   \   00000008   0xF8AD 0x0000      STRH     R0,[SP, #+0]
+     43          
+     44              MPU6050_MultiReadReg(reg_address, 2, buf);
+   \   0000000C   0xAA00             ADD      R2,SP,#+0
+   \   0000000E   0x2102             MOVS     R1,#+2
+   \   00000010   0x0020             MOVS     R0,R4
+   \   00000012   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000014   0x.... 0x....      BL       MPU6050_MultiReadReg
+     45          
+     46              ret = (int16)(((uint16)buf[0] << 8) + buf[1]);
+   \   00000018   0xF89D 0x0000      LDRB     R0,[SP, #+0]
+   \   0000001C   0x0200             LSLS     R0,R0,#+8
+   \   0000001E   0xF89D 0x1001      LDRB     R1,[SP, #+1]
+   \   00000022   0xFA50 0xF081      UXTAB    R0,R0,R1
+   \   00000026   0x0005             MOVS     R5,R0
+     47          
+     48              return ret;
+   \   00000028   0x0028             MOVS     R0,R5
+   \   0000002A   0xB200             SXTH     R0,R0            ;; SignExt  R0,R0,#+16,#+16
+   \   0000002C   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+     49          }
+     50          
+
+   \                                 In section .text, align 2, keep-with-next
+     51          void MPU6050_GetRawData(int16* raw_data)
+     52          {
+   \                     MPU6050_GetRawData:
+   \   00000000   0xB530             PUSH     {R4,R5,LR}
+   \   00000002   0xB085             SUB      SP,SP,#+20
+   \   00000004   0x0004             MOVS     R4,R0
+     53              int i = 0;
+   \   00000006   0x2500             MOVS     R5,#+0
+     54              uint8 buf[14];
+     55          
+     56              MPU6050_MultiReadReg(0x3b, 14, buf);
+   \   00000008   0xAA00             ADD      R2,SP,#+0
+   \   0000000A   0x210E             MOVS     R1,#+14
+   \   0000000C   0x203B             MOVS     R0,#+59
+   \   0000000E   0x.... 0x....      BL       MPU6050_MultiReadReg
+     57          
+     58              for(i = 0; i < 7; i++)
+   \   00000012   0x2000             MOVS     R0,#+0
+   \   00000014   0x0005             MOVS     R5,R0
+   \                     ??MPU6050_GetRawData_0:
+   \   00000016   0x2D07             CMP      R5,#+7
+   \   00000018   0xDA0D             BGE.N    ??MPU6050_GetRawData_1
+     59              {
+     60                  raw_data[i] = (int16)(((uint16)buf[2*i] << 8) + (uint16)buf[2*i+1]);
+   \   0000001A   0xA800             ADD      R0,SP,#+0
+   \   0000001C   0xF810 0x0015      LDRB     R0,[R0, R5, LSL #+1]
+   \   00000020   0x0200             LSLS     R0,R0,#+8
+   \   00000022   0xA900             ADD      R1,SP,#+0
+   \   00000024   0xEB11 0x0145      ADDS     R1,R1,R5, LSL #+1
+   \   00000028   0x7849             LDRB     R1,[R1, #+1]
+   \   0000002A   0xFA50 0xF081      UXTAB    R0,R0,R1
+   \   0000002E   0xF824 0x0015      STRH     R0,[R4, R5, LSL #+1]
+     61              }
+   \   00000032   0x1C6D             ADDS     R5,R5,#+1
+   \   00000034   0xE7EF             B.N      ??MPU6050_GetRawData_0
+     62          }
+   \                     ??MPU6050_GetRawData_1:
+   \   00000036   0xB005             ADD      SP,SP,#+20
+   \   00000038   0xBD30             POP      {R4,R5,PC}       ;; return
+     63          
+
+   \                                 In section .text, align 2, keep-with-next
+     64          void MPU6050_SingleWriteReg(uint8 reg_address, uint8 data)
+     65          {
+   \                     MPU6050_SingleWriteReg:
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+     66              I2C_WriteRegSingle(MPU9150_I2C_PORT, MPU6050_ADDRESS, reg_address, data, MPU9150_I2C_DELAY_TIME);
+   \   00000006   0x2002             MOVS     R0,#+2
+   \   00000008   0x9000             STR      R0,[SP, #+0]
+   \   0000000A   0x002B             MOVS     R3,R5
+   \   0000000C   0xB2DB             UXTB     R3,R3            ;; ZeroExt  R3,R3,#+24,#+24
+   \   0000000E   0x0022             MOVS     R2,R4
+   \   00000010   0xB2D2             UXTB     R2,R2            ;; ZeroExt  R2,R2,#+24,#+24
+   \   00000012   0x2168             MOVS     R1,#+104
+   \   00000014   0x....             LDR.N    R0,??DataTable9  ;; 0x40066000
+   \   00000016   0x.... 0x....      BL       I2C_WriteRegSingle
+     67          }
+   \   0000001A   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     68          
+
+   \                                 In section .text, align 2, keep-with-next
+     69          uint8 MPU6050_SingleReadReg(uint8 reg_address)
+     70          {
+   \                     MPU6050_SingleReadReg:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     71              return I2C_ReadRegSingle(MPU9150_I2C_PORT, MPU6050_ADDRESS, reg_address, MPU9150_I2C_DELAY_TIME);
+   \   00000004   0x2302             MOVS     R3,#+2
+   \   00000006   0x0022             MOVS     R2,R4
+   \   00000008   0xB2D2             UXTB     R2,R2            ;; ZeroExt  R2,R2,#+24,#+24
+   \   0000000A   0x2168             MOVS     R1,#+104
+   \   0000000C   0x....             LDR.N    R0,??DataTable9  ;; 0x40066000
+   \   0000000E   0x.... 0x....      BL       I2C_ReadRegSingle
+   \   00000012   0xBD10             POP      {R4,PC}          ;; return
+     72          }  
+     73          
+
+   \                                 In section .text, align 2, keep-with-next
+     74          void MPU6050_MultiWriteReg(uint8 reg_address, uint8 len, uint8 * data)
+     75          {
+   \                     MPU6050_MultiWriteReg:
+   \   00000000   0xB57C             PUSH     {R2-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+     76              I2C_WriteRegMulti(MPU9150_I2C_PORT, MPU6050_ADDRESS, reg_address, len, data, MPU9150_I2C_DELAY_TIME);
+   \   00000008   0x2002             MOVS     R0,#+2
+   \   0000000A   0x9001             STR      R0,[SP, #+4]
+   \   0000000C   0x9600             STR      R6,[SP, #+0]
+   \   0000000E   0x002B             MOVS     R3,R5
+   \   00000010   0xB2DB             UXTB     R3,R3            ;; ZeroExt  R3,R3,#+24,#+24
+   \   00000012   0x0022             MOVS     R2,R4
+   \   00000014   0xB2D2             UXTB     R2,R2            ;; ZeroExt  R2,R2,#+24,#+24
+   \   00000016   0x2168             MOVS     R1,#+104
+   \   00000018   0x....             LDR.N    R0,??DataTable9  ;; 0x40066000
+   \   0000001A   0x.... 0x....      BL       I2C_WriteRegMulti
+     77          }
+   \   0000001E   0xBD73             POP      {R0,R1,R4-R6,PC}  ;; return
+     78          
+
+   \                                 In section .text, align 2, keep-with-next
+     79          void MPU6050_MultiReadReg(uint8 reg_address, uint8 len, uint8 * buf)
+     80          {
+   \                     MPU6050_MultiReadReg:
+   \   00000000   0xB57C             PUSH     {R2-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+     81              I2C_ReadRegMulti(MPU9150_I2C_PORT, MPU6050_ADDRESS, reg_address, len, buf, MPU9150_I2C_DELAY_TIME);
+   \   00000008   0x2002             MOVS     R0,#+2
+   \   0000000A   0x9001             STR      R0,[SP, #+4]
+   \   0000000C   0x9600             STR      R6,[SP, #+0]
+   \   0000000E   0x002B             MOVS     R3,R5
+   \   00000010   0xB2DB             UXTB     R3,R3            ;; ZeroExt  R3,R3,#+24,#+24
+   \   00000012   0x0022             MOVS     R2,R4
+   \   00000014   0xB2D2             UXTB     R2,R2            ;; ZeroExt  R2,R2,#+24,#+24
+   \   00000016   0x2168             MOVS     R1,#+104
+   \   00000018   0x....             LDR.N    R0,??DataTable9  ;; 0x40066000
+   \   0000001A   0x.... 0x....      BL       I2C_ReadRegMulti
+     82          }  
+   \   0000001E   0xBD73             POP      {R0,R1,R4-R6,PC}  ;; return
+     83          
+
+   \                                 In section .text, align 2, keep-with-next
+     84          uint8 MPU6050_DMP_MultiWriteReg(uint8 dev_address, uint8 reg_address, uint8 len, uint8 * data)
+     85          {
+   \                     MPU6050_DMP_MultiWriteReg:
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002   0xB083             SUB      SP,SP,#+12
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000D             MOVS     R5,R1
+   \   00000008   0x0016             MOVS     R6,R2
+   \   0000000A   0x001F             MOVS     R7,R3
+     86              I2C_WriteRegMulti(MPU9150_I2C_PORT, dev_address, reg_address, len, data, MPU9150_I2C_DELAY_TIME);
+   \   0000000C   0x2002             MOVS     R0,#+2
+   \   0000000E   0x9001             STR      R0,[SP, #+4]
+   \   00000010   0x9700             STR      R7,[SP, #+0]
+   \   00000012   0x0033             MOVS     R3,R6
+   \   00000014   0xB2DB             UXTB     R3,R3            ;; ZeroExt  R3,R3,#+24,#+24
+   \   00000016   0x002A             MOVS     R2,R5
+   \   00000018   0xB2D2             UXTB     R2,R2            ;; ZeroExt  R2,R2,#+24,#+24
+   \   0000001A   0x0021             MOVS     R1,R4
+   \   0000001C   0xB2C9             UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   0000001E   0x....             LDR.N    R0,??DataTable9  ;; 0x40066000
+   \   00000020   0x.... 0x....      BL       I2C_WriteRegMulti
+     87              return 0;
+   \   00000024   0x2000             MOVS     R0,#+0
+   \   00000026   0xBDFE             POP      {R1-R7,PC}       ;; return
+     88          }
+     89          
+
+   \                                 In section .text, align 2, keep-with-next
+     90          uint8 MPU6050_DMP_MultiReadReg(uint8 dev_address, uint8 reg_address, uint8 len, uint8 * buf)
+     91          {
+   \                     MPU6050_DMP_MultiReadReg:
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002   0xB083             SUB      SP,SP,#+12
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000D             MOVS     R5,R1
+   \   00000008   0x0016             MOVS     R6,R2
+   \   0000000A   0x001F             MOVS     R7,R3
+     92              I2C_ReadRegMulti(MPU9150_I2C_PORT, dev_address, reg_address, len, buf, MPU9150_I2C_DELAY_TIME);
+   \   0000000C   0x2002             MOVS     R0,#+2
+   \   0000000E   0x9001             STR      R0,[SP, #+4]
+   \   00000010   0x9700             STR      R7,[SP, #+0]
+   \   00000012   0x0033             MOVS     R3,R6
+   \   00000014   0xB2DB             UXTB     R3,R3            ;; ZeroExt  R3,R3,#+24,#+24
+   \   00000016   0x002A             MOVS     R2,R5
+   \   00000018   0xB2D2             UXTB     R2,R2            ;; ZeroExt  R2,R2,#+24,#+24
+   \   0000001A   0x0021             MOVS     R1,R4
+   \   0000001C   0xB2C9             UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   0000001E   0x....             LDR.N    R0,??DataTable9  ;; 0x40066000
+   \   00000020   0x.... 0x....      BL       I2C_ReadRegMulti
+     93              return 0;
+   \   00000024   0x2000             MOVS     R0,#+0
+   \   00000026   0xBDFE             POP      {R1-R7,PC}       ;; return
+     94          }  
+     95          
+
+   \                                 In section .text, align 2, keep-with-next
+     96          void InitMPU6050(void)
+     97          {
+   \                     InitMPU6050:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     98              MPU6050_SingleWriteReg(MPU6050_PWR_MGMT_1, 0x00);
+   \   00000002   0x2100             MOVS     R1,#+0
+   \   00000004   0x206B             MOVS     R0,#+107
+   \   00000006   0x.... 0x....      BL       MPU6050_SingleWriteReg
+     99              //MPU6050_SingleWriteReg(MPU6050_SMPLRT_DIV, 0x07);
+    100              MPU6050_SingleWriteReg(MPU6050_SMPLRT_DIV, 0x01);    
+   \   0000000A   0x2101             MOVS     R1,#+1
+   \   0000000C   0x2019             MOVS     R0,#+25
+   \   0000000E   0x.... 0x....      BL       MPU6050_SingleWriteReg
+    101              MPU6050_SingleWriteReg(MPU6050_CONFIG, 0x06);
+   \   00000012   0x2106             MOVS     R1,#+6
+   \   00000014   0x201A             MOVS     R0,#+26
+   \   00000016   0x.... 0x....      BL       MPU6050_SingleWriteReg
+    102              MPU6050_SingleWriteReg(MPU6050_GYRO_CONFIG, 0x18);
+   \   0000001A   0x2118             MOVS     R1,#+24
+   \   0000001C   0x201B             MOVS     R0,#+27
+   \   0000001E   0x.... 0x....      BL       MPU6050_SingleWriteReg
+    103              MPU6050_SingleWriteReg(MPU6050_ACCEL_CONFIG, 0x01);    
+   \   00000022   0x2101             MOVS     R1,#+1
+   \   00000024   0x201C             MOVS     R0,#+28
+   \   00000026   0x.... 0x....      BL       MPU6050_SingleWriteReg
+    104          }
+   \   0000002A   0xBD01             POP      {R0,PC}          ;; return
+    105          
+    106          
+    107          
+    108          
+    109          /************************************************************************
+    110           * Function         AK8975C_SingleWriteReg                                              
+    111           * Usage            To Write a Reg to AK8975C(electrical compass)                           
+    112           * Argument         reg_address:    The address of the reg you want to write into
+    113           *                  data:           The data you want to write
+    114           * Return value     NONE                                                
+    115           * Modification History:                                                
+    116           * 01a 2014/4/1 20:40:30   
+    117           *
+    118           ************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    119          void AK8975C_SingleWriteReg (uint8 reg_address, uint8 data) 
+    120          {
+   \                     AK8975C_SingleWriteReg:
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    121              I2C_WriteRegSingle(MPU9150_I2C_PORT, AK8975C_ADDRESS, reg_address, data, MPU9150_I2C_DELAY_TIME);
+   \   00000006   0x2002             MOVS     R0,#+2
+   \   00000008   0x9000             STR      R0,[SP, #+0]
+   \   0000000A   0x002B             MOVS     R3,R5
+   \   0000000C   0xB2DB             UXTB     R3,R3            ;; ZeroExt  R3,R3,#+24,#+24
+   \   0000000E   0x0022             MOVS     R2,R4
+   \   00000010   0xB2D2             UXTB     R2,R2            ;; ZeroExt  R2,R2,#+24,#+24
+   \   00000012   0x210C             MOVS     R1,#+12
+   \   00000014   0x....             LDR.N    R0,??DataTable9  ;; 0x40066000
+   \   00000016   0x.... 0x....      BL       I2C_WriteRegSingle
+    122          }		/* -----  end of function AK8975C_SingleWriteReg  ----- */
+   \   0000001A   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    123          
+    124          
+    125          /************************************************************************
+    126           * Function         AK8975C_SingleReadReg                                              
+    127           * Usage            To Read a Reg from AK8975C(electrical compass)                           
+    128           * Argument         reg_address:    The address of the data you want to read                                                
+    129           * Return value     (uint8)         The data you read from the reg_address                                                
+    130           * Modification History:                                                
+    131           * 01a 2014/4/1 20:46:27   
+    132           *
+    133           ************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    134          uint8 AK8975C_SingleReadReg (uint8 reg_address) 
+    135          {
+   \                     AK8975C_SingleReadReg:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    136              return I2C_ReadRegSingle(MPU9150_I2C_PORT, AK8975C_ADDRESS, reg_address, MPU9150_I2C_DELAY_TIME);
+   \   00000004   0x2302             MOVS     R3,#+2
+   \   00000006   0x0022             MOVS     R2,R4
+   \   00000008   0xB2D2             UXTB     R2,R2            ;; ZeroExt  R2,R2,#+24,#+24
+   \   0000000A   0x210C             MOVS     R1,#+12
+   \   0000000C   0x....             LDR.N    R0,??DataTable9  ;; 0x40066000
+   \   0000000E   0x.... 0x....      BL       I2C_ReadRegSingle
+   \   00000012   0xBD10             POP      {R4,PC}          ;; return
+    137          }		/* -----  end of function AK8975C_SingleReadReg  ----- */
+    138          
+    139          
+    140          /************************************************************************
+    141           * Function         InitAK8975C                                              
+    142           * Usage            To Initialize AK8975C(electrical compass)                           
+    143           * Argument         NONE                                                
+    144           * Return value     NONE                                                
+    145           * Modification History:                                                
+    146           * 01a 2014/4/1 20:48:49   
+    147           *
+    148           ************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    149          void InitAK8975C (void) 
+    150          {
+   \                     InitAK8975C:
+   \   00000000   0xB580             PUSH     {R7,LR}
+    151              MPU6050_SingleWriteReg(0x37, 0x02);
+   \   00000002   0x2102             MOVS     R1,#+2
+   \   00000004   0x2037             MOVS     R0,#+55
+   \   00000006   0x.... 0x....      BL       MPU6050_SingleWriteReg
+    152              AK8975C_SingleWriteReg(AK8975C_CNTL, 0x01);
+   \   0000000A   0x2101             MOVS     R1,#+1
+   \   0000000C   0x200A             MOVS     R0,#+10
+   \   0000000E   0x.... 0x....      BL       AK8975C_SingleWriteReg
+    153          }		/* -----  end of function InitAK8975C  ----- */
+   \   00000012   0xBD01             POP      {R0,PC}          ;; return
+    154          
+    155          /************************************************************************
+    156           * Function         AK8975C_GetData                                              
+    157           * Usage            Get Sensor Data from the AK8975C                           
+    158           * Argument         reg_address:The address of the sensor data you want to read(16-bits)                                                
+    159           * Return value     (int16) The sensor data you want to get                                                
+    160           * Modification History:                                                
+    161           * 01a 2014/4/1 20:54:59   
+    162           *
+    163           ************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    164          int16 AK8975C_GetData (uint8 reg_address) 
+    165          {
+   \                     AK8975C_GetData:
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    166              int ret = 0;
+   \   00000004   0x2500             MOVS     R5,#+0
+    167          
+    168              uint8 H,L;
+    169              L = AK8975C_SingleReadReg(reg_address);
+   \   00000006   0x0020             MOVS     R0,R4
+   \   00000008   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000A   0x.... 0x....      BL       AK8975C_SingleReadReg
+   \   0000000E   0x0007             MOVS     R7,R0
+    170              H = AK8975C_SingleReadReg(reg_address+1);
+   \   00000010   0x1C60             ADDS     R0,R4,#+1
+   \   00000012   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000014   0x.... 0x....      BL       AK8975C_SingleReadReg
+   \   00000018   0x0006             MOVS     R6,R0
+    171          
+    172              ret =  (int16)((H<<8) + L);
+   \   0000001A   0xB2F6             UXTB     R6,R6            ;; ZeroExt  R6,R6,#+24,#+24
+   \   0000001C   0x0230             LSLS     R0,R6,#+8
+   \   0000001E   0xFA50 0xF087      UXTAB    R0,R0,R7
+   \   00000022   0xB200             SXTH     R0,R0            ;; SignExt  R0,R0,#+16,#+16
+   \   00000024   0x0005             MOVS     R5,R0
+    173          
+    174              return ret;    
+   \   00000026   0x0028             MOVS     R0,R5
+   \   00000028   0xB200             SXTH     R0,R0            ;; SignExt  R0,R0,#+16,#+16
+   \   0000002A   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    175          }		/* -----  end of function AK8975C_GetData  ----- */
+    176          
+    177          /************************************************************************
+    178           * Function         AK8975C_StartMeasure                                              
+    179           * Usage            Start Measure The Megenito                           
+    180           * Argument         NONE                                                
+    181           * Return value     NONE                                                
+    182           * Modification History:                                                
+    183           * 01a 2014/4/1 22:07:59   
+    184           *
+    185           ************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    186          void AK8975C_StartMeasure (void) 
+    187          {
+   \                     AK8975C_StartMeasure:
+   \   00000000   0xB580             PUSH     {R7,LR}
+    188              AK8975C_SingleWriteReg(AK8975C_CNTL, 0x01);    
+   \   00000002   0x2101             MOVS     R1,#+1
+   \   00000004   0x200A             MOVS     R0,#+10
+   \   00000006   0x.... 0x....      BL       AK8975C_SingleWriteReg
+    189          }		/* -----  end of function AK9875C_StartMeasure  ----- */
+   \   0000000A   0xBD01             POP      {R0,PC}          ;; return
+    190          
+    191          
+    192          /************************************************************************
+    193           * Function         AK8975C_WaitMeasureComplete                                              
+    194           * Usage            Wait AK8975C Measurement Complete                           
+    195           * Argument         NONE                                                
+    196           * Return value     (uint8) whether over time(0 not over, 1 over)                                                
+    197           * Modification History:                                                
+    198           * 01a 2014/4/1 22:08:58   
+    199           *
+    200           ************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    201          uint8 AK8975C_WaitMeasureComplete (void) 
+    202          {
+   \                     AK8975C_WaitMeasureComplete:
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+    203              int i = 0;
+   \   00000002   0x2400             MOVS     R4,#+0
+    204          
+    205              uint8 ret = 0;
+   \   00000004   0x2500             MOVS     R5,#+0
+    206              while(AK8975C_SingleReadReg(0x02) != 0x01)
+   \                     ??AK8975C_WaitMeasureComplete_0:
+   \   00000006   0x2002             MOVS     R0,#+2
+   \   00000008   0x.... 0x....      BL       AK8975C_SingleReadReg
+   \   0000000C   0x2801             CMP      R0,#+1
+   \   0000000E   0xD005             BEQ.N    ??AK8975C_WaitMeasureComplete_1
+    207              {
+    208                  i ++;
+   \   00000010   0x1C64             ADDS     R4,R4,#+1
+    209                  if(i > 2000)
+   \   00000012   0xF5B4 0x6FFA      CMP      R4,#+2000
+   \   00000016   0xDDF6             BLE.N    ??AK8975C_WaitMeasureComplete_0
+    210                  {
+    211                      ret = 1;
+   \   00000018   0x2001             MOVS     R0,#+1
+   \   0000001A   0x0005             MOVS     R5,R0
+    212                      break;
+    213                  }
+    214              }
+    215              ret = 0;
+   \                     ??AK8975C_WaitMeasureComplete_1:
+   \   0000001C   0x2000             MOVS     R0,#+0
+   \   0000001E   0x0005             MOVS     R5,R0
+    216          
+    217              return ret;
+   \   00000020   0x0028             MOVS     R0,R5
+   \   00000022   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000024   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    218          }		/* -----  end of function AK9875C_WaitMeasureComplete  ----- */
+    219          
+
+   \                                 In section .text, align 2, keep-with-next
+    220          void AK8975C_MultiReadReg(uint8 reg_address, uint8 len, uint8 * buf)
+    221          {
+   \                     AK8975C_MultiReadReg:
+   \   00000000   0xB57C             PUSH     {R2-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    222              I2C_ReadRegMulti(MPU9150_I2C_PORT, AK8975C_ADDRESS, reg_address, len, buf, MPU9150_I2C_DELAY_TIME);
+   \   00000008   0x2002             MOVS     R0,#+2
+   \   0000000A   0x9001             STR      R0,[SP, #+4]
+   \   0000000C   0x9600             STR      R6,[SP, #+0]
+   \   0000000E   0x002B             MOVS     R3,R5
+   \   00000010   0xB2DB             UXTB     R3,R3            ;; ZeroExt  R3,R3,#+24,#+24
+   \   00000012   0x0022             MOVS     R2,R4
+   \   00000014   0xB2D2             UXTB     R2,R2            ;; ZeroExt  R2,R2,#+24,#+24
+   \   00000016   0x210C             MOVS     R1,#+12
+   \   00000018   0x....             LDR.N    R0,??DataTable9  ;; 0x40066000
+   \   0000001A   0x.... 0x....      BL       I2C_ReadRegMulti
+    223          }  
+   \   0000001E   0xBD73             POP      {R0,R1,R4-R6,PC}  ;; return
+    224          
+
+   \                                 In section .text, align 2, keep-with-next
+    225          void AK8975C_GetRawData(int16* raw_data)
+    226          {
+   \                     AK8975C_GetRawData:
+   \   00000000   0xB530             PUSH     {R4,R5,LR}
+   \   00000002   0xB083             SUB      SP,SP,#+12
+   \   00000004   0x0004             MOVS     R4,R0
+    227              int i = 0;
+   \   00000006   0x2500             MOVS     R5,#+0
+    228              uint8 buf[6];
+    229          
+    230              AK8975C_MultiReadReg(0x03, 6, buf);
+   \   00000008   0xAA00             ADD      R2,SP,#+0
+   \   0000000A   0x2106             MOVS     R1,#+6
+   \   0000000C   0x2003             MOVS     R0,#+3
+   \   0000000E   0x.... 0x....      BL       AK8975C_MultiReadReg
+    231          
+    232              for(i = 0; i < 3; i++)
+   \   00000012   0x2000             MOVS     R0,#+0
+   \   00000014   0x0005             MOVS     R5,R0
+   \                     ??AK8975C_GetRawData_0:
+   \   00000016   0x2D03             CMP      R5,#+3
+   \   00000018   0xDA0D             BGE.N    ??AK8975C_GetRawData_1
+    233              {
+    234                  raw_data[i] = (int16)(((uint16)buf[2*i+1] << 8) + (uint16)buf[2*i]);
+   \   0000001A   0xA800             ADD      R0,SP,#+0
+   \   0000001C   0xEB10 0x0045      ADDS     R0,R0,R5, LSL #+1
+   \   00000020   0x7840             LDRB     R0,[R0, #+1]
+   \   00000022   0x0200             LSLS     R0,R0,#+8
+   \   00000024   0xA900             ADD      R1,SP,#+0
+   \   00000026   0xF811 0x1015      LDRB     R1,[R1, R5, LSL #+1]
+   \   0000002A   0xFA50 0xF081      UXTAB    R0,R0,R1
+   \   0000002E   0xF824 0x0015      STRH     R0,[R4, R5, LSL #+1]
+    235              }
+   \   00000032   0x1C6D             ADDS     R5,R5,#+1
+   \   00000034   0xE7EF             B.N      ??AK8975C_GetRawData_0
+    236          }
+   \                     ??AK8975C_GetRawData_1:
+   \   00000036   0xBD37             POP      {R0-R2,R4,R5,PC}  ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable9:
+   \   00000000   0x40066000         DC32     0x40066000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable9_1:
+   \   00000000   0x400FF040         DC32     0x400ff040
+
+   \                                 In section .rodata, align 4
+   \   00000000   0x00000000         DC32 0H
+   \   00000004   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+
+   \                                 In section .rodata, align 4
+   \   00000000   0x00000000         DC32 0H
+   \   00000004   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+   \              0x00 0x00    
+
+   \                                 In section .rodata, align 2
+   \   00000000   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       24  AK8975C_GetData
+             24 -> AK8975C_SingleReadReg
+       24  AK8975C_GetRawData
+             24 -> AK8975C_MultiReadReg
+       24  AK8975C_MultiReadReg
+             24 -> I2C_ReadRegMulti
+        8  AK8975C_SingleReadReg
+              8 -> I2C_ReadRegSingle
+       16  AK8975C_SingleWriteReg
+             16 -> I2C_WriteRegSingle
+        8  AK8975C_StartMeasure
+              8 -> AK8975C_SingleWriteReg
+       16  AK8975C_WaitMeasureComplete
+             16 -> AK8975C_SingleReadReg
+        8  InitAK8975C
+              8 -> AK8975C_SingleWriteReg
+              8 -> MPU6050_SingleWriteReg
+        8  InitMPU6050
+              8 -> MPU6050_SingleWriteReg
+       64  InitMPU9150
+             48 -> InitAK8975C
+             48 -> InitMPU6050
+             48 -> LPLD_GPIO_Init
+             48 -> LPLD_I2C_Init
+             48 -> __aeabi_memclr4
+             64 -> __aeabi_memcpy4
+             48 -> delayms
+       32  MPU6050_DMP_MultiReadReg
+             32 -> I2C_ReadRegMulti
+       32  MPU6050_DMP_MultiWriteReg
+             32 -> I2C_WriteRegMulti
+       16  MPU6050_GetData
+             16 -> MPU6050_MultiReadReg
+       32  MPU6050_GetRawData
+             32 -> MPU6050_MultiReadReg
+       24  MPU6050_MultiReadReg
+             24 -> I2C_ReadRegMulti
+       24  MPU6050_MultiWriteReg
+             24 -> I2C_WriteRegMulti
+        8  MPU6050_SingleReadReg
+              8 -> I2C_ReadRegSingle
+       16  MPU6050_SingleWriteReg
+             16 -> I2C_WriteRegSingle
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      20  ?<Constant {(GPIO_Type *)0}>
+      16  ?<Constant {(I2C_Type *)0}>
+       2  ?<Constant {0, 0}>
+       4  ??DataTable9
+       4  ??DataTable9_1
+      44  AK8975C_GetData
+      56  AK8975C_GetRawData
+      32  AK8975C_MultiReadReg
+      20  AK8975C_SingleReadReg
+      28  AK8975C_SingleWriteReg
+      12  AK8975C_StartMeasure
+      38  AK8975C_WaitMeasureComplete
+      20  InitAK8975C
+      44  InitMPU6050
+     124  InitMPU9150
+      40  MPU6050_DMP_MultiReadReg
+      40  MPU6050_DMP_MultiWriteReg
+      46  MPU6050_GetData
+      58  MPU6050_GetRawData
+      32  MPU6050_MultiReadReg
+      32  MPU6050_MultiWriteReg
+      20  MPU6050_SingleReadReg
+      28  MPU6050_SingleWriteReg
+
+ 
+  38 bytes in section .rodata
+ 722 bytes in section .text
+ 
+ 722 bytes of CODE  memory
+  38 bytes of CONST memory
+
+Errors: none
+Warnings: none
